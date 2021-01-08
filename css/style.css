@@ -148,10 +148,27 @@ hr {
   margin: 0.5em 0 0.5em 0;
 }
 
+main a:visited {
+    color: blue;
+}
+
 /* footer */
 
 footer p {
     color: var(--clr-light)
+}
+
+footer a {
+    color: var(--clr-light)
+}
+
+footer a:visited {
+    color: var(--clr-light)
+}
+
+#lastUpdate {
+    color: var(--clr-accent);
+    font-size: 0.75em;
 }
 
 @media (min-width: 600px) {
