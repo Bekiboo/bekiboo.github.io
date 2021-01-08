@@ -30,20 +30,23 @@
         0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
-/* @media (min-width: 800px) {
-    :root {
-        --fs-h1: 4.5rem;
-        --fs-h2: 3rem;
-        --fs-h3: 1.5rem;
-        --fs-body: 1.125rem;
-    }
-} */
+/* Utility classes */
+
+.clr-light { color: var(--clr-light) }
+.clr-dark { color: var(--clr-dark) }
+.clr-accent { color: var(--clr-accent) }
+
+.blue-link a:visited {
+    color: blue;
+}
+.light-link a:visited {
+    color: var(--clr-light)
+}
 
 /* General styles */
 
 body {
     background: var(--clr-light);
-    color: var(--clr-dark);
     margin: 5px;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
@@ -59,34 +62,10 @@ img {
     max-width: 100%;
 }
 
-strong {
-    font-weight: var(--fw-bold)
-}
-
 :focus {
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
 }
-
-/* Buttons */
-
-/* .btn {
-    display: inline-block;
-    padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: var(--fw-bold);
-    transition: transform 200ms ease-in-out;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-} */
 
 /* Typography */
 
@@ -97,21 +76,11 @@ h3 {
     margin: 0;
 }
 
-h1 {
-    font-size: var(--fs-h1);
-    color: var(--clr-light)
-}
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+h1 { font-size: var(--fs-h1) }
 
-h2 {
-    font-size: var(--fs-h2);
-    color: var(--clr-dark)
-}
-
-h3 {
-    font-size: var(--fs-h3)
-}
-
-/* header */
+/* Header */
 
 header,
 footer {
@@ -125,8 +94,8 @@ header img {
     box-shadow: var(--bs);
     width: 140px;
     float: right;
-    margin-left: 0.5em;;
-  }
+    margin-left: 0.5em;
+}
 
 header h1 {
     font-weight: var(--fw-reg);
@@ -136,38 +105,20 @@ header strong {
     display: block;
 }
 
-/* main */
+/* Main */
 
 main {
-    background-color: var(--clr-light);
     padding: 1em;
 }
 
 hr {
-  border-top: 1px solid var(--clr-dark);
-  margin: 0.5em 0 0.5em 0;
+    border-top: 1px solid var(--clr-dark);
+    margin: 0.5em 0 0.5em 0;
 }
 
-main a:visited {
-    color: blue;
-}
-
-/* footer */
-
-footer p {
-    color: var(--clr-light)
-}
-
-footer a {
-    color: var(--clr-light)
-}
-
-footer a:visited {
-    color: var(--clr-light)
-}
+/* Footer */
 
 #lastUpdate {
-    color: var(--clr-accent);
     font-size: 0.75em;
 }
 
