@@ -39,8 +39,12 @@
 .blue-link a:visited {
     color: blue;
 }
-.light-link a:visited {
+.light-link:visited {
     color: var(--clr-light)
+}
+.blue-link a:hover,
+.light-link:hover {
+    color: var(--clr-accent)
 }
 
 /* General styles */
@@ -51,6 +55,11 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+}
+
+.content {
+    box-shadow: var(--bs);
+    border-radius: 10px;
 }
 
 section {
@@ -86,8 +95,9 @@ header,
 footer {
     background-color: var(--clr-dark);
     padding: .75em;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: var(--bs);
 }
 
 header img {
