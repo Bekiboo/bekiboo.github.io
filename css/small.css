@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,16 +9,17 @@
 
 :root {
     /* font family */
-    --ff-primary: 'Source Sans Pro', sans-serif;
-    --ff-secondary: 'Source Code Pro', monospace;
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-secondary: 'Open Sans', monospace;
 
     /* font weight */
-    --fw-reg: 300;
+    --fw-light: 300;
+    --fw-reg: 400;
     --fw-bold: 600;
 
     /* font size */
-    --fs-h1: 2.5rem;
-    --fs-h2: 1.5rem;
+    --fs-h1: 1.75rem;
+    --fs-h2: 1.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
@@ -51,15 +54,9 @@
 
 body {
     background: var(--clr-light);
-    margin: 5px;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
-}
-
-.content {
-    box-shadow: var(--bs);
-    border-radius: 10px;
 }
 
 section {
@@ -95,20 +92,19 @@ header,
 footer {
     background-color: var(--clr-dark);
     padding: .75em;
-    border-radius: 10px;
     text-align: center;
     box-shadow: var(--bs);
 }
 
 header img {
     box-shadow: var(--bs);
-    width: 140px;
-    float: right;
-    margin-left: 0.5em;
+    width: 200px;
+    margin: 0 auto;
 }
 
 header h1 {
-    font-weight: var(--fw-reg);
+    font-weight: var(--fw-bold);
+    padding: 1rem 0 1rem 0
 }
 
 header strong {
@@ -132,18 +128,3 @@ hr {
     font-size: 0.75em;
 }
 
-@media (min-width: 600px) {
-    body {
-        width: 600px;
-        margin: 0 auto;
-        padding: .5em;
-    }
-
-    header br {
-        display: none;
-    }
-
-    main h2 {
-        padding-top: 1em;
-    }
-}
