@@ -76,6 +76,10 @@ main figcaption {
     font-size: .8rem;
 }
 
+.justify {
+    text-align: justify;
+}
+
 footer {
     text-align: center;
     padding: 1rem 2%;
