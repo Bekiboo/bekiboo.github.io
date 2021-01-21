@@ -1,0 +1,23 @@
+
+/* Typography */
+.typo__flex {
+    display: flex;
+    justify-content: space-around;  
+    text-align: center; 
+    padding: 2rem 0 2rem 0; 
+}
+
+.typo__flex .right {
+    background-color: #fab900;
+    color: white;
+}
+
+.typo__flex .right,
+.typo__flex .left {
+    width: 50%;
+}
+
+/* Color Scheme */
+.color-scheme img {
+    width: 100%
+}

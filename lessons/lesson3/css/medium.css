@@ -1,0 +1,40 @@
+/* 35em is also 560px (if basefont is 16px) */
+@media only screen and (min-width: 35rem) {
+
+    :root {
+            /* font size */
+            --fs-h1: 2.5rem;
+            --fs-h2: 1.5rem;
+            --fs-h3: 1.5rem;
+            --fs-body: 1rem;
+    }
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+header img {width: auto;}
+header h2 {
+    margin-top: -0.5rem;
+}
+
+/*----------- NAVIGATION --------------*/
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    nav ul li {
+        width: 25%;
+    }
+
+    nav ul li a{padding: .5rem 1rem;}
+
+
+/*----------- MAIN --------------*/
+
+
+
+/*----------- FOOTER --------------*/
+    
+} /* end of media query */
