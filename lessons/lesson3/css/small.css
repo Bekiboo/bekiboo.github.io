@@ -30,6 +30,7 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
     --clr-lightblue: #2caaff;
     --clr-honey: #fab900;
     --clr-red: #f13535;
+    --clr-lightgrey: #f2f2f2;
     --clr-grey: #4e4e4e;
     --clr-dark: #333333;
     --clr-darker: #1f1f1f;
@@ -40,13 +41,23 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 }
 
 /* Utility classes */
-
+    /* Colors */
 .clr-light { color: var(--clr-light) }
 .clr-lightblue { color: var(--clr-lightblue) }
 .clr-dark { color: var(--clr-dark) }
 .clr-darker { color: var(--clr-darker) }
 .clr-honey { color: var(--clr-honey) }
 .clr-red { color: var(--clr-red) }
+    /* Backgrounds */
+.bck-light { background-color: var(--clr-light) }
+.bck-lightblue { background-color: var(--clr-lightblue) }
+.bck-dark { background-color: var(--clr-dark) }
+.bck-darker { background-color: var(--clr-darker) }
+.bck-honey { background-color: var(--clr-honey) }
+.bck-red { background-color: var(--clr-red) }
+.bck-grey { background-color: var(--clr-grey) }
+.bck-lightgrey { background-color: var(--clr-lightgrey) }
+.bs { box-shadow: var(--bs);}
 
 /*----------- BODY --------------*/
 body {
@@ -59,10 +70,16 @@ h1, h2, h3 {
 }
 h1 {
     letter-spacing: 0.25rem;
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
 }
 
 h3 {
     font-size: var(--fs-h3);
+    padding-top: 1rem;
 }
 
 /*----------- HEADER --------------*/
@@ -78,9 +95,6 @@ header {
     width: 80px;
 }
 
-header h1 {margin: 0; font-size: var(--fs-h1);}
-header h2 {margin: 0; font-weight: normal; font-size: var(--fs-h2);}
-
 /*----------- NAVIGATION --------------*/
 .navbar {
     background-color:var(--clr-dark);
@@ -93,21 +107,21 @@ nav ul {
 
 .navbar__link a {
     display: block;
-    color: #eee;
+    color: var(--clr-light);
     padding: .5rem 0;
     text-decoration: none;
     font-size: .9rem;
     text-align: center;
 }
 
-
-.navbar__link:hover {
-    background-color: var(--clr-grey);
-    color: var(--clr-dark);
-}
 .active {
     background-color: black;
     font-weight: var(--fw-bold);
+}
+
+.navbar__link:hover {
+    background-color: var(--clr-grey);
+    color: var(--clr-honey);
 }
 
 /*----------- MAIN --------------*/
