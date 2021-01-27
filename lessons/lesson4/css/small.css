@@ -1,0 +1,220 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+*,
+*::before,
+*::after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+    box-sizing: border-box; margin: 0;}
+
+
+
+:root {
+    /* font family */
+    --ff-primary: 'Lato', sans-serif;
+    --ff-secondary: 'Galindo', cursive;
+
+    /* font weight */
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-bold: 600;
+
+    /* font size */
+    --fs-h1: 1.7rem;
+    --fs-h2: 1.1rem;
+    --fs-h3: 1rem;
+    --fs-body: 1rem;
+
+    /* color */
+    --clr-light: #fff;
+    --clr-lightblue: #2caaff;
+    --clr-honey: #fab900;
+    --clr-red: #f13535;
+    --clr-lightgrey: #f2f2f2;
+    --clr-grey: #4e4e4e;
+    --clr-dark: #333333;
+    --clr-darker: #1f1f1f;
+
+    /* box shadow */
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+/* Utility classes */
+
+    /* Colors */
+.clr-light { color: var(--clr-light) }
+.clr-lightblue { color: var(--clr-lightblue) }
+.clr-dark { color: var(--clr-dark) }
+.clr-darker { color: var(--clr-darker) }
+.clr-honey { color: var(--clr-honey) }
+.clr-red { color: var(--clr-red) }
+
+    /* Backgrounds */
+.bck-light { background-color: var(--clr-light) }
+.bck-lightblue { background-color: var(--clr-lightblue) }
+.bck-dark { background-color: var(--clr-dark) }
+.bck-darker { background-color: var(--clr-darker) }
+.bck-honey { background-color: var(--clr-honey) }
+.bck-red { background-color: var(--clr-red) }
+.bck-grey { background-color: var(--clr-grey) }
+.bck-lightgrey { background-color: var(--clr-lightgrey) }
+.bs { box-shadow: var(--bs);}
+
+    /* Positions */
+.center {
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+
+/*----------- BODY --------------*/
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-primary);
+}
+
+h1, h3 {
+    font-family: var(--ff-secondary);
+}
+h1 {
+    letter-spacing: 0.25rem;
+    font-size: var(--fs-h1);
+    margin: 0.5rem 0 ;
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    padding-top: 1rem;
+}
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: var(--clr-honey);
+    height: 96px;
+}
+
+.logo {
+    margin-right: 10px; 
+    width: 80px;
+}
+
+.logo img {height: 80px;}
+
+
+
+
+
+/*----------- NAVIGATION --------------*/
+.navbar {
+    background-color:var(--clr-dark);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar__link a {
+    display: block;
+    color: var(--clr-light);
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.active {
+    background-color: black;
+    font-weight: var(--fw-bold);
+}
+
+.navbar__link:hover {
+    background-color: var(--clr-grey);
+    color: var(--clr-honey);
+}
+
+    /*  Nav toggle */
+    .navbar ul.hide {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        position: absolute;
+        background-color: rgba(0,0,0,0);
+        width: calc (2rem + 1vw);
+        height: 25px;
+        top: 0;
+        right: 0;
+        margin-right: 3vw;
+        margin-top: calc(5.2rem - 6vw);
+        align-items: center;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--clr-darker);
+        height: 1vw;
+        width: 8vw;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        bottom: 2vw;
+    }
+
+    .nav-toggle-label span::after {
+        top: 2vw;
+    }
+
+    /* Sticky Navbar */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    
+    .sticky + main {
+        padding-top: 30px;
+    }
+
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+}
+
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: var(--clr-honey);
+    padding: .5rem 2%;
+    text-align: center;
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+} 
+
+  

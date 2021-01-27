@@ -1,0 +1,53 @@
+
+/* Typography */
+.typo__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  
+    text-align: center; 
+    padding: 2rem; 
+}
+
+.typo__flex .right {
+    background-color: #fab900;
+    color: white;
+}
+
+.typo__flex .right,
+.typo__flex .left {
+    width: 100%;
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 35rem) {
+    .typo__flex {
+        flex-direction: row;
+    }
+
+    .typo__flex .right,
+    .typo__flex .left {
+        width: 40%;
+}
+}
+
+/* Color Scheme */
+.color-scheme__img img {
+    width: 100%
+}
+
+.color-scheme table {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.color-scheme table tr {
+    height: 3rem
+}
+
+.color-scheme table td:nth-child(even) {
+    letter-spacing: 0.5rem;
+}
+.color-scheme table tr:nth-child(even) {
+    background-color: var(--clr-lightgrey);
+}
