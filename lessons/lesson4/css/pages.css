@@ -1,53 +1,22 @@
-
-/* Typography */
-.typo__flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;  
-    text-align: center; 
-    padding: 2rem; 
+/* Preston */
+.hero {
+    position: relative;
+    background: #1d0000;
 }
-
-.typo__flex .right {
-    background-color: #fab900;
-    color: white;
-}
-
-.typo__flex .right,
-.typo__flex .left {
+.hero:before {
+    content: ' ';
+    display: block;
+    position: relative;
     width: 100%;
-    padding: 1rem;
+    height: 100%;
+    z-index: 10;
+}
+.hero-img {
+    height: 250px;
 }
 
-@media only screen and (min-width: 35rem) {
-    .typo__flex {
-        flex-direction: row;
-    }
-
-    .typo__flex .right,
-    .typo__flex .left {
-        width: 40%;
-}
-}
-
-/* Color Scheme */
-.color-scheme__img img {
-    width: 100%
-}
-
-.color-scheme table {
-    width: 80%;
-    margin: 2rem auto;
-    text-align: center;
-}
-
-.color-scheme table tr {
-    height: 3rem
-}
-
-.color-scheme table td:nth-child(even) {
-    letter-spacing: 0.5rem;
-}
-.color-scheme table tr:nth-child(even) {
-    background-color: var(--clr-lightgrey);
+.hero-img:before {
+    opacity: 1;
+    background: url(https://picsum.photos/1024/250) no-repeat center;
+    background-size: cover;
 }

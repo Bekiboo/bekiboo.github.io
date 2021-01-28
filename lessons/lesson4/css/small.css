@@ -21,8 +21,8 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
     /* font size */
     --fs-h1: 1.7rem;
-    --fs-h2: 1.1rem;
-    --fs-h3: 1rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.2rem;
     --fs-body: 1rem;
 
     /* color */
@@ -62,42 +62,39 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 .bs { box-shadow: var(--bs);}
 
     /* Positions */
-.center {
-    margin: 0 auto;
-}
-.flex {
-    display: flex;
-}
+.center {margin: 0 auto;}
+
+.flex {display: flex;}
 
 /*----------- BODY --------------*/
-body {
-    font-size: var(--fs-body);
-    font-family: var(--ff-primary);
-}
+body {font-size: var(--fs-body);
+    font-family: var(--ff-primary);}
 
-h1, h3 {
-    font-family: var(--ff-secondary);
-}
-h1 {
-    letter-spacing: 0.25rem;
+h1, h3 {font-family: var(--ff-secondary);}
+
+h1 {letter-spacing: 0.25rem;
     font-size: var(--fs-h1);
-    margin: 0.5rem 0 ;
+    margin-top: .8rem;
+    margin-bottom: 0;
 }
 
-h2 {
-    font-size: var(--fs-h2);
-}
+h2 {font-size: var(--fs-h2);
+    padding-left: 1rem;}
 
-h3 {
-    font-size: var(--fs-h3);
-    padding-top: 1rem;
-}
+h3 {font-size: var(--fs-h3);
+    padding-top: 1rem;}
 
 /*----------- HEADER --------------*/
 header {
     padding: .5rem 2%;
     background-color: var(--clr-honey);
     height: 96px;
+}
+
+.motto {
+    font-size: 1.1rem;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
 }
 
 .logo {
@@ -114,6 +111,7 @@ header {
 /*----------- NAVIGATION --------------*/
 .navbar {
     background-color:var(--clr-dark);
+    z-index: 100;
 }
 nav ul {
     list-style-type: none;
@@ -147,13 +145,13 @@ nav ul {
     }
 
     #nav-icon1 {
-        width: calc(8vw);
+        width: calc(10vw);
         height: 45px;
         position: absolute;
         top: 0;
         right: 0;
         margin-right: 2vw;
-        margin-top: calc(4.8rem - 8vw);
+        margin-top: calc(5rem - 8vw);
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         -o-transform: rotate(0deg);
@@ -238,12 +236,18 @@ nav ul {
 /*----------- MAIN --------------*/
 main {
     min-height: 10rem;
+    padding-top: 1rem;
 }
 
-.hero-img img{
-    width: 100%;
-}
 
+.placeholder {
+    display: block;
+    margin: 1rem auto;
+    box-shadow: var(--bs);
+    padding: 15px;
+    color: var(--clr-light);
+    background-color: var(--clr-dark);
+}
 
 /*----------- FOOTER --------------*/
 footer {

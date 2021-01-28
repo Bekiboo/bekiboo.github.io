@@ -11,16 +11,15 @@
 
 /*----------- BODY --------------*/
 
-
+.center {
+    max-width: 48rem;
+}
 
 /*----------- HEADER --------------*/
 header div.flex {
     justify-content: center;
 }
 
-.motto {
-    margin-top: -1rem;
-}
 
 /*----------- NAVIGATION --------------*/
 nav ul {
