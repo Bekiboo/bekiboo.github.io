@@ -140,47 +140,89 @@ nav ul {
     color: var(--clr-honey);
 }
 
-    /*  Nav toggle */
+    /*  Nav toggle by Jesse Couch on codepen.io */
+    /* I had to tweak a lot of things so it could fit my website */
     .navbar ul.hide {
         display: none;
     }
 
-    .nav-toggle-label {
+    #nav-icon1 {
+        width: calc(8vw);
+        height: 45px;
         position: absolute;
-        background-color: rgba(0,0,0,0);
-        width: calc (2rem + 1vw);
-        height: 25px;
         top: 0;
         right: 0;
-        margin-right: 3vw;
-        margin-top: calc(5.2rem - 6vw);
-        align-items: center;
-    }
-    
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
+        margin-right: 2vw;
+        margin-top: calc(4.8rem - 8vw);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+      }
+      
+      #nav-icon1 span {
         display: block;
-        background: var(--clr-darker);
-        height: 1vw;
-        width: 8vw;
-        border-radius: 2px;
-        position: relative;
-    }
-
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
         position: absolute;
-    }
-
-    .nav-toggle-label span::before {
-        bottom: 2vw;
-    }
-
-    .nav-toggle-label span::after {
-        top: 2vw;
-    }
+        height: calc(3px + 1vw);
+        width: 100%;
+        background: var(--clr-darker);
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+      }
+      
+      #nav-icon1 span:nth-child(1) {
+        top: 0px;
+      }
+      
+      #nav-icon1 span:nth-child(2),
+      #nav-icon1 span:nth-child(3) {
+        top: calc(4px + 2vw);
+      }
+      
+      #nav-icon1 span:nth-child(4) {
+        top: calc(8px + 4vw);
+      }
+      
+      #nav-icon1.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+      }
+      
+      #nav-icon1.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      
+      #nav-icon1.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      
+      #nav-icon1.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+      }
+      
 
     /* Sticky Navbar */
     .sticky {
@@ -195,10 +237,12 @@ nav ul {
 
 /*----------- MAIN --------------*/
 main {
-    padding: 0 2%;
     min-height: 10rem;
 }
 
+.hero-img img{
+    width: 100%;
+}
 
 
 /*----------- FOOTER --------------*/

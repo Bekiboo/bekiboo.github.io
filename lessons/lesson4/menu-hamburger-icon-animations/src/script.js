@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#nav-icon3').click(function(){
+	$('#nav-icon1').click(function(){
 		$(this).toggleClass('open');
 	});
 });
