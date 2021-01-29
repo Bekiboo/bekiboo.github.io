@@ -3,14 +3,34 @@ function toggleMenu() {
   document.getElementById("primaryNav").classList.toggle("hide");
 }
 
-// Dynamic Last Update
-var dateUpdated = document.lastModified;
-document.getElementById("lastUpdate").textContent =
-  "Last Updated: " + dateUpdated;
+// Dynamic Date
+const daynames = [
+    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+];
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+const todaysdate = new Date();
+const dayName = daynames[todaysdate.getDay()];
+const monthName = months[todaysdate.getMonth()];
+const year = todaysdate.getFullYear();
+const currentDate = dayName + ", " + todaysdate.getDate() + " " + monthName + " " + year;
+const options = {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'};
+document.getElementById("currentDate").textContent = currentDate;
 
 // Dynamic Year
-var today = new Date(); 
-document.getElementById("currentDate").textContent = today.toDateString();
+document.getElementById("currentYear").textContent = todaysdate.getFullYear();
 
 // Sticky Navbar
 window.onscroll = function() {myFunction()};
