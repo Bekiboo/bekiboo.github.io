@@ -1,0 +1,12 @@
+/* Preston */
+
+.hero-img {
+    background-image: url(/bekiboo.github.io/lessons/lesson5/img/hero.jpg);
+}
+@media only screen and (min-width: 35rem) {
+    .hero-img{background-position: 0 -10vw;}
+}
+
+@media only screen and (min-width: 64rem) {
+    .hero-img{background-position: 0 -8rem;}
+}

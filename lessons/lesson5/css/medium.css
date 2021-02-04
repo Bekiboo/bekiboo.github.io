@@ -1,0 +1,110 @@
+@media only screen and (min-width: 35rem) {
+
+    :root {
+            /* font size */
+            --fs-h1: 2rem;
+            --fs-h2: 1.7rem;
+            --fs-h3: 1.4rem;
+            --fs-body: 1rem;
+    }
+
+/*----------- BODY --------------*/
+
+.center {
+    max-width: 64rem;
+}
+
+.weather-summary {
+    width: calc(14rem + 1vw);
+}
+
+/*----------- HEADER --------------*/
+.site-title {
+    font-size: 2.5rem;
+}
+
+/*----------- NAVIGATION --------------*/
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {width: 25%;}
+
+nav ul li a{padding: .5rem 1rem;}
+
+.nav-icon1{display: none;}
+
+.navbar ul.hide {display: flex;}
+
+    /* Sticky Navbar */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .sticky + main {
+        padding-top: 45px;
+    }
+
+/*----------- MAIN --------------*/
+
+    /* 5 Day Forecast */ 
+    .forecast {
+        display: block;
+    }
+
+    .forecast__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        text-align: center;    
+    }
+
+    .forecast img {
+        width: 4rem;
+    }
+
+    .forecast__grid div {
+        margin: auto calc(-.5rem + 3vw);
+        padding: .5rem;
+    }
+
+    /* Article */
+    .article {        
+        margin-top: 3rem;
+    }
+    .article img {
+        float: right;
+        width: 18rem;
+        top: 0;
+        margin-left: .5rem;
+    }
+
+    .inline {
+        display: ruby;
+    }
+
+    .top-img {display: block;}
+    .bottom-img {display: none;}
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr 1fr calc(30% + 10vw);
+        grid-gap: .5rem;
+        padding-bottom: 1rem;;
+    }
+
+    .contact__column {
+        padding: 0 1rem;
+    }
+
+    .contact img {
+        grid-column: 3/4;
+        width: 100%;
+    }
+
+    
+
+/*----------- FOOTER --------------*/
+    
+} /* end of media query */

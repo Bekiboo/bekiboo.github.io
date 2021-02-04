@@ -1,9 +1,12 @@
-/* 64em is also 1028px (if basefont is 16px) */
-/* @media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 56rem) {
 
     .center {
-        max-width: 64rem;
-    } */
+        max-width: 56rem;
+    }
+
+    h1, h2 {
+        margin-left: 0;
+    }
 
 /*----------- BODY --------------*/
 
@@ -23,4 +26,5 @@
 
 /*----------- FOOTER --------------*/
     
-} /* end of media query */
+/* end of media query */
+}
