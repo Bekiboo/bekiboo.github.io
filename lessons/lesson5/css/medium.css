@@ -67,6 +67,7 @@ nav ul li a{padding: .5rem 1rem;}
     .forecast__grid div {
         margin: auto calc(-.5rem + 3vw);
         padding: .5rem;
+        border-radius: .25rem;
     }
 
     /* Article */

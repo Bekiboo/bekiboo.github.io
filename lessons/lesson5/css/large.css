@@ -1,4 +1,4 @@
-@media only screen and (min-width: 56rem) {
+@media only screen and (min-width: 58rem) {
 
     .center {
         max-width: 56rem;
@@ -22,7 +22,16 @@
 
 /*----------- MAIN --------------*/
 
+.forecast__grid div {
+    margin: 0;
+}
 
+.forecast__grid {
+    grid-gap: calc(1rem + 3vw);
+}
+
+.contact__column {
+    padding: 0;
 
 /*----------- FOOTER --------------*/
     

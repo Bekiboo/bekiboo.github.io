@@ -66,8 +66,11 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
     /* Positions */
 .center {margin: 0 auto;}
-
 .flex {display: flex;}
+
+.b-radius {
+    border-radius: .25rem;
+}
 
 /*----------- BODY --------------*/
 body {font-size: var(--fs-body);
@@ -351,10 +354,6 @@ main {
         padding-bottom: 1rem;
     }
 
-    /* .contact-grid {
-        font-size: .80rem;
-    } */
-
     .contact__column {
         padding: 0 1rem;
     }
@@ -379,5 +378,3 @@ footer {
   display: table;
   clear: both;
 } 
-
-  
