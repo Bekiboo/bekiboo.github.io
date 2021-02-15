@@ -107,5 +107,9 @@ nav ul li a{padding: .5rem 1rem;}
     
 
 /*----------- FOOTER --------------*/
+        /*------ GALLERY ------*/
+        .gallery {
+            grid-template-columns: 1fr 1fr;
+        }        
     
 } /* end of media query */
