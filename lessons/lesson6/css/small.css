@@ -411,8 +411,10 @@ footer {
         }
 
         .gallery a:link,
+        .gallery a,
         .gallery a:visited {
             text-decoration: none;
+            color: var(--clr-darker);
         }
 
         .gallery img {
