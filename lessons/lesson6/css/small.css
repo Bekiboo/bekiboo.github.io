@@ -39,7 +39,10 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
     /* box shadow */
     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
         0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
-}
+
+    /* border radius */
+    --b-radius: .25rem;
+    }
 
 /* Utility classes */
 
@@ -69,10 +72,10 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 .flex {display: flex;}
 
 .b-radius {
-    border-radius: .25rem;
+    border-radius: var(--b-radius);
 }
 
-/*----------- BODY --------------*/
+/*----------- General Styling --------------*/
 body {font-size: var(--fs-body);
     font-family: var(--ff-primary);}
 
@@ -93,6 +96,22 @@ h1, h2 {
     margin-bottom: .5rem;
     margin-left: 1rem;
     margin-top: 1rem;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+
+img[data-src] {
+filter: blur(0.2em);
+}
+
+img {
+filter: blur(0em);
+transition: filter 0.5s;
 }
 
 /* Pop-up message */
@@ -366,6 +385,41 @@ footer {
     text-align: center;
 }
 
+        /*------ GALLERY ------*/
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            grid-gap: 1rem;
+            padding: auto 1rem;
+        }
+
+        .gallery figure {
+            box-shadow: var(--bs);
+            max-width: 18rem;
+            border-radius: var(--b-radius);
+            transition: 250ms;
+            margin: 0 auto;
+        }
+
+        .gallery figure:last-child {
+            margin-bottom: 1rem;
+        }
+
+        .gallery figcaption {
+            padding: .5rem;
+        }
+
+        .gallery a:link,
+        .gallery a:visited {
+            text-decoration: none;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--b-radius) var(--b-radius) 0 0;
+        }
 
 
 /*----- Clearfix: Force an Element not to collapse -----*/
@@ -374,3 +428,4 @@ footer {
   display: table;
   clear: both;
 } 
+
