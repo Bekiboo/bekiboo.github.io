@@ -1,0 +1,52 @@
+/* #e7f0ed, #e7ffed (data rows) and #628ca6, #7fb9c2 */
+
+:root {
+    --light: #e7f0ed;
+    --lightgreen: #e7ffed;
+    --blue: #628ca6;
+    --green: #7fb9c2;
+}
+
+table, th, td   {    
+    border: 1px solid rgb(184, 184, 184);
+    border-collapse: collapse;
+}
+
+table {
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    background-color: var(--lightgreen);
+    box-shadow: 0.5em 0.5em 1em var(--blue);
+    font-size: 1.5rem;
+}
+
+td, th {
+    padding: .33em;
+}
+
+tr:first-child {
+    background-color: var(--green);
+    font-size: 1.5em;
+}
+
+
+tr:nth-child(odd) td{
+    background-color: var(--light);
+}
+
+tr:last-child td {
+    background-color: var(--green);
+    font-size: .66em;
+}
+
+tr:nth-child(7) :first-child {
+    font-style: italic;
+}
+
+tr:nth-child(2),
+tr:nth-child(6) :last-child
+{
+    background-color: var(--blue);
+    color: white
+}
