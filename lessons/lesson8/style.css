@@ -7,12 +7,12 @@
     --green: #7fb9c2;
 }
 
-table, th, td   {    
+table, th, td, caption   {    
     border: 1px solid rgb(184, 184, 184);
     border-collapse: collapse;
 }
 
-table {
+table, caption {
     margin: 0 auto;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
@@ -21,32 +21,33 @@ table {
     font-size: 1.5rem;
 }
 
-td, th {
+td, th, caption {
     padding: .33em;
 }
 
-tr:first-child {
+caption {
     background-color: var(--green);
     font-size: 1.5em;
+    font-weight: 700;
 }
 
 
-tr:nth-child(odd) td{
+tbody tr:nth-child(odd) td{
     background-color: var(--light);
 }
 
-tr:last-child td {
-    background-color: var(--green);
-    font-size: .66em;
-}
-
-tr:nth-child(7) :first-child {
+tbody tr:nth-child(5) :first-child {
     font-style: italic;
 }
 
-tr:nth-child(2),
-tr:nth-child(6) :last-child
+thead,
+tr:nth-child(4) :last-child
 {
     background-color: var(--blue);
     color: white
+}
+
+tfoot{
+    background-color: var(--green);
+    font-size: .66em;
 }
