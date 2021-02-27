@@ -77,14 +77,14 @@
                     <legend>Storm Sighting Details</legend>
                     <label class="top">Storm Date <input type="date" name="stormDate"></label>
                     <label class="top">Storm Type
-                        <input name="storm" list="stormtype">
-                        <datalist id="stormtype">
-                            <option value="Flash Flood">
-                            <option value="Hail">
-                            <option value="Hurricance">
-                            <option value="Thunderstorm">
-                            <option value="Tornado">
-                        </select></option>
+                        <select name="type">
+                            <option value="">Please Select &#9662;</option>
+                            <option value="flashFlood">Flash Flood</option>
+                            <option value="hail">Hail</option>
+                            <option value="hurricance">Hurricane</option>
+                            <option value="thunderstorm">Thunderstorm</option>
+                            <option value="tornado">Tornado</option>
+                        </select>
                     </label>
                     <label class="flexly" for="rating">Storm Severity: &nbsp;&nbsp;&nbsp;
                         <input type="range" id="rating" value="5" min="1" max="10" step="1" list="tickmarks"

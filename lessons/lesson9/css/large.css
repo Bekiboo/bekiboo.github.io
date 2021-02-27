@@ -1,0 +1,80 @@
+@media only screen and (min-width: 58rem) {
+
+    .center {
+        max-width: 56rem;
+    }
+
+    h1, h2 {
+        margin-left: 0;
+    }
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+
+
+
+/*----------- MAIN --------------*/
+
+    /* Hero */
+    .hero-img img {
+        border-radius: .25rem;
+    }
+
+.forecast__grid div {
+    margin: 0;
+}
+
+.forecast__grid {
+    grid-gap: calc(1rem + 3vw);
+}
+
+.contact__column {
+    padding: 0;
+}
+
+/*----------- FOOTER --------------*/
+        /*------ GALLERY ------*/
+        .gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .gallery figure:nth-last-child(-n+3) {
+            margin-bottom: 1rem;
+        }
+
+        .gallery figure:hover {
+            box-shadow: 0.5em 0.5em 1.5em rgba(0, 0, 0, .5),
+            0.25em 0.25em 0.5em rgba(0, 0, 0, .3);
+        }
+
+                /* ---------- Storm Center ---------- */
+                .right-filler {
+                    display: block;
+                    overflow: hidden;
+                    box-shadow: var(--bs);
+                    border-radius: var(--b-radius);
+                    margin-top: 2rem;
+                }
+
+                .storm-grid {
+                    display: grid;
+                    grid-template-columns: 22rem auto;
+                    grid-gap: 2rem;
+                    align-items: center;
+                    margin: 1rem 0;
+                }
+
+                .sbs {
+                    padding: 0.25rem 0;
+                }
+
+
+/* end of media query */
+}
