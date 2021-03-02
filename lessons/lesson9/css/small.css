@@ -114,6 +114,13 @@ filter: blur(0em);
 transition: filter 0.5s;
 }
 
+a:link,
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--clr-darker);
+}
+
 /* Pop-up message */
 #message {
     padding: .5rem;
@@ -161,7 +168,7 @@ header {
 
 /*----------- NAVIGATION --------------*/
 .navbar {
-    background-color:var(--clr-dark);
+    background-color: var(--clr-dark);
     z-index: 100;
 }
 nav ul {
@@ -279,7 +286,6 @@ nav ul {
 /*----------- MAIN --------------*/
 main {
     min-height: 10rem;
-    padding-top: 1rem;
     position: relative;
 }
 
@@ -291,6 +297,15 @@ main {
     .hero-img img {
         display: block;
         width: 100%;
+    }
+
+    .mainhero {
+        background: url("../img/mainhero-small.jpg");
+        width: 100%;
+        height: calc(50vw);
+        max-height: 500px;
+        background-size: cover;
+        background-position: center;
     }
 
     /* Weather Summary */
@@ -343,7 +358,7 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
     
     .card {
@@ -357,6 +372,8 @@ main {
         text-align: center;
         width: 300px;
         margin-bottom: 1rem;
+        transition: .2s ease-in-out;
+        cursor: pointer;
     }
 
     .card-image {
@@ -433,6 +450,14 @@ main {
         width: 100%;
     }
 
+    /* Event */
+    .event p {
+        padding: 0 1rem 1rem 1rem;
+    }
+    .event h2 {
+        margin-bottom: 0;
+    }
+
     /* Contact */
     .contact-grid {
         display: grid;
@@ -482,13 +507,6 @@ main {
         
         .gallery figcaption {
             padding: .5rem;
-        }
-        
-        .gallery a:link,
-        .gallery a,
-        .gallery a:visited {
-            text-decoration: none;
-            color: var(--clr-darker);
         }
         
         .gallery img {

@@ -14,14 +14,15 @@
     max-width: 64rem;
 }
 
+.mainhero {
+    background: url("../img/mainhero-medium.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 .weather-summary {
     width: calc(14rem + 1vw);
 }
-
-    /* --------- Article ---------- */
-    .article {
-        padding: 0 1rem 0 1rem;
-    }
 
 /*----------- HEADER --------------*/
 .site-title {
@@ -78,19 +79,49 @@ nav ul li a{padding: .5rem 1rem;}
     }
 
     /* Article */
+    .article {
+        padding: 0 1rem 0 1rem;
+    }
+
     .article img {
         float: right;
         width: 18rem;
         top: 0;
         margin-left: .5rem;
     }
-    
-    .inline {
-        display: ruby;
-    }
 
     .top-img {display: block;}
     .bottom-img {display: none;}
+
+    /* Event */
+    .event {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: "image title"
+                             "image text";
+    }
+
+    .event img {
+        grid-area: image;
+        width: 100%
+    }
+
+    .event h2 {
+        grid-area: title;
+        padding-top: 0;
+    }
+
+    .event p {
+        grid-area: text;
+        font-size: calc(.65rem + 1vw);
+    }
+
+    .event p,
+    .event h2 {
+        padding-left: calc(10vw - 3rem);
+        padding-right: calc(10vw - 3rem)
+    }
 
     /* Contact */
     .contact-grid {
@@ -106,6 +137,18 @@ nav ul li a{padding: .5rem 1rem;}
     .contact img {
         grid-column: 3/4;
         width: 100%;
+    }
+
+    /* Cards */
+
+    .card:hover {
+        transform: scale(1.1);
+        box-shadow: 0.125em 0.125em 0.35em rgba(0, 0, 0, .25),
+        0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
+    }
+
+    .cards {
+        margin-bottom: 2rem;
     }
 
     /*------ GALLERY ------*/
@@ -128,32 +171,32 @@ nav ul li a{padding: .5rem 1rem;}
         width: 33rem;
     }
 
-    .card:nth-child(odd) {
+    .cards a:nth-child(odd) .card {
         grid-template-areas: 
             "title image"
             "info image";
     }
 
-    .card:nth-child(even) {
+    .cards a:nth-child(even) .card {
         grid-template-areas: 
             "image title"
             "image info";
     }
 
-    .card:nth-child(odd) .card-info{
+    .cards a:nth-child(odd) .card .card-info{
         border-bottom-right-radius: 0;
     }
 
-    .card:nth-child(even) .card-info {
+    .cards a:nth-child(even) .card .card-info {
         border-bottom-left-radius: 0;
     }
 
-    .card:nth-child(odd) .card-image {
+    .cards a:nth-child(odd) .card .card-image {
         border-top-left-radius: 0;
         border-bottom-right-radius: 1rem;
     }
 
-    .card:nth-child(even) .card-image {
+    .cards a:nth-child(even) .card .card-image {
         border-top-right-radius: 0;
         border-bottom-left-radius: 1rem;
     }

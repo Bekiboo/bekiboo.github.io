@@ -10,7 +10,11 @@
 
 /*----------- BODY --------------*/
 
-
+.mainhero {
+    background: url("../img/mainhero-large.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 /*----------- HEADER --------------*/
 
@@ -47,6 +51,9 @@
         grid-gap: calc(1rem + 3vw);
     }
 
+    .event p {
+        font-size: 1.25rem;
+    }
 
     /* Contact */
     .contact__column {
