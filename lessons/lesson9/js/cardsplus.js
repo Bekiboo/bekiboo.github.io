@@ -28,8 +28,7 @@ const renderTownCard = townData => {
     if (!ALLOWED_TOWNS.find(townName => townData.name === townName)) {
     	return false;
     }
-    console.log(ALLOWED_TOWNS)
-
+    
     townCount += 1;
 
     let card = document.createElement('article');
