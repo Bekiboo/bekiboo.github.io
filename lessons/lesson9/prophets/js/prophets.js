@@ -15,6 +15,16 @@ fetch(requestURL)
             let bodyDiv = document.createElement('div');
             bodyDiv.classList.add('card-body');
 
+            // img - picture
+            let image = document.createElement('img');
+            image.setAttribute('src', prophets[i].imageurl);
+            image.setAttribute('loading', 'lazy');
+            image.setAttribute('alt', prophets[i].name + ' ' + prophets[i].lastname + ' - ' + (i + 1));
+         
+            card.appendChild(titleDiv);
+            card.appendChild(image);
+            card.appendChild(bodyDiv);
+
             // h2 - name
             let fullName = document.createElement('h2');
             fullName.textContent = prophets[i].name + ' ' + prophets[i].lastname;
@@ -30,14 +40,6 @@ fetch(requestURL)
             placeOfBirth.textContent = 'Place of Birth:\r\n' + prophets[i].birthplace;
             bodyDiv.appendChild(placeOfBirth);
 
-            // img - picture
-            let image = document.createElement('img');
-            image.setAttribute('src', prophets[i].imageurl);
-            image.setAttribute('loading', 'lazy');
-            image.setAttribute('alt', prophets[i].name + ' ' + prophets[i].lastname + ' - ' + (i + 1));
-            card.appendChild(titleDiv);
-            card.appendChild(image);
-            card.appendChild(bodyDiv);
 
             document.querySelector('div.cards').appendChild(card);
         }

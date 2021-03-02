@@ -359,9 +359,9 @@ main {
         margin-bottom: 1rem;
     }
 
-    .card--1 .card-image {
+    /* .card--1 .card-image {
         background: url('../img/barn1.jfif');
-    }
+    } */
 
     .card-image {
         grid-area: image;
