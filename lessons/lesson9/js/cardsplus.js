@@ -1,9 +1,9 @@
 const requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
-// const ALLOWED_TOWNS = [
-// 	"Fish Haven",
-//     "Preston",
-//     "Soda Springs"
-// ];
+const ALLOWED_TOWNS = [
+	"Fish Haven",
+    "Preston",
+    "Soda Springs"
+];
 
 let townCount = 0;
 
@@ -25,9 +25,10 @@ const renderTownInfo = (infoDiv, value, label) => {
 };
 
 const renderTownCard = townData => {
-    // if (!ALLOWED_TOWNS.find(townName => townData.name)) {
-    // 	return false;
-    // }
+    if (!ALLOWED_TOWNS.find(townName => townData.name === townName)) {
+    	return false;
+    }
+    console.log(ALLOWED_TOWNS)
 
     townCount += 1;
 
@@ -90,11 +91,11 @@ fetch(requestURL)
         console.table(jsonObject); // temporary checking for valid response and data parsing
         const towns = jsonObject['towns'];
 
-        for (let i = 0; i < towns.length; i++) {
-            if (towns[i].name == "Fish Haven" ||
-                towns[i].name == "Preston" ||
-                towns[i].name == "Soda Springs") {
-                renderTownCard(towns[i]);
-            }
-        }
+        // for (let i = 0; i < towns.length; i++) {
+        //     if (towns[i].name == "Fish Haven" ||
+        //         towns[i].name == "Preston" ||
+        //         towns[i].name == "Soda Springs") {
+        //         renderTownCard(towns[i]);
+        //     }
+        // }
     });
