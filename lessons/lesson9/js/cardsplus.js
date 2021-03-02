@@ -91,11 +91,8 @@ fetch(requestURL)
         console.table(jsonObject); // temporary checking for valid response and data parsing
         const towns = jsonObject['towns'];
 
-        // for (let i = 0; i < towns.length; i++) {
-        //     if (towns[i].name == "Fish Haven" ||
-        //         towns[i].name == "Preston" ||
-        //         towns[i].name == "Soda Springs") {
-        //         renderTownCard(towns[i]);
-        //     }
-        // }
+        for (let i = 0; i < towns.length; i++) {
+                renderTownCard(towns[i]);
+            
+        }
     });
