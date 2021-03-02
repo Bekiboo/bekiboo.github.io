@@ -54,7 +54,8 @@ nav ul li a{padding: .5rem 1rem;}
 
 /*----------- MAIN --------------*/
 
-    /* 5 Day Forecast */ 
+
+/* 5 Day Forecast */ 
     .forecast {
         display: block;
     }
@@ -85,7 +86,7 @@ nav ul li a{padding: .5rem 1rem;}
         top: 0;
         margin-left: .5rem;
     }
-
+    
     .inline {
         display: ruby;
     }
@@ -109,14 +110,58 @@ nav ul li a{padding: .5rem 1rem;}
         width: 100%;
     }
 
+    /*------ GALLERY ------*/
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }        
     
 
-/*----------- FOOTER --------------*/
-        /*------ GALLERY ------*/
-        .gallery {
-            grid-template-columns: 1fr 1fr;
-        }        
+    
+    /*----------- FOOTER --------------*/
     
 } /* end of media query */
 
 
+@media only screen and (min-width: 35rem) and (max-width: 62rem) {
+    /* Town Data */
+    .card {
+        grid-template-columns: 16.5rem 16.5rem;
+        grid-template-rows: 170px 80px;
+        width: 33rem;
+    }
+
+    .card:nth-child(odd) {
+        grid-template-areas: 
+            "title image"
+            "info image";
+    }
+
+    .card:nth-child(even) {
+        grid-template-areas: 
+            "image title"
+            "image info";
+    }
+
+    .card:nth-child(odd) .card-info{
+        border-bottom-right-radius: 0;
+    }
+
+    .card:nth-child(even) .card-info {
+        border-bottom-left-radius: 0;
+    }
+
+    .card:nth-child(odd) .card-image {
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .card:nth-child(even) .card-image {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1rem;
+    }
+    
+    .card-title {
+        margin-top: 1.5rem;
+    }
+
+}
