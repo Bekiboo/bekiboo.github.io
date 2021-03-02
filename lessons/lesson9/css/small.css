@@ -359,10 +359,6 @@ main {
         margin-bottom: 1rem;
     }
 
-    /* .card--1 .card-image {
-        background: url('../img/barn1.jfif');
-    } */
-
     .card-image {
         grid-area: image;
         border-top-left-radius: 1rem;
@@ -378,8 +374,8 @@ main {
     
     .card-title h3 {
         font-size: var(--fs-h1);
-        letter-spacing: .25rem;
         padding-bottom: .5rem;
+        text-transform: uppercase;
     }
 
     .card-title h4 {
@@ -404,7 +400,7 @@ main {
         color: var(--clr-light);
     }
 
-    .card-border {
+    .card-info > div:nth-of-type(2) {
         border-left: 1px solid var(--clr-dark);
         border-right: 1px solid var(--clr-dark);
     }
