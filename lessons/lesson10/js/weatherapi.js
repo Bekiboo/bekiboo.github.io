@@ -14,7 +14,6 @@ const apiURL = '//api.openweathermap.org/data/2.5/forecast?id=5604473&units=impe
 
 const renderForecastCard = (forecastData, dayOfWeek) => {
 
-
     // cards
     let card = document.createElement('div');
     card.classList.add('bs');
@@ -50,6 +49,18 @@ fetch(apiURL)
         document.getElementById('temp').textContent = jsObject.list[0].main.temp;
         document.getElementById('humidity').textContent = jsObject.list[0].main.humidity;
         document.getElementById('windSpeed').textContent = jsObject.list[0].wind.speed;
+        const tempNum = parseFloat(jsObject.list[0].main.temp)
+        const windSpeedNum = parseFloat(jsObject.list[0].wind.speed)
+        
+        let windChill = Math.round(35.74 + (0.6215 * tempNum) -
+            (35.75 * Math.pow(windSpeedNum, 0.16)) +
+            (0.4275 * tempNum * Math.pow(windSpeedNum, 0.16)));
+        
+        if (tempNum <= 50 && windSpeedNum > 4.8) {
+            document.getElementById("windChill").textContent = windChill
+        } else {
+            document.getElementById("windChill").textContent = "N/A"
+        }
 
         // Five Day Forecast
         for (let i = 0; i < forecastList.length; i++) {
