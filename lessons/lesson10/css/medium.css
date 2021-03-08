@@ -1,0 +1,192 @@
+@media only screen and (min-width: 35rem) {
+
+    :root {
+            /* font size */
+            --fs-h1: 2rem;
+            --fs-h2: 1.7rem;
+            --fs-h3: 1.4rem;
+            --fs-body: 1rem;
+    }
+
+/*----------- BODY --------------*/
+
+.center {
+    max-width: 64rem;
+}
+
+.mainhero {
+    background: url("../img/mainhero-medium.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.weather-summary {
+    width: calc(16rem + 1vw);
+}
+
+/*----------- HEADER --------------*/
+.site-title {
+    font-size: 2.5rem;
+}
+
+/*----------- NAVIGATION --------------*/
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {width: 25%;}
+
+nav ul li a{padding: .5rem 1rem;}
+
+.nav-icon1{display: none;}
+
+.navbar ul.hide {display: flex;}
+
+    /* Sticky Navbar */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .sticky + .fix-navbar {
+        padding-top: 32px;
+    }
+
+/*----------- MAIN --------------*/
+
+
+/* 5 Day Forecast */ 
+    .forecast__grid {
+        grid-template-columns: repeat(3, 1fr);  
+    }
+
+
+    /* Article */
+    .article {
+        padding: 0 1rem 0 1rem;
+    }
+
+    .article img {
+        float: right;
+        width: 18rem;
+        top: 0;
+        margin-left: .5rem;
+    }
+
+    .top-img {display: block;}
+    .bottom-img {display: none;}
+
+    /* Event */
+    .event {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: "image title"
+                             "image text";
+    }
+
+    .event img {
+        grid-area: image;
+        width: 100%
+    }
+
+    .event h2 {
+        grid-area: title;
+        padding-top: 0;
+    }
+
+    .event p {
+        grid-area: text;
+        font-size: calc(.65rem + 1vw);
+    }
+
+    .event p,
+    .event h2 {
+        padding-left: calc(10vw - 3rem);
+        padding-right: calc(10vw - 3rem)
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr 1fr calc(30% + 10vw);
+        grid-gap: .5rem;
+        padding-bottom: 1rem;;
+    }
+
+    .contact__column {
+        padding: 0 1rem;
+    }
+
+    .contact img {
+        grid-column: 3/4;
+        width: 100%;
+    }
+
+    /* Cards */
+
+    .card:hover {
+        transform: scale(1.1);
+        box-shadow: 0.125em 0.125em 0.35em rgba(0, 0, 0, .25),
+        0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
+    }
+
+    .cards {
+        margin-bottom: 2rem;
+    }
+
+    /*------ GALLERY ------*/
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }        
+    
+
+    
+    /*----------- FOOTER --------------*/
+    
+} /* end of media query */
+
+
+@media only screen and (min-width: 35rem) and (max-width: 62rem) {
+    /* Town Data */
+    .card {
+        grid-template-columns: 16.5rem 16.5rem;
+        grid-template-rows: 170px 80px;
+        width: 33rem;
+    }
+
+    .cards a:nth-child(odd) .card {
+        grid-template-areas: 
+            "title image"
+            "info image";
+    }
+
+    .cards a:nth-child(even) .card {
+        grid-template-areas: 
+            "image title"
+            "image info";
+    }
+
+    .cards a:nth-child(odd) .card .card-info{
+        border-bottom-right-radius: 0;
+    }
+
+    .cards a:nth-child(even) .card .card-info {
+        border-bottom-left-radius: 0;
+    }
+
+    .cards a:nth-child(odd) .card .card-image {
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .cards a:nth-child(even) .card .card-image {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1rem;
+    }
+    
+    .card-title {
+        margin-top: 1.5rem;
+    }
+
+}
