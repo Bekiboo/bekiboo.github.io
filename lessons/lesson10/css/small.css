@@ -291,7 +291,7 @@ main {
 
     /* Hero Image */
     .hero-img img {
-        min-height: 15rem;
+        height: 20rem;
         width: 100%;
         object-fit: cover;
     }

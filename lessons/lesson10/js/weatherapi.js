@@ -56,7 +56,7 @@ fetch(apiURL)
             (35.75 * Math.pow(windSpeedNum, 0.16)) +
             (0.4275 * tempNum * Math.pow(windSpeedNum, 0.16)));
         
-        if (tempNum <= 50 && windSpeedNum > 4.8) {
+        if (tempNum <= 50 && windSpeedNum > 3) {
             document.getElementById("windChill").textContent = windChill
         } else {
             document.getElementById("windChill").textContent = "N/A"
