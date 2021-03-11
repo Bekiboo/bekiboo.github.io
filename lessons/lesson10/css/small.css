@@ -443,18 +443,19 @@ main {
     }
 
     .forecast__grid div {
-        width: 7rem;
-    }
-
-    
-    .forecast img {
-        width: 4rem;
-    }
-
-    .forecast__grid div {
-        margin: auto calc(-.5rem + 3vw);
+        width: 9rem;
+        height: 9rem;
         padding: .5rem;
         border-radius: .25rem;
+    }
+
+    .forecast__grid p {
+        font-size: var(--fs-h2);
+        font-weight: var(--fw-bold);
+    }
+    
+    .forecast img {
+        width: 5rem;
     }
 
     /* Article */
@@ -622,7 +623,7 @@ main {
             border: none;
             background-color: #9c2c13;
             color: white;
-            border-radius: calc(var(--b-radius)*3);
+            border-radius: calc(var(--b-radius) * 3);
             box-shadow: var(--bs);
             font-size: 1.25rem;
             font-weight: 700;

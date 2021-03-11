@@ -49,7 +49,6 @@
 
     .forecast__grid {
         grid-template-columns: repeat(5, 1fr);  
-        grid-gap: calc(1rem + 3vw);
     }
 
     .event p {

@@ -25,13 +25,13 @@ const renderForecastCard = (forecastData, dayOfWeek) => {
 
     let weatherIcon = document.createElement('img');
     let iconCode = forecastData.weather[0].icon;
-    let iconPath = `//openweathermap.com/img/w/${iconCode}.png`;
+    let iconPath = `//openweathermap.com/img/wn/${iconCode}@2x.png`;
     weatherIcon.src = iconPath;
     weatherIcon.setAttribute('alt', forecastData.weather[0].description)
     card.appendChild(weatherIcon);
 
     let forecastTemp = document.createElement('p');
-    forecastTemp.textContent = forecastData.main.temp + "\xB0";
+    forecastTemp.textContent = Math.round(forecastData.main.temp *10)/10 + "\xB0";
     card.appendChild(forecastTemp);
 
 
@@ -46,9 +46,9 @@ fetch(apiURL)
 
         // Weather Summary
         document.getElementById('currentWeather').textContent = jsObject.list[0].weather[0].description;
-        document.getElementById('temp').textContent = jsObject.list[0].main.temp;
+        document.getElementById('temp').textContent = Math.round(jsObject.list[0].main.temp * 10)/10;
         document.getElementById('humidity').textContent = jsObject.list[0].main.humidity;
-        document.getElementById('windSpeed').textContent = jsObject.list[0].wind.speed;
+        document.getElementById('windSpeed').textContent = Math.round(jsObject.list[0].wind.speed *10)/10;
         const tempNum = parseFloat(jsObject.list[0].main.temp)
         const windSpeedNum = parseFloat(jsObject.list[0].wind.speed)
         
