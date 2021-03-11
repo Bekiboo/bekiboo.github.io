@@ -356,6 +356,26 @@ main {
         color: white;
       }
 
+      .mainhero h1 {
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-size: 4rem;
+          margin-bottom: 0;
+      }
+
+      .mainhero h2 {
+          font-size: 3rem;
+          margin-top: -1rem;
+          padding-top: 0;
+      }
+
+      .mainhero p {
+          padding: 1rem;
+      }
+
+      .caption {
+          width: 20.5rem;
+      }
+
     /* Weather Summary */
     .weather-summary {
         position: absolute;
@@ -407,6 +427,7 @@ main {
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
     
     .card {
@@ -419,9 +440,12 @@ main {
         background: var(--clr-light);
         text-align: center;
         width: 300px;
-        margin-bottom: 1rem;
         transition: .2s ease-in-out;
         cursor: pointer;
+    }
+
+    .cards a:not(:last-child) {
+        margin-bottom: 1rem;
     }
 
     .card-image {

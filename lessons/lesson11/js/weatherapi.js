@@ -10,8 +10,6 @@ weekDay[4] = "Thursday";
 weekDay[5] = "Friday";
 weekDay[6] = "Saturday";
 
-const apiURL = '//api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=9f477eafba3d815a2c9226646be32802'
-
 const renderForecastCard = (forecastData, dayOfWeek) => {
 
     // cards
@@ -38,9 +36,30 @@ const renderForecastCard = (forecastData, dayOfWeek) => {
 
 }
 
+const apiURLs = [
+    '//api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=9f477eafba3d815a2c9226646be32802',
+    '//api.openweathermap.org/data/2.5/forecast?id=5607916&units=imperial&appid=9f477eafba3d815a2c9226646be32802',
+    '//api.openweathermap.org/data/2.5/forecast?id=5585010&units=imperial&appid=9f477eafba3d815a2c9226646be32802'
+]
+
+const townName = document.getElementById('town-name').textContent;
+let apiURL;
+switch(townName) {
+    case 'Soda Springs Idaho':
+      apiURL = apiURLs[1]
+      break;
+    case 'Fish Haven Idaho':
+      apiURL = apiURLs[2]
+      break;
+    default:
+      apiURL = apiURLs[0]
+  }
+console.log(townName);
+
 fetch(apiURL)
     .then((response) => response.json())
     .then((jsObject) => {
+        console.log(apiURL);
         console.log(jsObject);
         const forecastList = jsObject.list
 

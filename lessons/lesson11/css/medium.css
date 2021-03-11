@@ -36,6 +36,10 @@
     display: block;
 }
 
+.caption {
+    left: -15vw;
+}
+
 /*----------- NAVIGATION --------------*/
 nav ul {
     display: flex;
@@ -61,7 +65,9 @@ nav ul li a{padding: .5rem 1rem;}
     }
 
 /*----------- MAIN --------------*/
-
+.page-title {
+    margin-top: 3rem;
+}
 
 /* 5 Day Forecast */ 
     .forecast__grid {
@@ -138,7 +144,7 @@ nav ul li a{padding: .5rem 1rem;}
         0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
     }
 
-    .cards {
+    .cards:not(:last-of-type) {
         margin-bottom: 2rem;
     }
 
