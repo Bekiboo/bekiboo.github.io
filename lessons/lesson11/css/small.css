@@ -667,6 +667,11 @@ main {
     padding: .2rem;
     text-align: center;
     color: var(--clr-darkred);
+    transition: .15s;
+}
+
+.fab:hover {
+    color: var(--clr-honey);
 }
 
 /*------ GALLERY ------*/
