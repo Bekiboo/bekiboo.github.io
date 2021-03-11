@@ -77,7 +77,9 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
 /*----------- General Styling --------------*/
 body {font-size: var(--fs-body);
-    font-family: var(--ff-primary);}
+    font-family: var(--ff-primary);
+    background: var(--clr-lightgrey);
+}
 
 h1 {
     font-family: var(--ff-secondary);
@@ -299,6 +301,7 @@ main {
     }
 
     .mainhero {
+        background: var(--clr-darker);
         height: calc(100vh - 72px);
         width: 100%;
         display: -webkit-box;
@@ -366,6 +369,7 @@ main {
           font-size: 3rem;
           margin-top: -1rem;
           padding-top: 0;
+          font-weight: var(--fw-light);
       }
 
       .mainhero p {
