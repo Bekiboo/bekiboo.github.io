@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <meta name="description"
+        content="Find out if the weather is favorable for your trip in Madagascar and which roads are usable">
+    <meta name="keywords" content="Madagascar, weather, roads, road, trip, travel, rain, meteo">
+    <title>Thank you - Madaroad</title>
+</head>
+
+<body class="preston">
+
+    <div class="bck-darkred clr-light" id="message">Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the
+        city park pavilion.</div>
+    <header>
+
+        <div class="center flex">
+            <div class="logo">
+                <img src="img/logo.svg" alt="logo">
+            </div>
+            <div class="headings clr-darker">
+                <h1 class="site-title">MADAROAD</h1>
+                <h2 class="motto">We know where to go</h2>
+            </div>
+            <div id="nav-icon1" class="nav-icon1" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar" id="navbar">
+        <ul class="center hide" id="primaryNav">
+            <li class="li navbar__link"><a href="index.html">Home</a></li>
+            <li class="li navbar__link"><a href="preston.html">Preston</a></li>
+            <li class="li navbar__link"><a href="soda_spring.html">Soda Springs</a></li>
+            <li class="li navbar__link"><a href="fish-haven.html">Fish Haven</a></li>
+            <li class="li navbar__link"><a href="storm_center.html">Storm Center</a></li>
+            <li class="li navbar__link"><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <div class="fix-navbar"></div>
+    <main class="center">
+        <div class="thanks">Thank you for your help :)</div>
+        
+
+    </main>
+
+    <footer class="center b-radius">
+        <p class="information">&copy; <span id="currentYear"></span> | Julien Connault | <span id="currentDate"></span>
+        </p>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/windchill.js"></script>
+    <script src="js/lazyload.js"></script>
+</body>
+
+</html>
