@@ -1,6 +1,6 @@
 const requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
 const ALLOWED_TOWNS = [
-	"Fish Haven",
+    "Fish Haven",
     "Preston",
     "Soda Springs"
 ];
@@ -26,9 +26,9 @@ const renderTownInfo = (infoDiv, value, label) => {
 
 const renderTownCard = townData => {
     if (!ALLOWED_TOWNS.find(townName => townData.name === townName)) {
-    	return false;
+        return false;
     }
-    
+
     townCount += 1;
 
     let card = document.createElement('article');
@@ -39,7 +39,7 @@ const renderTownCard = townData => {
 
     // Comment
     var com = document.createComment(`Card n°${townCount}`);
-    document.getElementById('cards').appendChild(com);
+    document.getElementById('townCards').appendChild(com);
 
     // card-image
     let image = document.createElement('div');
@@ -71,7 +71,7 @@ const renderTownCard = townData => {
     renderTownInfo(infoDiv, townData.averageRainfall, "Average Rainfall");
 
     link.appendChild(card);
-    document.getElementById('cards').appendChild(link);
+    document.getElementById('townCards').appendChild(link);
 
     if (townData.name == "Fish Haven") {
         link.setAttribute('href', 'fish-haven.html');
@@ -89,9 +89,9 @@ fetch(requestURL)
     .then(function (jsonObject) {
         console.table(jsonObject); // temporary checking for valid response and data parsing
         const towns = jsonObject['towns'];
+        const eventsDiv = document.getElementById('events')
 
         for (let i = 0; i < towns.length; i++) {
-                renderTownCard(towns[i]);
-            
+            renderTownCard(towns[i]);
         }
     });

@@ -75,11 +75,19 @@
                 <p>Wind Speed: </p>
             </div>
             <div class="data clr-honey">
-                <p><span id="currentWeather">Cloudy</span></p>
+                <p><span id="currentWeather">Fetching...</span></p>
                 <p><span id="temp"></span> &#8457;</p>
                 <p><span id="windChill"></span> &#8457;</p>
                 <p><span id="humidity"></span>%</p>
                 <p><span id="windSpeed"></span> mph</p>
+            </div>
+        </section>
+
+        <!-- Incoming Events -->
+        <section class="incoming-events bs clr-light b-radius">
+            <h3 class="incoming-events__title">Incoming Events</h3>
+            <span class="bck-light b-radius"></span>
+            <div class="events" id="events">
             </div>
         </section>
 
@@ -148,6 +156,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script src="js/script.js"></script>
     <script src="js/weatherapi.js"></script>
+    <script src="js/events.js"></script>
 </body>
 
 </html>

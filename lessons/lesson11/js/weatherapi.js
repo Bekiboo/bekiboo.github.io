@@ -59,12 +59,12 @@ console.log(townName);
 fetch(apiURL)
     .then((response) => response.json())
     .then((jsObject) => {
-        console.log(apiURL);
         console.log(jsObject);
         const forecastList = jsObject.list
 
         // Weather Summary
-        document.getElementById('currentWeather').textContent = jsObject.list[0].weather[0].description;
+        const currentWeatherLower = jsObject.list[0].weather[0].description;
+        document.getElementById('currentWeather').textContent = currentWeatherLower.charAt(0).toUpperCase() + currentWeatherLower.slice(1);
         document.getElementById('temp').textContent = Math.round(jsObject.list[0].main.temp * 10)/10;
         document.getElementById('humidity').textContent = jsObject.list[0].main.humidity;
         document.getElementById('windSpeed').textContent = Math.round(jsObject.list[0].wind.speed *10)/10;
