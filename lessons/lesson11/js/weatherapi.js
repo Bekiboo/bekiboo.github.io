@@ -29,7 +29,7 @@ const renderForecastCard = (forecastData, dayOfWeek) => {
     card.appendChild(weatherIcon);
 
     let forecastTemp = document.createElement('p');
-    forecastTemp.textContent = Math.round(forecastData.main.temp *10)/10 + "\xB0";
+    forecastTemp.textContent = Math.round(forecastData.main.temp * 10) / 10 + "\xB0";
     card.appendChild(forecastTemp);
 
 
@@ -44,16 +44,16 @@ const apiURLs = [
 
 const townName = document.getElementById('town-name').textContent;
 let apiURL;
-switch(townName) {
+switch (townName) {
     case 'Soda Springs Idaho':
-      apiURL = apiURLs[1]
-      break;
+        apiURL = apiURLs[1]
+        break;
     case 'Fish Haven Idaho':
-      apiURL = apiURLs[2]
-      break;
+        apiURL = apiURLs[2]
+        break;
     default:
-      apiURL = apiURLs[0]
-  }
+        apiURL = apiURLs[0]
+}
 console.log(townName);
 
 fetch(apiURL)
@@ -65,16 +65,16 @@ fetch(apiURL)
         // Weather Summary
         const currentWeatherLower = jsObject.list[0].weather[0].description;
         document.getElementById('currentWeather').textContent = currentWeatherLower.charAt(0).toUpperCase() + currentWeatherLower.slice(1);
-        document.getElementById('temp').textContent = Math.round(jsObject.list[0].main.temp * 10)/10;
+        document.getElementById('temp').textContent = Math.round(jsObject.list[0].main.temp * 10) / 10;
         document.getElementById('humidity').textContent = jsObject.list[0].main.humidity;
-        document.getElementById('windSpeed').textContent = Math.round(jsObject.list[0].wind.speed *10)/10;
+        document.getElementById('windSpeed').textContent = Math.round(jsObject.list[0].wind.speed * 10) / 10;
         const tempNum = parseFloat(jsObject.list[0].main.temp)
         const windSpeedNum = parseFloat(jsObject.list[0].wind.speed)
-        
+
         let windChill = Math.round(35.74 + (0.6215 * tempNum) -
             (35.75 * Math.pow(windSpeedNum, 0.16)) +
             (0.4275 * tempNum * Math.pow(windSpeedNum, 0.16)));
-        
+
         if (tempNum <= 50 && windSpeedNum > 3) {
             document.getElementById("windChill").textContent = windChill
         } else {

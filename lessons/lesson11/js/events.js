@@ -7,16 +7,16 @@ const ALLOWED_TOWNS = [
 
 const eventsDiv = document.getElementById('events');
 const townNameEvents = document.getElementById('town-name').textContent;
-switch(townNameEvents) {
+switch (townNameEvents) {
     case 'Soda Springs Idaho':
-      townNameEvent = 'Soda Springs'
-      break;
+        townNameEvent = 'Soda Springs'
+        break;
     case 'Fish Haven Idaho':
         townNameEvent = 'Fish Haven'
-      break;
+        break;
     default:
         townNameEvent = 'Preston'
-  }
+}
 
 fetch(requestURL)
     .then(function (response) {
@@ -41,12 +41,12 @@ fetch(requestURL)
                     let eventDate = document.createElement('p');
                     eventDate.textContent = eventDateSlice;
                     fullEvent.appendChild(eventDate);
-                    
+
                     let eventName = document.createElement('p');
-                    eventName.classList.add('left-space', 'clr-honey', 'data');
+                    eventName.classList.add('left-space', 'clr-lightblue', 'data');
                     eventName.textContent = eventNameSlice;
                     fullEvent.appendChild(eventName);
-                    
+
                     eventsDiv.appendChild(fullEvent);
 
 
@@ -54,4 +54,3 @@ fetch(requestURL)
             }
         }
     });
-

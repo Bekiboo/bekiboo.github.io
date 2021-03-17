@@ -1,53 +1,62 @@
 @media only screen and (min-width: 35rem) {
 
     :root {
-            /* font size */
-            --fs-h1: 2rem;
-            --fs-h2: 1.7rem;
-            --fs-h3: 1.4rem;
-            --fs-body: 1rem;
+        /* font size */
+        --fs-h1: 2rem;
+        --fs-h2: 1.7rem;
+        --fs-h3: 1.4rem;
+        --fs-body: 1rem;
     }
 
-/*----------- BODY --------------*/
+    /*----------- BODY --------------*/
 
-.center {
-    max-width: 64rem;
-}
+    .center {
+        max-width: 64rem;
+    }
 
-/*----------- HEADER --------------*/
-.site-title {
-    font-size: 2.5rem;
-    margin-top: .0;
-}
+    /*----------- HEADER --------------*/
+    .site-title {
+        font-size: 2.5rem;
+        margin-top: .0;
+    }
 
-.motto {
-    margin-top: -1rem;
-}
+    .motto {
+        margin-top: -1rem;
+    }
 
-.hero-video-small {
-    display: none;
-}
+    .hero-video-small {
+        display: none;
+    }
 
-.hero-video-large {
-    display: block;
-}
+    .hero-video-large {
+        display: block;
+    }
 
-.caption {
-    left: -15vw;
-}
+    .caption {
+        left: -15vw;
+    }
 
-/*----------- NAVIGATION --------------*/
-nav ul {
-    display: flex;
-    justify-content: space-around;
-}
-nav ul li {width: 25%;}
+    /*----------- NAVIGATION --------------*/
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
 
-nav ul li a{padding: .5rem 1rem;}
+    nav ul li {
+        width: 25%;
+    }
 
-.nav-icon1{display: none;}
+    nav ul li a {
+        padding: .5rem 1rem;
+    }
 
-.navbar ul.hide {display: flex;}
+    .nav-icon1 {
+        display: none;
+    }
+
+    .navbar ul.hide {
+        display: flex;
+    }
 
     /* Sticky Navbar */
     .sticky {
@@ -56,24 +65,25 @@ nav ul li a{padding: .5rem 1rem;}
         width: 100%;
     }
 
-    .sticky + .fix-navbar {
+    .sticky+.fix-navbar {
         padding-top: 0px;
     }
 
-/*----------- MAIN --------------*/
-.page-title {
-    margin-top: 3rem;
-}
+    /*----------- MAIN --------------*/
+    .page-title {
+        margin-top: 3rem;
+    }
 
-/* 5 Day Forecast */ 
+    /* 5 Day Forecast */
     .forecast__grid {
-        grid-template-columns: repeat(3, 1fr);  
+        grid-template-columns: repeat(3, 1fr);
     }
 
 
     /* Article */
     .article {
         padding: 0 1rem 0 1rem;
+        font-size: calc(.65rem + 1vw);
     }
 
     .article img {
@@ -83,35 +93,40 @@ nav ul li a{padding: .5rem 1rem;}
         margin-left: .5rem;
     }
 
-    .top-img {display: block;}
-    .bottom-img {display: none;}
+    .top-img {
+        display: block;
+    }
 
-    /* Event */
-    .event {
+    .bottom-img {
+        display: none;
+    }
+
+    /* Coming Soon */
+    .coming-soon {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 4rem auto;
         grid-template-areas: "image title"
-                             "image text";
+            "image text";
     }
 
-    .event img {
+    .coming-soon img {
         grid-area: image;
         width: 100%
     }
 
-    .event h2 {
+    .coming-soon h2 {
         grid-area: title;
         padding-top: 0;
     }
 
-    .event p {
+    .coming-soon p {
         grid-area: text;
         font-size: calc(.65rem + 1vw);
     }
 
-    .event p,
-    .event h2 {
+    .coming-soon p,
+    .coming-soon h2 {
         padding-left: calc(10vw - 3rem);
         padding-right: calc(10vw - 3rem)
     }
@@ -120,7 +135,8 @@ nav ul li a{padding: .5rem 1rem;}
     .contact-grid {
         grid-template-columns: 1fr 1fr calc(30% + 10vw);
         grid-gap: .5rem;
-        padding-bottom: 1rem;;
+        padding-bottom: 1rem;
+        ;
     }
 
     .contact__column {
@@ -137,7 +153,7 @@ nav ul li a{padding: .5rem 1rem;}
     .card:hover {
         transform: scale(1.05);
         box-shadow: 0.125em 0.125em 0.35em rgba(0, 0, 0, .25),
-        0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
+            0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
         color: var(--clr-red);
     }
 
@@ -148,16 +164,19 @@ nav ul li a{padding: .5rem 1rem;}
     /*------ GALLERY ------*/
     .gallery {
         grid-template-columns: 1fr 1fr;
-    }        
-    
+    }
 
-    
+
+
     /*----------- FOOTER --------------*/
-    
-} /* end of media query */
+
+}
+
+/* end of media query */
 
 
 @media only screen and (min-width: 35rem) and (max-width: 62rem) {
+
     /* Town Data */
     .card {
         grid-template-columns: 16.5rem 16.5rem;
@@ -166,18 +185,18 @@ nav ul li a{padding: .5rem 1rem;}
     }
 
     .cards a:nth-child(odd) .card {
-        grid-template-areas: 
+        grid-template-areas:
             "title image"
             "info image";
     }
 
     .cards a:nth-child(even) .card {
-        grid-template-areas: 
+        grid-template-areas:
             "image title"
             "image info";
     }
 
-    .cards a:nth-child(odd) .card .card-info{
+    .cards a:nth-child(odd) .card .card-info {
         border-bottom-right-radius: 0;
     }
 
@@ -194,7 +213,7 @@ nav ul li a{padding: .5rem 1rem;}
         border-top-right-radius: 0;
         border-bottom-left-radius: 1rem;
     }
-    
+
     .card-title {
         margin-top: 1.5rem;
     }

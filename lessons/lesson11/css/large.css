@@ -4,21 +4,22 @@
         max-width: 56rem;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         margin-left: 0;
     }
 
-/*----------- BODY --------------*/
+    /*----------- BODY --------------*/
 
-/*----------- HEADER --------------*/
-
-
-
-/*----------- NAVIGATION --------------*/
+    /*----------- HEADER --------------*/
 
 
 
-/*----------- MAIN --------------*/
+    /*----------- NAVIGATION --------------*/
+
+
+
+    /*----------- MAIN --------------*/
 
     /* Hero */
     .hero-img img {
@@ -46,11 +47,28 @@
     }
 
     .forecast__grid {
-        grid-template-columns: repeat(5, 1fr);  
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .event p {
         font-size: 1.25rem;
+    }
+
+    /* Article */
+    .article {
+        font-size: 1.25rem;
+        min-height: 18rem;
+    }
+
+    /* Coming Soon */
+    .coming-soon p {
+        font-size: 1.25rem;
+    }
+
+    .coming-soon p,
+    .coming-soon h2 {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 
     /* Contact */
@@ -70,7 +88,7 @@
 
     .gallery figure:hover {
         box-shadow: 0.5em 0.5em 1.5em rgba(0, 0, 0, .5),
-        0.25em 0.25em 0.5em rgba(0, 0, 0, .3);
+            0.25em 0.25em 0.5em rgba(0, 0, 0, .3);
     }
 
     /* ---------- Storm Center ---------- */
@@ -94,8 +112,8 @@
         padding: 0.25rem 0;
     }
 
-/*----------- FOOTER --------------*/
+    /*----------- FOOTER --------------*/
 
 
-/* end of media query */
+    /* end of media query */
 }
