@@ -1,0 +1,73 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+        @include cover(10);
+        content: '';
+        background: rgba($color: #000000, $alpha: .5)
+    }
+
+    .texture {
+        @include cover(15);
+        background: url('diagonal.png');
+    }
+
+    video {
+        @include cover(5);
+        object-fit: cover;
+    }
+
+    .caption {
+        position: relative;
+        z-index: 20;
+        text-align: center;
+        padding-top: 10vh;
+        color: white;
+        font-family: $font-primary;
+        width: 92vw;
+
+
+        p {
+            font-family: $font-secondary;
+            font-style: italic;
+            font-size: .80rem;
+        }
+
+        h1 {
+            margin-top: .25rem;
+            font-size: calc(1.8rem + 1.6vw);
+            text-transform: uppercase;
+            line-height: 2.25rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        .cta {
+            border: .35rem solid $honey-light;
+            width: 15rem;
+            padding: .625rem .25rem .25rem.25rem;
+            margin: 1rem auto;
+            line-height: 2rem;
+        }
+
+        span {
+            color: $honey-light;
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        em {
+            font-style: normal;
+            color: $honey-lighter;
+            font-weight: 900;
+        }
+    }
+}

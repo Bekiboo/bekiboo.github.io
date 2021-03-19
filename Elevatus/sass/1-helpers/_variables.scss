@@ -1,0 +1,57 @@
+// -------- COLORS --------
+// Brand
+$downy:                 #6ABCD2;
+$downy-light:           #B2CFE2;
+$deluge:                #7D67A6;
+$deluge-light:          #868EBD;
+$mandy:                 #DB4E57;
+$mandy-light:           #E27C4A; 
+
+// Layout       
+$honey-lighter:         #FFE8A7;
+$honey-light:           #FED254;
+$honey:                 #FAB900;
+$honey-dark:            #D09A00;
+$honey-darker:          #755700;
+
+$primary-lighter:       $honey-lighter;
+$primary-light:         $honey-light;
+$primary:               $honey;       
+$primary-dark:          $honey-dark;   
+$primary-darker:        $honey-darker;
+
+$light:                 #F0F0F2;
+$grey-light:            #DBE3E5;
+$grey-dark:             #525A5D;
+$dark:                  #313538;
+
+// Denotive
+$red-error:             #D43E3F;
+$green-success:         #24D5AE;
+$grey-light-disabled:   #B2B6B9;
+$grey-dark-disabled:    #5D6363;
+
+// Interactive
+$curious-blue-lighter:  #88C3EF;
+$curious-blue-light:    #62ADE4;
+$curious-blue:          #298ED4;
+$curious-blue-dark:     #16619A;
+$curious-blue-darker:   #0F4F7B;
+
+$interactive-lighter:   $curious-blue-lighter;
+$interactive-light:     $curious-blue-light;  
+$interactive:           $curious-blue;        
+$interactive-dark:      $curious-blue-dark;   
+$interactive-darker:    $curious-blue-darker; 
+
+// -------- FONT --------
+$default-font-size: 1.6rem;
+$font-primary: 'Lato', sans-serif;
+$font-secondary: 'Noto Serif', serif;
+
+
+// -------- GRID --------
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

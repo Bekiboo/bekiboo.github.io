@@ -1,0 +1,165 @@
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    text-align: left;
+    background-image: linear-gradient(to bottom, black, rgba(0,0,0,0));
+
+    @include respond(tab-land) {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+
+    }
+}
+
+.logo {
+    @include respond(tab-land) {
+        grid-column: 2 / span 1;
+    }
+}
+
+.logo img {
+    width: 10rem;
+    margin-top: .5rem;
+    margin-left: 1rem;
+}
+
+nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba($primary, .98);
+    transform: scale(1, 0);
+    transform-origin: top right;
+    transition: 0.4s ease-in-out;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        opacity: 0;
+        transition: opacity .15s ease-in-out;
+
+        &:hover {
+            color: $interactive;
+        }
+
+        @include respond(tab-land) {
+            opacity: 1;
+        }
+    }
+
+    @include respond(tab-land) {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-size: 1rem;
+        }
+    }
+}
+
+.display-nav {
+    transform: scale(1, 1);
+
+    a {
+        opacity: 1;
+        transition: opacity .25s ease-in-out .25s;
+    }
+}
+
+#hamburger {
+    all: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    transform: scale(.75);
+    transition: 0.3s;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0;
+        width: 3rem;
+        border: 0.25rem solid white;
+        border-radius: 3rem;
+        margin: -0.25rem 0 0 -1.75rem;
+        transition: 0.3s;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 3.5rem;
+            height: 0.5rem;
+            background: white;
+            border-radius: 3rem;
+            margin: 0 0 0 -1.75rem;
+            transition: 0.3s;
+        }
+
+        &:before {
+            top: -1.125rem;
+        }
+
+        &:after {
+            top: 0.625rem;
+        }
+    }
+
+    &.open span {
+        height: 3rem;
+        margin: -1.875rem 0 0 -1.875rem;
+        border-width: 0.375rem;
+
+        &:before,
+        &:after {
+            top: 1.3rem;
+            width: 2rem;
+            margin: 0 0 0 -.95rem;
+        }
+
+        &:before {
+            transform: rotate(-135deg);
+        }
+
+        &:after {
+            transform: rotate(135deg);
+        }
+    }
+
+    @include respond(tab-land) {
+        display: none;
+    }
+
+}
