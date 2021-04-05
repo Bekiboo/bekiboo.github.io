@@ -12,7 +12,6 @@
 .weather {
     grid-area: weather;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     color: $light;
     text-align: center;
@@ -197,5 +196,4 @@
 .events {
     grid-area: events;
     box-shadow: $bs-light;
-    height: 20rem;
 }
