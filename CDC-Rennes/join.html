@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="dist/css/main.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4ecb5a630a.js" crossorigin="anonymous"></script>
+
+
+    <meta name="description"
+        content="The hub for businesses in Rennes Métropole. Connect with other businesses and CEO in the region.">
+
+    <title>Join - CDC Rennes</title>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo_CDC-white.svg" alt="CDC Rennes Logo" /></a>
+        </div>
+        <a href="#" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+        </a>
+
+        <!-- Navigation -->
+        <nav class="nav" id="js-nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__a" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__a" href="city.html">City</a></li>
+                <li class="nav__item"><a class="nav__a" href="directory.html">Directory</a></li>
+                <li class="nav__item"><a class="nav__a" href="contact.html">Contact</a></li>
+                <li class="nav__item nav__item--join"><a class="nav__a--join  active" href="join.html">Join</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+    <div class="container">
+        <div class="hero" id="hero">
+            <div class="texture"></div>
+            <picture>
+                <source media="(max-width: 800px)" srcset="img/hero800.jpg">
+                <source media="(max-width: 1200px)" srcset="img/hero1200.jpg">
+                <img src="img/hero1920.jpg" alt="Parlement de Rennes">
+            </picture>
+
+            <!-- caption -->
+            <div class="caption">
+                <h1>Because entrepreneurs need to expand their network</h1>
+            </div>
+
+
+        </div>
+    </div>
+
+    <main class="main-home" id="mainHome">
+        <h1 class="page-title">Storm Report Center</h1>
+        <h4>Have you witnessed a storm? Tell us more!</h4>
+        <div class="storm-grid">
+            <form method="GET" action="thanks.html">
+
+                <!-- 1st Fieldset -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label class="top">Full Name* <input type="text" name="fname" pattern="[A-Za-z ]{5,}"
+                            required></label>
+                    <label class="top">Phone* <input type="tel" name="phone" placeholder="1235551234" required></label>
+                    <label class="top">Email <input type="email" name="email" placeholder="someone@gmail.com"></label>
+                    <label class="top">Zipcode* <input type="number" name="zipcode" required></label>
+                </fieldset>
+
+                <!-- 2nd Fieldset -->
+                <fieldset>
+                    <legend>Storm Sighting Details</legend>
+                    <label class="top">Storm Date <input type="date" name="stormDate"></label>
+                    <label class="top">Storm Type
+                        <select name="type">
+                            <option value="">Please Select &#9662;</option>
+                            <option value="flashFlood">Flash Flood</option>
+                            <option value="hail">Hail</option>
+                            <option value="hurricance">Hurricane</option>
+                            <option value="thunderstorm">Thunderstorm</option>
+                            <option value="tornado">Tornado</option>
+                        </select>
+                    </label>
+                    <label class="flexly" for="rating">Storm Severity: &nbsp;&nbsp;&nbsp;
+                        <input type="range" id="rating" value="5" min="1" max="10" step="1" list="tickmarks"
+                            oninput="adjustRating(this.value)" onchange="adjustRating(this.value)">
+                        <span id="ratingvalue">5</span>
+                    </label>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                    <label class="top">Storm Region
+                        <select name="region">
+                            <option value="">Please Select &#9662;</option>
+                            <option value="preston">Preston</option>
+                            <option value="sodaSrings">Soda Springs</option>
+                            <option value="fishHaven">Fish Haven</option>
+                        </select>
+                    </label>
+                    <div class="top">Are you in danger?</div>
+                    <label class="sbs"><input type="radio" name="dangerLevel" value="yes"> Yes</label>
+                    <label class="sbs"><input type="radio" name="dangerLevel" value="maybe"> Maybe</label>
+                    <label class="sbs"><input type="radio" name="dangerLevel" value="no"> No</label>
+                </fieldset>
+
+                <!-- 3rd Fieldset -->
+                <fieldset>
+                    <legend>Additional Sighting Details</legend>
+                    <textarea name="additionalInfo" placeholder="Enter comment here..." rows="40" cols="50"></textarea>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <input class="submitBtn" type="submit" value="Report Storm">
+            </form>
+
+            <!-- 392*900 -->
+            <img class="right-filler" src="img/tornado.jfif" alt="storm" width="512" height="900">
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="footer-grid">
+            <div class="contact">
+                <h2>Contact</h2>
+                <div class="contact-flex">
+                    <div>
+                        <p>CCD - Rennes</p>
+                        <p>101 rue Henri Fréville</p>
+                    </div>
+                    <div>
+                        <p>35700 RENNES</p>
+                        <p>cdc-rennes@officiel.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="social">
+                <a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                <a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a>
+                <a target="_blank" href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a>
+            </div>
+
+            <p>Last modified: <span id="lastModified"></span></p>
+            <a href="#">Resources</a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

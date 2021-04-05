@@ -1,0 +1,74 @@
+footer {
+    min-height: 4rem;
+    background-color: $dark;
+    width: 100%;
+    // max-width: ;
+    padding: 1rem 5vw 1rem 5vw;
+    color: $grey-light;
+
+    h2 {
+        font-size: 1rem;
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+    }
+
+    p {
+        font-size: .75rem;
+        @include respond(tab-port) {
+            font-size: .9rem;
+        }
+    }
+
+    span {
+        color: $clr-primary-darker;
+    }
+    
+    a {
+        text-decoration: none;
+        color: $interactive-darker;
+
+        &:hover {color: $interactive-lighter}
+    }
+}
+
+.footer-grid {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-areas:    "contact social"
+                            "contact resources"
+                            "contact modified";
+
+    @include respond(tab-port) {
+        grid-template-areas:"contact resources social"
+                            "contact modified modified";
+    }
+    
+    .contact {grid-area: contact;}
+    .social {grid-area: social;}
+    p {grid-area: modified;}
+    a {grid-area: resources;}
+
+    @include respond(tab-land) {
+        .contact-flex {
+            display: flex;
+
+            div {margin-right: 1rem;}
+        }
+    }
+}
+
+.fab {
+    font-size: 2.5rem;
+    padding: .2rem;
+    text-align: center;
+    color: $interactive-darker;
+    transition: .15s;
+}
+
+.fab:hover {
+    color: $interactive-lighter;
+    transform: scale(1.05);
+    text-shadow: 0.125em 0.125em 0.35em rgba(0, 0, 0, .25),
+        0.05em 0.05em 0.15em rgba(0, 0, 0, .15);
+}

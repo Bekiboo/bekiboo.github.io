@@ -3,7 +3,7 @@ header {
     z-index: 999;
     width: 100%;
     text-align: left;
-    background-image: linear-gradient(to bottom, black, rgba(0,0,0,0));
+    background: rgba($primary, .95);
 
     @include respond(tab-land) {
         display: grid;
@@ -30,7 +30,7 @@ nav {
     top: 100%;
     right: 0;
     width: 100%;
-    background: rgba($primary, .98);
+    background: rgba($primary, .95);
     transform: scale(1, 0);
     transform-origin: top right;
     transition: 0.4s ease-in-out;
@@ -49,12 +49,12 @@ nav {
         text-decoration: none;
         font-size: 1.2rem;
         text-transform: uppercase;
-        font-weight: 500;
         opacity: 0;
         transition: opacity .15s ease-in-out;
+        font-weight: 700;
 
         &:hover {
-            color: $interactive;
+            color: $interactive-dark;
         }
 
         @include respond(tab-land) {
@@ -110,8 +110,8 @@ nav {
         left: 50%;
         height: 0;
         width: 3rem;
-        border: 0.25rem solid white;
-        border-radius: 3rem;
+        border: 0.2rem solid white;
+        // border-radius: 3rem;
         margin: -0.25rem 0 0 -1.75rem;
         transition: 0.3s;
 
@@ -121,9 +121,9 @@ nav {
             position: absolute;
             left: 50%;
             width: 3.5rem;
-            height: 0.5rem;
+            height: 0.4rem;
             background: white;
-            border-radius: 3rem;
+            // border-radius: 3rem;
             margin: 0 0 0 -1.75rem;
             transition: 0.3s;
         }
@@ -139,8 +139,9 @@ nav {
 
     &.open span {
         height: 3rem;
-        margin: -1.875rem 0 0 -1.875rem;
-        border-width: 0.375rem;
+        margin: -2rem 0 0 -2rem;
+        border-width: 0.35rem;
+        border-radius: 3rem;
 
         &:before,
         &:after {

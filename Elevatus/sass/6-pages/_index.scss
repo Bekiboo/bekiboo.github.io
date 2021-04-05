@@ -28,14 +28,14 @@
         text-align: center;
         padding-top: 10vh;
         color: white;
-        font-family: $font-primary;
+        font-family: $font-secondary;
         width: 92vw;
 
 
         p {
-            font-family: $font-secondary;
+            font-family: $font-tertiary;
             font-style: italic;
-            font-size: .80rem;
+            font-size: 1rem;
         }
 
         h1 {
@@ -47,27 +47,38 @@
 
         h2 {
             font-size: 1.2rem;
+            font-family: $font-primary;
         }
 
-        .cta {
-            border: .35rem solid $honey-light;
-            width: 15rem;
-            padding: .625rem .25rem .25rem.25rem;
-            margin: 1rem auto;
-            line-height: 2rem;
+        a {
+            text-decoration: none;
         }
 
-        span {
-            color: $honey-light;
-            font-size: 2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+    }
+}
 
-        em {
-            font-style: normal;
-            color: $honey-lighter;
-            font-weight: 900;
-        }
+.cta {
+    width: 15rem;
+    padding: 1.125rem .25rem .25rem .75rem;
+    margin: 1rem auto;
+    line-height: 2rem;
+    transition: 0.25s;
+    box-shadow:
+        0.5em 0.5em 0 0 $honey,
+        inset 0.5em 0.5em 0 0 $honey;
+    font-family: 'Poppins', sans-serif;
+
+    span {
+        color: $honey-light;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+
+    }
+
+    em {
+        font-style: normal;
+        font-weight: 900;
     }
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="dist/css/main.css">
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/4ecb5a630a.js" crossorigin="anonymous"></script>
+
+
+	<meta name="description"
+        content="The hub for businesses in Rennes Métropole. Connect with other businesses and CEO in the region.">
+
+	<title>Contact - CDC Rennes</title>
+
+</head>
+
+<body>
+
+	<!-- HEADER -->
+	<header>
+		<div class="logo">
+			<a href="index.html"><img src="img/logo_CDC-white.svg" alt="CDC Rennes Logo" /></a>
+		</div>
+		<a href="#" id="hamburger" onclick="toggleMenu()">
+			<span></span>
+		</a>
+
+		<!-- Navigation -->
+		<nav class="nav" id="js-nav">
+			<ul class="nav__list">
+				<li class="nav__item"><a class="nav__a" href="index.html">Home</a></li>
+				<li class="nav__item"><a class="nav__a" href="city.html">City</a></li>
+				<li class="nav__item"><a class="nav__a" href="directory.html">Directory</a></li>
+				<li class="nav__item"><a class="nav__a active" href="contact.html">Contact</a></li>
+				<li class="nav__item nav__item--join"><a class="nav__a--join" href="join.html">Join</a>
+				</li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+	
+	<main class="main-home" id="mainHome">
+
+	</main>
+	<footer>
+		<div class="footer-grid">
+			<div class="contact">
+				<h2>Contact</h2>
+				<div class="contact-flex">
+					<div>
+						<p>CCD - Rennes</p>
+						<p>101 rue Henri Fréville</p>
+					</div>
+					<div>
+						<p>35700 RENNES</p>
+						<p>cdc-rennes@officiel.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="social">
+				<a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+				<a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a>
+				<a target="_blank" href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a>
+			</div>
+
+			<p>Last modified: <span id="lastModified"></span></p>
+			<a href="#">Resources</a>
+		</div>
+	</footer>
+
+	<script src="js/app.js"></script>
+	<script src="js/weather.js"></script>
+	<script src="js/business-cards.js"></script>
+</body>
+
+</html>

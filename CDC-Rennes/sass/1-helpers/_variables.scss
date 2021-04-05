@@ -1,0 +1,57 @@
+// -------- COLORS --------
+// Layout       
+$coral-lighter:         #F7B267;
+$coral-light:           #F79D65;
+$coral:                 #F4845F;
+$coral-dark:            #F27059;
+$coral-darker:          #F25C54;
+
+$clr-primary-lighter:       $coral-lighter;
+$clr-primary-light:         $coral-light;
+$clr-primary:               $coral;       
+$clr-primary-dark:          $coral-dark;   
+$clr-primary-darker:        $coral-darker;
+
+$light:                 #F0F0F2;
+$grey-light:            #DBE3E5;
+$grey-dark:             #525A5D;
+$dark:                  #313538;
+$darker:                #1b1d1f;
+
+// Denotive
+$red-error:             #D43E3F;
+$green-success:         #24D5AE;
+$grey-light-disabled:   #B2B6B9;
+$grey-dark-disabled:    #5D6363;
+
+// Interactive
+$blizzard-lighter:  #C5EDF3;
+$blizzard-light:    #AFE6EF;
+$blizzard:          #98DFEA;
+$blizzard-dark:     #54CADC;
+$blizzard-darker:   #26A4B8;
+
+$interactive-lighter:   $blizzard-lighter;
+$interactive-light:     $blizzard-light;  
+$interactive:           $blizzard;        
+$interactive-dark:      $blizzard-dark;   
+$interactive-darker:    $blizzard-darker; 
+
+// BOX-SHADOW
+$bs-light:  0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+            0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+
+$bs-dark:  0.25em 0.25em 0.75em rgba(0, 0, 0, 0.75),
+            0.125em 0.125em 0.25em rgba(0, 0, 0, 0.5);
+
+// -------- FONT --------
+$default-font-size: 1.6rem;
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Noto Serif', serif;
+
+
+// -------- GRID --------
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

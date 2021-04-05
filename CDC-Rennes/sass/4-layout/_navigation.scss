@@ -1,0 +1,203 @@
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    text-align: left;
+    background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+
+    @include respond(tab-land) {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(500px, 3fr) 1fr;
+    }
+}
+
+.logo {
+    @include respond(tab-land) {
+        grid-column: 2 / span 1;
+    }
+}
+
+.logo img {
+    height: 3rem;
+    margin-top: .5rem;
+    margin-left: 1rem;
+
+    @include respond(tab-land) {
+        height: 4rem;
+    }
+}
+
+nav {
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right: 0;
+    width: 9rem;
+    background-color: rgba($dark, .95);
+    transform: scale(1, 0);
+    transform-origin: top right;
+    transition: 0.4s ease-in-out;
+
+    ul {
+        margin-top: 5em;
+        list-style: none;
+
+        @include respond(tab-land) {
+            margin-top: 0;
+        }
+    }
+
+    li {
+        margin: 1em 1em 1em 0;
+    }
+
+    a {
+        color: $light;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity .15s ease-in-out;
+        font-weight: 400;
+
+        &:hover {
+            color: $interactive;
+        }
+
+        @include respond(tab-land) {
+            opacity: 1;
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                height: 5px;
+                background: $interactive;
+                position: absolute;
+                top: -0.75em;
+                left: 0;
+                right: 0;
+                transform: scale(0, 1);
+                transition: transform ease-in-out .125s;
+            }
+
+            &:hover::before {
+                transform: scale(1, 1);
+            }
+        }
+    }
+
+    @include respond(tab-land) {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-size: 1rem;
+        }
+    }
+}
+
+.display-nav {
+    transform: scale(1, 1);
+
+    a {
+        opacity: 1;
+        transition: opacity .25s ease-in-out .25s;
+    }
+}
+
+#hamburger {
+    all: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    transform: scale(.75);
+    transition: 0.3s;
+    z-index: 100;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0;
+        width: 3rem;
+        border: 0.2rem solid $light;
+        margin: -0.25rem 0 0 -1.75rem;
+        transition: 0.3s;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 3.5rem;
+            height: 0.4rem;
+            background: $light;
+            // border-radius: 3rem;
+            margin: 0 0 0 -1.75rem;
+            transition: 0.3s;
+        }
+
+        &:before {
+            top: -1.125rem;
+        }
+
+        &:after {
+            top: 0.625rem;
+        }
+    }
+
+    &.open span {
+        height: 3rem;
+        margin: -2rem 0 0 -2rem;
+        border-width: 0.35rem;
+        border-radius: 3rem;
+
+        &:before,
+        &:after {
+            top: 1.3rem;
+            width: 2rem;
+            margin: 0 0 0 -.95rem;
+        }
+
+        &:before {
+            transform: rotate(-135deg);
+        }
+
+        &:after {
+            transform: rotate(135deg);
+        }
+    }
+
+    @include respond(tab-land) {
+        display: none;
+    }
+
+    
+}
+
+.active {
+    color: $interactive-darker;
+    font-weight: 600;
+}
+.nav-scrolled {
+    background-image: none;
+    background: $dark;
+    transition: .5s ease-in-out;
+
+}
