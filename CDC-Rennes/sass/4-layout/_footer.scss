@@ -13,7 +13,7 @@ footer {
         }
     }
 
-    p {
+    p,a  {
         font-size: .75rem;
         @include respond(tab-port) {
             font-size: .9rem;

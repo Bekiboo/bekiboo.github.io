@@ -9,7 +9,7 @@ const header = document.querySelector('header');
 const hero = document.getElementById('hero');
 
 const heroOptions = {
-  rootMargin: "-70% 0px 0px 0px"
+  rootMargin: "-60% 0px 0px 0px"
 };
 
 const heroObserver = new IntersectionObserver(function(

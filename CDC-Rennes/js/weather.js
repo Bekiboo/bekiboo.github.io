@@ -12,7 +12,6 @@ const apiURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=48.1173&lon=
 fetch(apiURL)
     .then((response) => response.json())
     .then((jsObject) => {
-            console.log(jsObject);
             const forecastList = jsObject.daily
 
             // Current Weather

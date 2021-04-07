@@ -8,8 +8,19 @@ var btn = document.getElementById("infoBtn");
 var span = document.getElementsByClassName("modal_info-close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function () {
-    modal.style.display = "block";
+
+mainId = document.getElementsByTagName('main');
+mainIdName = mainId[0].id
+if (mainIdName == "mainHome") {
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+} else {
+    let form = document.getElementsByTagName("form")[0];
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        modal.style.display = "block";
+    });
 }
 
 // When the user clicks on <span> (x), close the modal

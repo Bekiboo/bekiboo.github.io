@@ -4,10 +4,7 @@ const renderBusinessCards = (num) => {
     fetch(jsonBusiness)
         .then((response) => response.json())
         .then((jsObject) => {
-            console.log(jsObject);
             const businessList = jsObject.businesses;
-            // const homeBusinessCards = () => renderBusinessCards(3)
-            // const directoryBusinessCards = () => renderBusinessCards(businessList.length)
 
             for (let i = 0; i < num; i++) {
 
