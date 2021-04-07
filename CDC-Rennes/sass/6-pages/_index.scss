@@ -102,6 +102,7 @@
     flex-direction: column;
     margin: 2rem 0 0 auto;
     background: $darker;
+    box-shadow: $bs-light;
 
     h2 {
         color: $light;
@@ -246,6 +247,7 @@ aside {
 
         img {
             width: 18em;
+            box-shadow: $bs-light;
         }
     }
 }
@@ -259,6 +261,7 @@ aside {
     margin-top: 1em;
     background: $dark;
     color: $light;
+    box-shadow: $bs-light;
 
     @include respond(tab-land) {
         max-width: unset;
