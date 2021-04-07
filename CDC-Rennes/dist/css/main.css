@@ -1246,6 +1246,10 @@ aside {
   color: #98DFEA;
 }
 
+.directory-cards {
+  margin-bottom: 2em;
+}
+
 .directory-cards .flex {
   display: flex;
   justify-content: space-between;
