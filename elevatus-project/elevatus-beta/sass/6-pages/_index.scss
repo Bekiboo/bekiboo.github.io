@@ -1,14 +1,5 @@
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-  html {
-    height: -webkit-fill-available;
-  }
-
 .hero {
-    height: clamp(568px, 100vh, 100vh);
-    /* mobile viewport bug fix */
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,32 +22,41 @@ body {
         object-fit: cover;
     }
 
+    .video-large {
+        display: none;
+        @include respond(tab-port) {
+            display: block;
+        }
+    }
+
+    .video-thin {
+        display: block;
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
     .caption {
         position: relative;
         z-index: 20;
-        text-align: center;
-        padding-top: 10vh;
+        text-align: left;
+        // padding-top: 10vh;
+        // margin-left: 1em;
         color: white;
-        font-family: $font-secondary;
-        width: 92vw;
-
-
-        p {
-            font-family: $font-tertiary;
-            font-style: italic;
-            font-size: 1rem;
-        }
 
         h1 {
             margin-top: .25rem;
             font-size: calc(1.8rem + 1.6vw);
             text-transform: uppercase;
-            line-height: 2.25rem;
+            line-height: 1;
+            max-width: 20ch;
         }
 
-        h2 {
+        h4 {
+            margin-left: 1em;
             font-size: 1.2rem;
-            font-family: $font-primary;
+            margin-bottom: .5em;
+            font-weight: 300;
         }
 
         a {
@@ -67,27 +67,66 @@ body {
 }
 
 .cta {
-    width: 15rem;
-    padding: 1.125rem .25rem .25rem .75rem;
-    margin: 1rem auto;
-    line-height: 2rem;
+    width: 16em;
+    padding: 1em;
+    line-height: 1;
+    text-align: center;
     transition: 0.25s;
-    box-shadow:
-        0.5em 0.5em 0 0 $honey,
-        inset 0.5em 0.5em 0 0 $honey;
+    background: $interactive-500;
+    border-radius: 15px;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+
+    &:hover {
+        background: $interactive-400;
+    }
 
     span {
-        color: $honey-light;
+        color: $light-50;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
-
-
     }
 
     em {
         font-style: normal;
-        font-weight: 900;
+        font-weight: 700;
     }
+}
+
+.mission-statement {
+    display: grid;
+    place-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+
+    h2 {
+        color: $primary-600;
+        font-size: 1.5rem;
+        max-width: 30ch;
+        @include respond(tab-port) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        margin-top: 1em;
+        color: $dark-800;
+        max-width: 60ch;
+    }
+}
+
+.infographic {
+    color: $dark-800;
+
+    h2 {
+        color: $red-error;
+    }
+
+    img {
+        max-width: 50%;
+        max-height: 12em;
+    }
+    
 }

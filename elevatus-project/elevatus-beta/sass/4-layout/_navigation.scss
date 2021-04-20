@@ -1,24 +1,29 @@
-body {
-    position: relative;
-}
-
 header {
     position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
     text-align: left;
-    background: rgba($primary, .95);
+    background: rgba($primary-500, .95);
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
         display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-
+        place-items: center;
     }
+
+     .header__content {
+
+        @include respond(tab-port) {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+    }
+    
 }
 
 .logo {
-    @include respond(tab-land) {
+    @include respond(tab-port) {
         grid-column: 2 / span 1;
     }
 }
@@ -26,7 +31,6 @@ header {
 .logo img {
     width: 10rem;
     margin-top: .5rem;
-    margin-left: 1rem;
 }
 
 nav {
@@ -35,11 +39,11 @@ nav {
     top: 100%;
     right: 0;
     width: 100%;
-    background: rgba($primary, .95);
+    background: rgba($primary-500, .95);
     transform: scale(1, 0);
     transform-origin: top right;
     transition: 0.4s ease-in-out;
-
+    
     ul {
         list-style: none;
     }
@@ -56,18 +60,18 @@ nav {
         text-transform: uppercase;
         opacity: 0;
         transition: opacity .15s ease-in-out;
-        font-weight: 700;
+        font-weight: 400;
 
         &:hover {
-            color: $interactive-dark;
+            color: $interactive-400;
         }
 
-        @include respond(tab-land) {
+        @include respond(tab-port) {
             opacity: 1;
         }
     }
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
         all: unset;
         grid-column: 3 / 4;
         display: flex;
@@ -164,7 +168,7 @@ nav {
         }
     }
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
         display: none;
     }
 

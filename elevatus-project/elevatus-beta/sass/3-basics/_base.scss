@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background: white;
+    background: $light-50;
 }
 
 *,
@@ -11,13 +11,24 @@ html {
     padding: 0;
 }
 
-// .container {
-//     overflow: auto;
-//     width: 100%;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 20px;
-// }
+section {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.container-section {
+    overflow: auto;
+    width: calc(4.5em + 80%);
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+h2 {
+    line-height: 1.2;
+}
 
 // .containerWide {
 //     max-width: 1400px;
