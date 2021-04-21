@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background: $light;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    max-width: 34em;
+    min-height: 40em;
+
+    @include respond(tab-land) {
+        max-width: 56.25em;
+    }
+
+    // @include respond(desktop) {
+    //     max-width: 75em;
+    // }
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+}
+
+// .container {
+//     overflow: auto;
+//     width: 100%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 0 20px;
+// }
+
+// .containerWide {
+//     max-width: 1400px;
+// }
+
+.hide {
+    display: none;
+}

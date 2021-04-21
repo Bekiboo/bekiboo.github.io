@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    /* font family */
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-secondary: 'Open Sans', monospace;
+
+    /* font weight */
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-bold: 600;
+
+    /* font size */
+    --fs-h1: 1.75rem;
+    --fs-h2: 1.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    /* color */
+    --clr-light: #fff;
+    --clr-dark: rgba(13, 33, 73, 1);
+    --clr-accent: rgba(250, 185, 0, 1);
+
+    /* box shadow */
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+/* Utility classes */
+
+.clr-light { color: var(--clr-light) }
+.clr-dark { color: var(--clr-dark) }
+.clr-accent { color: var(--clr-accent) }
+
+.blue-link a:visited {
+    color: blue;
+}
+.light-link:visited {
+    color: var(--clr-light)
+}
+.blue-link a:hover,
+.light-link:hover {
+    color: var(--clr-accent)
+}
+
+/* General styles */
+
+body {
+    background: var(--clr-light);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+h1 { font-size: var(--fs-h1) }
+
+/* Header */
+
+header,
+footer {
+    background-color: var(--clr-dark);
+    padding: .75em;
+    text-align: center;
+    box-shadow: var(--bs);
+}
+
+header img {
+    box-shadow: var(--bs);
+    width: 200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-weight: var(--fw-bold);
+    padding: 1rem 0 1rem 0
+}
+
+header strong {
+    display: block;
+}
+
+/* Main */
+
+main {
+    padding: 1em;
+}
+
+hr {
+    border-top: 1px solid var(--clr-dark);
+    margin: 0.5em 0 0.5em 0;
+}
+
+main ul {
+    list-style: none;
+}
+
+/* Footer */
+
+#lastUpdate {
+    font-size: 0.75em;
+}
+

@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --honey: hsl(44, 100%, 49%);
+}
+
+body {
+    font-family: Poppins, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    background: var(--honey);
+    padding: 1em;
+    color: white;
+}
+
+header a:visited {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    color: black;
+}
+
+main {
+    padding: 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+section p {
+    max-width: 60ch;
+}
+
+h4 {
+    padding-top: .5em;
+}
+
+@media only screen and (min-width: 900px) {
+    header {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-right: 1em;
+    }
+    
+}
+    
+a:hover,
+header h1 a:hover {
+    color: hsl(9, 65%, 47%);
+}
+
+a:active,
+header h1 a:active {
+    color: hsl(9, 100%, 27%);
+}

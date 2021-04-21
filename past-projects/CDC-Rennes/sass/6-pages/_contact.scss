@@ -1,0 +1,71 @@
+.main-contact {
+
+    .contact-info {
+        margin: .5em;
+
+        &__map {
+            width: 100%;
+            box-shadow: $bs-light;
+        }
+    }
+
+    .contact-board {
+        margin: 1em auto;
+        max-width: 20em;
+        text-align: center;
+        @include respond(tab-land) {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        h2 {
+            color: $clr-primary;
+        }
+
+        &__cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            div {
+                margin: .5em;
+            }
+
+            img {
+                height: 12em;
+                width: auto;
+                box-shadow: $bs-light;
+            }
+        }
+    }
+
+    .contact-form {
+        margin: 1rem auto;
+        max-width: 20em;
+    }
+
+
+
+
+    @include respond(tab-land) {
+
+        display: grid;
+        grid-template-areas:
+            "info form"
+            "board board";
+
+        .contact-info {
+            grid-area: info;
+        }
+
+        .contact-form {
+            grid-area: form;
+        }
+
+        .contact-board {
+            grid-area: board;
+
+
+        }
+    }
+}

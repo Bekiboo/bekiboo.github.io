@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+
+    <meta name="description"
+        content="Find out if the weather is favorable for your trip in Madagascar and which roads are usable">
+    <meta name="keywords" content="Madagascar, weather, roads, road, trip, travel, rain, meteo">
+    <title>Gallery - Madaroad</title>
+</head>
+
+<body class="gallery-page">
+
+    <div class="bck-darkred clr-light" id="message">Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the
+        city park pavilion.</div>
+    <header>
+
+        <div class="center flex">
+            <div class="logo"><a href="index.html">
+                <img src="img/logo.svg" alt="logo"></a>
+            </div>
+            <div class="headings clr-darker">
+                <h1 class="site-title">MADAROAD</h1>
+                <h2 class="motto">We know where to go</h2>
+            </div>
+            <div id="nav-icon1" class="nav-icon1" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar" id="navbar">
+        <ul class="center hide" id="primaryNav">
+            <li class="li navbar__link"><a href="index.html">Home</a></li>
+            <li class="li navbar__link"><a href="preston.html">Preston</a></li>
+            <li class="li navbar__link"><a href="soda_spring.html">Soda Springs</a></li>
+            <li class="li navbar__link"><a href="fish-haven.html">Fish Haven</a></li>
+            <li class="li navbar__link"><a href="storm_center.html">Storm Center</a></li>
+            <li class="li navbar__link active"><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <div class="fix-navbar"></div>
+    <main class="center">
+        <h1 class="page-title">Weather Gallery</h1>
+        <div class="gallery">
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/PxK7xyoSNk4/288x216/"
+                        alt="Mist on the countryside" width="288" height="216"></a>
+                    <figcaption><a href="#">Mist on the countryside</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/q_CK7PnrTtU/288x216/"
+                        alt="Cactus with rain drops" width="288" height="216"></a>
+                    <figcaption><a href="#">Cactus with rain drops</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/8ziKea1xXLU/288x216/"
+                        alt="Lightning over Antananarivo" width="288" height="216"></a>
+                    <figcaption><a href="#">Lightning over Antananarivo</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/5Mh8iz9vqpY/288x216/"
+                        alt="Lightning in the highlands" width="288" height="216"></a>
+                    <figcaption><a href="#">Lightning in the highlands</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/JjYhagSxnOU/288x216/"
+                        alt="Sunrise in the valley" width="288" height="216"></a>
+                    <figcaption><a href="#">Sunrise in the valley</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/Tkd0uSnNXfo/288x216/"
+                        alt="Menacing clouds" width="288" height="216"></a>
+                    <figcaption><a href="#">Menacing clouds</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/i9w4Uy1pU-s/288x216/"
+                        alt="Incoming cyclone" width="288" height="216"></a>
+                    <figcaption><a href="#">Incoming cyclone</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/Tf-qtxkNisk/288x216/"
+                        alt="Sun over the palm tree" width="288" height="216"></a>
+                    <figcaption><a href="#">Sun over the palm tree</a></figcaption>
+                </figure>
+            <figure><a href="#">
+                    <img src="img/Placeholder-288-216.png" data-src="https://source.unsplash.com/F-t5EpfQNpk/288x216/"
+                        alt="Heavy rain in the summmer" width="288" height="216"></a>
+                    <figcaption><a href="#">Heavy rain in the summmer</a></figcaption>
+                </figure>
+
+        </div>
+
+    </main>
+
+    <footer class="center b-radius">
+        <p class="information">&copy; <span id="currentYear"></span> | Julien Connault | <span id="currentDate"></span>
+        </p>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/lazyload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4ecb5a630a.js" crossorigin="anonymous"></script>
+
+    <meta name="description"
+        content="Find out if the weather is favorable for your trip in Madagascar and which roads are usable">
+    <meta name="keywords" content="Madagascar, weather, roads, road, trip, travel, rain, meteo">
+    <title>Fish Haven - Madaroad</title>
+</head>
+
+<body class="preston">
+    
+    <!-- Pop-up Message -->
+    <div class="bck-darkred clr-light" id="message">Saturday = Preston Pancakes in the Park! 9:00 a.m. Saturday at the
+        city park pavilion.</div>
+    <header>
+        
+        <!-- BANNER -->
+        <div class="center flex">
+            <div class="logo"><a href="index.html">
+                <img src="img/logo.svg" alt="logo"></a>
+            </div>
+            <div class="headings clr-darker">
+                <h1 class="site-title">MADAROAD</h1>
+                <h2 class="motto">We know where to go</h2>
+            </div>
+            <div id="nav-icon1" class="nav-icon1" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <ul class="center hide" id="primaryNav">
+            <li class="li navbar__link"><a href="index.html">Home</a></li>
+            <li class="li navbar__link"><a href="preston.html">Preston</a></li>
+            <li class="li navbar__link"><a href="soda_spring.html">Soda Springs</a></li>
+            <li class="li navbar__link active"><a href="fish-haven.html">Fish Haven</a></li>
+            <li class="li navbar__link"><a href="storm_center.html">Storm Center</a></li>
+            <li class="li navbar__link"><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <div class="fix-navbar"></div>
+    <main class="center">
+        <h1 class="page-title" id="town-name">Fish Haven Idaho</h1>
+        <picture class="hero-img">
+            <source media="(max-width: 500px)" srcset="img/roadsnow-500.jpg">
+            <source media="(max-width: 800px)" srcset="img/roadsnow-800.jpg">
+            <img class="bs" src="img/roadsnow-1024.jpg" alt="snowy road">
+        </picture>
+
+        <!-- Weather Summary -->
+        <section class="weather-summary bs clr-light b-radius">
+            <h3 class="weather-summary__title">Weather Summary</h3>
+            <span class="bck-light b-radius"></span>
+            <div class="category">
+                <p>Currently: </p>
+                <p>High: </p>
+                <p>Wind Chill: </p>
+                <p>Humidity: </p>
+                <p>Wind Speed: </p>
+            </div>
+            <div class="data clr-honey">
+                <p><span id="currentWeather">Fetching...</span></p>
+                <p><span id="temp"></span> &#8457;</p>
+                <p><span id="windChill"></span> &#8457;</p>
+                <p><span id="humidity"></span>%</p>
+                <p><span id="windSpeed"></span> mph</p>
+            </div>
+        </section>
+
+        <!-- Five Day Forecat -->
+        <section class="forecast">
+            <h2 class="forecast__title">Five Day Forecast</h2>
+            <div class="forecast__grid" id="cards">
+            </div>
+        </section>
+
+        <!-- Incoming Events -->
+        <section class="incoming-events bs clr-light b-radius">
+            <h3 class="incoming-events__title">Incoming Events</h3>
+            <span class="bck-light b-radius"></span>
+            <div class="events" id="events">
+            </div>
+        </section>
+        
+        <!-- Article -->
+        <section class="article bs b-radius">
+            <h2>Article Title</h2>
+            <div class="inline">
+                <img class="top-img bs b-radius" src="img/fishcity.jpg" alt="the city of Fish Haven">
+                <p>Fish Haven has been the least affected by the great dimensional shift so far. ven though some people want to wall up the city to prevent Malagasy refugees to come in, we have seen a great outpouring of solidarity. <br>
+                    The Elevatus Foundation non-profit, who has been helping malnourished children in Madagascar for the past 10 years, has used this opportunity to connect their board of directors in Utah directly with their team on-site, and are now receiving more donations than they ever had. They are helping the Malagasy refugees to find food and shelter.
+                </p>
+                <img class="bottom-img bs" src="img/fishcity.jpg" alt="the city of Fish Haven">
+            </div>
+        </section>
+
+        <!-- Contact -->
+         <section class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact__column">
+                    <h3>Address:</h3>
+                    <p>The Weather Center <br>
+                        123 Main Street. <br>
+                        Franklin, MI 87654</p>
+                </div>
+                <div class="contact__column">
+                    <h3>Phone:</h3>
+                    <p>(801) 555-1234</p>
+                    <h3>Email:</h3>
+                    <p>contact@yoururl.com</p>
+                    <div class="social">
+                        <a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                        <a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a>
+                        <a target="_blank" href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a>
+                    </div>
+                </div>
+
+                <img class="google-map bs b-radius" src="img/Mada.jpg" alt="map of Madagascar">
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="center b-radius">
+        <p class="information">&copy; <span id="currentYear"></span> | Julien Connault | <span id="currentDate"></span>
+        </p>
+        <p>Weather data provided by <a href="https://openweathermap.org">OpenWeatherMap.org</a></p>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/weatherapi.js"></script>
+    <script src="js/events.js"></script>
+</body>
+
+</html>
