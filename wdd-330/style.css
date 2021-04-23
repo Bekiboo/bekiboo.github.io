@@ -14,6 +14,7 @@ body {
 
 a {
     text-decoration: none;
+    transition: 200ms;
 }
 
 header {
@@ -23,14 +24,16 @@ header {
     background: var(--honey);
     padding: 1em;
     color: white;
+    font-family: helve;
 }
 
 header a:visited {
     color: white;
 }
 
-h1 {
+h1 a {
     color: white;
+    transition: 200ms;
 }
 
 h2 {
@@ -47,6 +50,7 @@ li a {
 
 main {
     padding: 1em;
+    min-height: 75vh;
 }
 
 section {
@@ -61,17 +65,23 @@ h4 {
     padding-top: .5em;
 }
 
+footer {
+    background: var(--honey);
+    height: 6em;
+}
+
 @media only screen and (min-width: 900px) {
     header {
         flex-direction: row;
     }
+
     h1 {
         font-size: 3rem;
         margin-right: 1em;
     }
-    
+
 }
-    
+
 a:hover,
 header h1 a:hover {
     color: hsl(9, 65%, 47%);
