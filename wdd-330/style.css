@@ -24,7 +24,6 @@ header {
     background: var(--honey);
     padding: 1em;
     color: white;
-    font-family: helve;
 }
 
 header a:visited {
