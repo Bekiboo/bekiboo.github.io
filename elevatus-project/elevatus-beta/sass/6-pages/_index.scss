@@ -1,10 +1,14 @@
 .hero {
-    height: 100vh;
+    height: calc(100vh - 80px);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+
+    @include respond(tab-port) {
+        margin-top: 80px;
+    }
 
     &::after {
         @include cover(10);
@@ -24,6 +28,7 @@
 
     .video-large {
         display: none;
+
         @include respond(tab-port) {
             display: block;
         }
@@ -31,6 +36,7 @@
 
     .video-thin {
         display: block;
+
         @include respond(tab-port) {
             display: none;
         }
@@ -105,6 +111,7 @@
         color: $primary-600;
         font-size: 1.5rem;
         max-width: 30ch;
+
         @include respond(tab-port) {
             font-size: 2rem;
         }
@@ -120,13 +127,73 @@
 .infographic {
     color: $dark-800;
 
-    h2 {
-        color: $red-error;
-    }
-
+    
     img {
         max-width: 50%;
         max-height: 12em;
     }
     
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+        max-width: 20em;
+        margin: 0 auto;
+        
+        h3 {
+            font-size: 3rem;
+        }
+        
+        em {
+            font-style: unset;
+            font-weight: 700;
+        }
+        
+        p {
+            max-width: 17ch;
+        }
+    }
+
+    &--dark {
+        h2 {
+            color: $red-error;
+        }
+        .infographic__card {
+            div {
+                text-align: right;
+                line-height: 1.2;
+            }
+    
+            &:nth-of-type(even) {
+                flex-direction: row-reverse;
+                // background: $honey-100;
+                div {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    
+    &--light {
+        h2 {
+            color: $green-success;
+            text-align: right;
+        }
+        .infographic__card {
+            div {
+                text-align: right;
+                line-height: 1.2;
+            }
+    
+            &:nth-of-type(odd) {
+                flex-direction: row-reverse;
+                // background: $honey-100;
+                div {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
 }

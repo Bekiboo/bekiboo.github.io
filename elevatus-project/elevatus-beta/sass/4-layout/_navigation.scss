@@ -1,31 +1,28 @@
 header {
     position: fixed;
-    top: 0;
+    bottom: 0;
     z-index: 999;
     width: 100%;
+    height: 80px;
     text-align: left;
-    background: rgba($primary-500, .95);
+    background: rgba($primary-500, .98);
 
     @include respond(tab-port) {
         display: grid;
         place-items: center;
+        bottom: unset;
+        top: 0;
     }
 
-     .header__content {
+    .header__content {
 
         @include respond(tab-port) {
             display: flex;
             justify-content: space-between;
-            
+
         }
     }
-    
-}
 
-.logo {
-    @include respond(tab-port) {
-        grid-column: 2 / span 1;
-    }
 }
 
 .logo img {
@@ -36,21 +33,25 @@ header {
 nav {
     position: absolute;
     text-align: right;
-    top: 100%;
+    bottom: 99%;
     right: 0;
     width: 100%;
-    background: rgba($primary-500, .95);
+    background: rgba($primary-500, .98);
     transform: scale(1, 0);
-    transform-origin: top right;
+    transform-origin: bottom right;
     transition: 0.4s ease-in-out;
-    
+
     ul {
         list-style: none;
     }
 
     li {
-        margin-bottom: 1em;
+        margin-top: 1em;
         margin-right: 1em;
+
+        @include respond(tab-port){
+            margin-top: 0;
+        }
     }
 
     a {
@@ -73,7 +74,6 @@ nav {
 
     @include respond(tab-port) {
         all: unset;
-        grid-column: 3 / 4;
         display: flex;
         justify-content: flex-end;
         align-items: center;

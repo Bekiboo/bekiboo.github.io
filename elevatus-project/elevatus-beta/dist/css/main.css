@@ -593,17 +593,20 @@ footer {
 
 header {
   position: fixed;
-  top: 0;
+  bottom: 0;
   z-index: 999;
   width: 100%;
+  height: 80px;
   text-align: left;
-  background: rgba(255, 187, 0, 0.95);
+  background: rgba(255, 187, 0, 0.98);
 }
 
 @media only screen and (min-width: 48em) {
   header {
     display: grid;
     place-items: center;
+    bottom: unset;
+    top: 0;
   }
 }
 
@@ -611,12 +614,6 @@ header {
   header .header__content {
     display: flex;
     justify-content: space-between;
-  }
-}
-
-@media only screen and (min-width: 48em) {
-  .logo {
-    grid-column: 2 / span 1;
   }
 }
 
@@ -628,12 +625,12 @@ header {
 nav {
   position: absolute;
   text-align: right;
-  top: 100%;
+  bottom: 99%;
   right: 0;
   width: 100%;
-  background: rgba(255, 187, 0, 0.95);
+  background: rgba(255, 187, 0, 0.98);
   transform: scale(1, 0);
-  transform-origin: top right;
+  transform-origin: bottom right;
   transition: 0.4s ease-in-out;
 }
 
@@ -642,8 +639,14 @@ nav ul {
 }
 
 nav li {
-  margin-bottom: 1em;
+  margin-top: 1em;
   margin-right: 1em;
+}
+
+@media only screen and (min-width: 48em) {
+  nav li {
+    margin-top: 0;
+  }
 }
 
 nav a {
@@ -669,7 +672,6 @@ nav a:hover {
 @media only screen and (min-width: 48em) {
   nav {
     all: unset;
-    grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -764,12 +766,18 @@ nav a:hover {
 }
 
 .hero {
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+@media only screen and (min-width: 48em) {
+  .hero {
+    margin-top: 80px;
+  }
 }
 
 .hero::after {
@@ -907,12 +915,65 @@ nav a:hover {
   color: #2f3337;
 }
 
-.infographic h2 {
-  color: #d53f3f;
-}
-
 .infographic img {
   max-width: 50%;
   max-height: 12em;
+}
+
+.infographic__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  max-width: 20em;
+  margin: 0 auto;
+}
+
+.infographic__card h3 {
+  font-size: 3rem;
+}
+
+.infographic__card em {
+  font-style: unset;
+  font-weight: 700;
+}
+
+.infographic__card p {
+  max-width: 17ch;
+}
+
+.infographic--dark h2 {
+  color: #d53f3f;
+}
+
+.infographic--dark .infographic__card div {
+  text-align: right;
+  line-height: 1.2;
+}
+
+.infographic--dark .infographic__card:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.infographic--dark .infographic__card:nth-of-type(even) div {
+  text-align: left;
+}
+
+.infographic--light h2 {
+  color: #24d6af;
+  text-align: right;
+}
+
+.infographic--light .infographic__card div {
+  text-align: right;
+  line-height: 1.2;
+}
+
+.infographic--light .infographic__card:nth-of-type(odd) {
+  flex-direction: row-reverse;
+}
+
+.infographic--light .infographic__card:nth-of-type(odd) div {
+  text-align: left;
 }
 /*# sourceMappingURL=main.css.map */
