@@ -1,4 +1,4 @@
-const numberOfWeeks = 1;
+const numberOfWeeks = 2;
 
 let listOfWeek = document.getElementById("weekList");
 

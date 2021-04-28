@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css" />
+  <title>WDD 330</title>
+</head>
+
+<body>
+  <header>
+    <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
+    <a href="../index.html">Back</a>
+  </header>
+  <main>
+    <section>
+      <h2>Team Activity - Code</h2><p>
+<h4>TEAM ACTIVITY A</h4>
+function teamActivityA() { <br>
+    &emsp;let a = parseInt(document.getElementById('inputA').value); <br>
+ <br>
+    &emsp;const addInteger = (int) => { <br>
+    &emsp;    &emsp;totalInt = 0; <br>
+ <br>
+    &emsp;    &emsp;if (Number.isInteger(int)) { <br>
+    &emsp;    &emsp;    &emsp;if (int < 0) { <br>
+    &emsp;    &emsp;    &emsp;    &emsp;int *= -1 <br>
+    &emsp;    &emsp;    &emsp;} <br>
+    &emsp;    &emsp;    &emsp;for (let i = 1; i <= int; i++) { <br>
+    &emsp;    &emsp;    &emsp;    &emsp;totalInt += i; <br>
+    &emsp;    &emsp;    &emsp;    &emsp;document.getElementById("outputA").innerHTML = totalInt; <br>
+    &emsp;    &emsp;    &emsp;} <br>
+ <br>
+    &emsp;    &emsp;} else { <br>
+    &emsp;    &emsp;    &emsp;document.getElementById("outputA").innerHTML = "Enter an Integer please"; <br>
+    &emsp;    &emsp;} <br>
+    &emsp;} <br>
+    &emsp;addInteger(a); <br>
+} <br>
+ <br>
+ <br>
+<h4>TEAM ACTIVIY B</h4>
+const add = (num1, num2) => num1 + num2; <br>
+const sub = (num1, num2) => num1 - num2; <br>
+const mul = (num1, num2) => num1 * num2; <br>
+ <br>
+const displayTotal = (total) => { <br>
+  &emsp;document.getElementById("outputB").innerHTML = "Total: " + total; <br>
+} <br>
+ <br>
+function teamActivityB(operation) { <br>
+    &emsp;let b = parseFloat(document.getElementById('inputB').value); <br>
+    &emsp;let c = parseFloat(document.getElementById('inputC').value); <br>
+ <br>
+    &emsp;if ((b + c) !== NaN) { <br>
+    &emsp;    &emsp;const compute = operation(b, c); <br>
+    &emsp;    &emsp;displayTotal(compute); <br>
+    &emsp;} else { <br>
+    &emsp;    &emsp;document.getElementById("outputB").innerHTML = "Enter valid numbers please"; <br>
+    &emsp;} <br>
+}</p>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+
+</html>&emsp;

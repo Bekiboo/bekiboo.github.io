@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css" />
+  <title>WDD 330</title>
+</head>
+
+<body>
+  <header>
+    <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
+    <a href="../index.html">Back</a>
+  </header>
+  <main>
+    <section>
+      <h2>Bean Counting - Code</h2>
+      function beanCounting() { <br>
+      &emsp;let a = document.getElementById('inputA').value; <br>
+      &emsp;let b = document.getElementById('inputB').value; <br>
+      &emsp; <br>
+      &emsp;const countChar = (string, char) => { <br>
+      &emsp; &emsp;let count = 0; <br>
+      &emsp; &emsp;for (let i = 0; i < string.length; i++) { <br>
+        &emsp; &emsp; &emsp;if(string.charAt(i) == char) { <br>
+        &emsp; &emsp; &emsp; &emsp;count += 1
+        <br>
+        &emsp; &emsp; &emsp;}; <br>
+        &emsp; &emsp;} <br>
+        &emsp; &emsp;document.getElementById("output").innerHTML = <br>
+        &emsp; &emsp;`There is ${count} "${char}" in "${string}"`; <br>
+        &emsp;} <br>
+        <br>
+        &emsp;countChar(a, b) <br>
+        <br>
+        } <br>
+
+    </section>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

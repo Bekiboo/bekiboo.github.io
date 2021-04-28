@@ -14,7 +14,12 @@ body {
 
 a {
     text-decoration: none;
-    transition: 200ms;
+    transition: 100ms;
+    color: hsl(189, 65%, 50%)
+}
+
+a:hover {
+    color: hsl(189, 65%, 70%);
 }
 
 header {
@@ -26,13 +31,20 @@ header {
     color: white;
 }
 
-header a:visited {
+header > a {
+    background: hsl(189, 65%, 50%);
+    color: white;
+    padding: 0 .5em 0 .5em;
+    border-radius: 25em;
+}
+
+header > a:hover {
+    background: hsl(189, 65%, 70%);
     color: white;
 }
 
 h1 a {
     color: white;
-    transition: 200ms;
 }
 
 h2 {
@@ -41,10 +53,6 @@ h2 {
 
 li {
     list-style: none;
-}
-
-li a {
-    color: black;
 }
 
 main {
@@ -79,14 +87,4 @@ footer {
         margin-right: 1em;
     }
 
-}
-
-a:hover,
-header h1 a:hover {
-    color: hsl(9, 65%, 47%);
-}
-
-a:active,
-header h1 a:active {
-    color: hsl(9, 100%, 27%);
 }
