@@ -36,14 +36,14 @@ function teamActivityA() {
     const addInteger = (int) => {
         totalInt = 0;
 
-        if (Number.isInteger(int)) {
+        if (Number.isInteger(int) && int < 1000000) {
             if (int < 0) {
                 int *= -1
             }
             for (let i = 1; i <= int; i++) {
                 totalInt += i;
-                document.getElementById("outputA").innerHTML = totalInt;
             }
+            document.getElementById("outputA").innerHTML = totalInt;
 
         } else {
             document.getElementById("outputA").innerHTML = "Enter an Integer please";
@@ -57,9 +57,10 @@ function teamActivityA() {
 const add = (num1, num2) => num1 + num2;
 const sub = (num1, num2) => num1 - num2;
 const mul = (num1, num2) => num1 * num2;
+const div = (num1, num2) => num1 / num2;
 
 const displayTotal = (total) => {
-    document.getElementById("outputB").innerHTML = "Total: " + total;
+    document.getElementById("outputB").innerHTML = "Total: " + Math.round(total *100)/100;
 }
 
 function teamActivityB(operation) {

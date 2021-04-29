@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap");
+/* General styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 48em) {
+  body div {
+    display: flex;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lora", serif;
+}
+
+a {
+  color: #6494ed;
+  text-decoration: none;
+}
+
+a:active {
+  color: burlywood;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+header {
+  background: #6494ed;
+  text-align: right;
+  padding: 2em;
+}
+
+@media only screen and (min-width: 48em) {
+  header {
+    padding: 1.5em;
+    width: 600px;
+  }
+}
+
+header a {
+  color: #faead6;
+}
+
+header h1 {
+  padding: 1em 0 1em 0;
+  font-weight: 600;
+}
+
+header hr {
+  margin-bottom: .5em;
+}
+
+/* NAVIGATION */
+nav li {
+  list-style: none;
+  padding: .5em;
+}
+
+/* MAIN */
+main {
+  background: #faead6;
+  padding: 5vw;
+}
+
+/* ARTICLE */
+article {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  background: white;
+  padding: 2em;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+
+article img {
+  height: 300px;
+  margin-top: 4em;
+  margin-bottom: 1.5em;
+}
+
+article figure {
+  display: grid;
+  justify-content: center;
+}
+
+article h2 {
+  font-size: 1.7rem;
+}
+
+article h2 a {
+  color: black;
+}
+
+article .post-date {
+  color: #919191;
+  font-weight: 600;
+}
+/*# sourceMappingURL=main.css.map */
