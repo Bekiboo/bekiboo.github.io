@@ -12,6 +12,12 @@ body {
     font-family: Poppins, Helvetica, sans-serif;
 }
 
+img {
+    width: 100%;;
+    max-width: 32em;
+    object-fit: cover;
+}
+
 a {
     text-decoration: none;
     transition: 100ms;
@@ -69,6 +75,7 @@ section p {
 }
 
 h4 {
+    font-size: 1.2rem;
     padding-top: .5em;
 }
 

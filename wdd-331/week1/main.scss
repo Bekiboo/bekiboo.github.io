@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap');
 
 // ---------- VARIABLES ----------
-$clr-primary: hsl(219, 79%, 66%);
-$clr-secondary: hsl(34, 78%, 91%);
-$clr-tertiary: hsl(34, 57%, 70%);
+$clr-primary: #6494ed;
+$clr-secondary: #faead6;
+$clr-tertiary: #deb887;
 
 $f-primary: 'Lora',
 serif;
@@ -74,7 +74,7 @@ a {
     text-decoration: none;
 
     &:active {
-        color: $clr-tertiary;
+        color: $clr-tertiary !important;
     }
 
     &:hover {
@@ -144,6 +144,10 @@ article {
 
         a {
             color: black;
+
+            &:hover {
+                color: $clr-primary;
+            }
         }
     }
 

@@ -4,6 +4,6 @@ function toggleMenu() {
   document.getElementById("js-nav").classList.toggle("display-nav");
 }
 
-$('.button').click(function () {
-  $(this).parent().toggleClass('expand');     
-});
+// $('.button').click(function () {
+//   $(this).parent().toggleClass('expand');     
+// });

@@ -21,7 +21,12 @@ section {
 
 .container-section {
     overflow: auto;
-    width: calc(4.5em + 80%);
+    width: 100%;
+
+    @include respond(tab-port) {
+        width: 90%;
+    }
+
     max-width: 1000px;
     padding: 0 20px;
 }

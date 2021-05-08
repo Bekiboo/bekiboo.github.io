@@ -109,7 +109,6 @@
 
     h2 {
         color: $primary-600;
-        font-size: 1.5rem;
         max-width: 30ch;
 
         @include respond(tab-port) {
@@ -126,6 +125,8 @@
 
 .infographic {
     color: $dark-800;
+    margin-top: 2em;
+    margin-bottom: 2em;
 
     
     img {
@@ -167,7 +168,6 @@
     
             &:nth-of-type(even) {
                 flex-direction: row-reverse;
-                // background: $honey-100;
                 div {
                     text-align: left;
                 }
@@ -176,10 +176,16 @@
     }
     
     &--light {
+        margin-top: 2em;
         h2 {
-            color: $green-success;
+            color: $honey-500;
             text-align: right;
         }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
         .infographic__card {
             div {
                 text-align: right;
@@ -188,7 +194,6 @@
     
             &:nth-of-type(odd) {
                 flex-direction: row-reverse;
-                // background: $honey-100;
                 div {
                     text-align: left;
                 }

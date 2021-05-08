@@ -485,9 +485,15 @@ section {
 
 .container-section {
   overflow: auto;
-  width: calc(4.5em + 80%);
+  width: 100%;
   max-width: 1000px;
   padding: 0 20px;
+}
+
+@media only screen and (min-width: 48em) {
+  .container-section {
+    width: 90%;
+  }
 }
 
 h2 {
@@ -638,6 +644,12 @@ nav ul {
   list-style: none;
 }
 
+@media only screen and (min-width: 48em) {
+  nav ul {
+    display: flex;
+  }
+}
+
 nav li {
   margin-top: 1em;
   margin-right: 1em;
@@ -646,6 +658,7 @@ nav li {
 @media only screen and (min-width: 48em) {
   nav li {
     margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -656,16 +669,18 @@ nav a {
   text-transform: uppercase;
   opacity: 0;
   transition: opacity .15s ease-in-out;
-  font-weight: 400;
+  font-weight: 500;
+  position: relative;
 }
 
-nav a:hover {
+nav a:active {
   color: #54abde;
 }
 
 @media only screen and (min-width: 48em) {
   nav a {
     opacity: 1;
+    font-size: 1rem;
   }
 }
 
@@ -673,17 +688,25 @@ nav a:hover {
   nav {
     all: unset;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
   }
-  nav ul {
-    display: flex;
+  nav .nav__a::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: white;
+    position: absolute;
+    top: -0.35em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
   }
-  nav li {
-    margin-bottom: 0;
+  nav .nav__a::before:active {
+    background: #54abde;
   }
-  nav a {
-    font-size: 1rem;
+  nav .nav__a:hover::before {
+    transform: scale(1, 1);
   }
 }
 
@@ -895,7 +918,6 @@ nav a:hover {
 
 .mission-statement h2 {
   color: #cc9600;
-  font-size: 1.5rem;
   max-width: 30ch;
 }
 
@@ -913,6 +935,8 @@ nav a:hover {
 
 .infographic {
   color: #2f3337;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .infographic img {
@@ -959,9 +983,17 @@ nav a:hover {
   text-align: left;
 }
 
+.infographic--light {
+  margin-top: 2em;
+}
+
 .infographic--light h2 {
-  color: #24d6af;
+  color: #ffbb00;
   text-align: right;
+}
+
+.infographic--light h3 {
+  font-size: 1.75rem;
 }
 
 .infographic--light .infographic__card div {

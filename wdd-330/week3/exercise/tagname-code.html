@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css" />
+  <title>WDD 330</title>
+</head>
+
+<body>
+  <header>
+    <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
+    <a href="../index.html">Back</a>
+  </header>
+  <main>
+    <section>
+      <h2>Elements by tag name - Code</h2>
+    &emsp;function byTagName(node, tagName) { <br>
+    &emsp;  &emsp;descendant = []; <br>
+    &emsp;  &emsp;tagName = tagName.toUpperCase(); <br>
+ <br>
+    &emsp;  &emsp;function findNodes(node) { <br>
+    &emsp;  &emsp;    &emsp;for (let i = 0; i < node.childNodes.length; i++) { <br>
+    &emsp;  &emsp;    &emsp;    &emsp;const child = node.childNodes[i]; <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;if (child.nodeType == 1) { <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;    &emsp;if (child.nodeName == tagName) { <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;    &emsp;    &emsp;descendant.push(child) <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;    &emsp;} <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;    &emsp;findNodes(child) <br>
+    &emsp;  &emsp;    &emsp;    &emsp;&emsp;} <br>
+    &emsp;  &emsp;    &emsp;} <br>
+    &emsp;  &emsp;} <br>
+ <br>
+    &emsp;  &emsp;findNodes(node); <br>
+    &emsp;  &emsp;return descendant; <br>
+    &emsp; <br>
+ <br>
+    console.log(byTagName(document.body, "h1").length); <br>
+    // → 2 <br>
+    console.log(byTagName(document.body, "span").length); <br>
+    // → 3 <br>
+    let para = document.querySelector("p"); <br>
+    console.log(byTagName(para, "span").length); <br>
+    // → 2 <br>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

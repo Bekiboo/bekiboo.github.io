@@ -19,10 +19,8 @@ header {
         @include respond(tab-port) {
             display: flex;
             justify-content: space-between;
-
         }
     }
-
 }
 
 .logo img {
@@ -43,14 +41,19 @@ nav {
 
     ul {
         list-style: none;
-    }
 
+        @include respond(tab-port) {
+            display: flex;
+        }
+    }
+    
     li {
         margin-top: 1em;
         margin-right: 1em;
-
-        @include respond(tab-port){
+        
+        @include respond(tab-port) {
             margin-top: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -61,34 +64,45 @@ nav {
         text-transform: uppercase;
         opacity: 0;
         transition: opacity .15s ease-in-out;
-        font-weight: 400;
+        font-weight: 500;
+        position: relative;
 
-        &:hover {
+        &:active {
             color: $interactive-400;
         }
 
         @include respond(tab-port) {
             opacity: 1;
+            font-size: 1rem;
         }
     }
 
     @include respond(tab-port) {
         all: unset;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
+        
+        .nav__a {
+            &::before {
+                content: '';
+                display: block;
+                height: 3px;
+                background: white;
+                position: absolute;
+                top: -0.35em;
+                left: 0;
+                right: 0;
+                transform: scale(0, 1);
+                transition: transform ease-in-out 250ms;
 
-
-        ul {
-            display: flex;
-        }
-
-        li {
-            margin-bottom: 0;
-        }
-
-        a {
-            font-size: 1rem;
+                &:active {
+                    background: $interactive-400;
+                }
+            }
+    
+            &:hover::before {
+                transform: scale(1, 1);
+            }
         }
     }
 }
@@ -171,5 +185,4 @@ nav {
     @include respond(tab-port) {
         display: none;
     }
-
 }

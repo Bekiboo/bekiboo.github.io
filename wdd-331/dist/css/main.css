@@ -30,7 +30,7 @@ a {
 }
 
 a:active {
-  color: burlywood;
+  color: #deb887 !important;
 }
 
 a:hover {
@@ -104,6 +104,10 @@ article h2 {
 
 article h2 a {
   color: black;
+}
+
+article h2 a:hover {
+  color: #6494ed;
 }
 
 article .post-date {
