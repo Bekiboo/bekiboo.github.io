@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css" />
+  <title>WDD 330</title>
+</head>
+
+<body>
+  <header>
+    <h1><a href="../../../index.html">WDD 330 PORTFOLIO</a></h1>
+    <a href="../../index.html">Back</a>
+  </header>
+  <main>
+    <section>
+      <h2>Tic Tac Toe - Code</h2>
+const boxAll = document.querySelectorAll('.box') <br>
+const board = document.querySelector('.board') <br>
+const button = document.querySelector('button') <br>
+const resultDiv = document.querySelector('.result') <br>
+ <br>
+let xTurn = true <br>
+let turnNumber = 0 <br>
+ <br>
+const winningCombo = [ <br>
+&emsp;// horizontal <br>
+&emsp;[1, 2, 3], <br>
+&emsp;[4, 5, 6], <br>
+&emsp;[7, 8, 9], <br>
+&emsp;// vertical <br>
+&emsp;[1, 4, 7], <br>
+&emsp;[2, 5, 8], <br>
+&emsp;[3, 6, 9], <br>
+&emsp;// diagonal <br>
+&emsp;[1, 5, 9], <br>
+&emsp;[3, 5, 7], <br>
+]; <br>
+ <br>
+const currentStateX = [] <br>
+const currentStateO = [] <br>
+ <br>
+function toggleBox() { <br>
+&emsp;boxState = this.dataset['state'] <br>
+&emsp;boxId = this.dataset['id'] <br>
+&emsp;turnNumber += 1 <br>
+&emsp;if (boxState == "" && turnNumber <= 9) { <br>
+&emsp;&emsp;if (xTurn == true) { <br>
+&emsp;&emsp;&emsp;this.setAttribute('data-state', 'x') <br>
+&emsp;&emsp;&emsp;board.setAttribute('data-turn', 'o') // sets board turn to "o" <br>
+&emsp;&emsp;&emsp;xTurn = false <br>
+&emsp;&emsp;&emsp;currentStateX.push(parseInt(boxId)) <br>
+&emsp;&emsp;&emsp;if (checkWin(winningCombo, currentStateX)) endGame("X wins") <br>
+ <br>
+&emsp;&emsp;} else { <br>
+&emsp;&emsp;&emsp;this.setAttribute('data-state', 'o') <br>
+&emsp;&emsp;&emsp;board.setAttribute('data-turn', 'x') // sets board turn to "x" <br>
+&emsp;&emsp;&emsp;xTurn = true <br>
+&emsp;&emsp;&emsp;currentStateO.push(parseInt(boxId)) <br>
+&emsp;&emsp;&emsp;if (checkWin(winningCombo, currentStateO)) endGame("O wins") <br>
+&emsp;&emsp;} <br>
+&emsp;} <br>
+ <br>
+&emsp;if (turnNumber == 9) endGame("Draw"); <br>
+} <br>
+ <br>
+ <br>
+function checkWin(solutions, state) { <br>
+&emsp;return solutions.some(solution => { <br>
+&emsp;&emsp;return solution.every(i => state.includes(i)); <br>
+&emsp;}) <br>
+} <br>
+ <br>
+function endGame(finalState) { <br>
+&emsp;resultDiv.innerHTML = finalState <br>
+&emsp;boxAll.forEach(box => { <br>
+&emsp;&emsp;if (box.dataset['state'] == '') {&emsp;<br>
+&emsp;&emsp;&emsp;box.setAttribute('data-state', 'end') <br>
+&emsp;&emsp;} <br>
+&emsp;}) <br>
+} <br>
+ <br>
+ <br>
+function resetBoard() { <br>
+&emsp;board.setAttribute('data-turn', 'x') <br>
+&emsp;boxAll.forEach(box => { <br>
+&emsp;&emsp;box.setAttribute('data-state', '') <br>
+&emsp;}) <br>
+&emsp;xTurn = true <br>
+&emsp;turnNumber = 0 <br>
+&emsp;currentStateX.length = 0 <br>
+&emsp;currentStateO.length = 0 <br>
+&emsp;resultDiv.innerHTML = '' <br>
+} <br>
+ <br>
+ <br>
+boxAll.forEach(box => { <br>
+&emsp;box.addEventListener('click', toggleBox) <br>
+}); <br>
+button.addEventListener('click', resetBoard) <br>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

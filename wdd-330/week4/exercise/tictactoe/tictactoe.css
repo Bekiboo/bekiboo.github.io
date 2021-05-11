@@ -1,0 +1,92 @@
+:root {
+  --border: 8px solid black;
+}
+
+.tictac {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.box:nth-child(3n + 2) {
+  border-left: var(--border);
+  border-right: var(--border);
+}
+
+.box:nth-child(4),
+.box:nth-child(5),
+.box:nth-child(6) {
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.box[data-state] {
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: 0.125s ease-in-out;
+}
+
+.box[data-state="x"] {
+  cursor: not-allowed;
+  background: rgb(206, 166, 79);
+}
+
+.box[data-state="o"] {
+  cursor: not-allowed;
+  background: rgb(206, 104, 79);
+}
+
+.box[data-state=""]:hover {
+  background: hsl(0, 0%, 35%);
+}
+
+.box[data-state="x"]:after {
+  content: "\274C";
+}
+
+.box[data-state="o"]:after {
+  content: "\2B55";
+}
+
+.board[data-turn="x"] .box[data-state=""]:hover:before {
+  content: "\274C";
+}
+
+.board[data-turn="o"] .box[data-state=""]:hover:before {
+  content: "\2B55";
+}
+
+.result {
+    height: 4rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+button {
+  display: block;
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 7%;
+  background: hsl(189, 65%, 50%);
+  color: white;
+  transition: 0.2s ease-in;
+  margin: auto;
+}
+
+button:hover {
+  background: hsl(189, 65%, 70%);
+  cursor: pointer;
+}
