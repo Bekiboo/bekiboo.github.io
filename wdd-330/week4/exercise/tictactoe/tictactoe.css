@@ -15,19 +15,19 @@
   justify-items: center;
 }
 
-.box:nth-child(3n + 2) {
+.tile:nth-child(3n + 2) {
   border-left: var(--border);
   border-right: var(--border);
 }
 
-.box:nth-child(4),
-.box:nth-child(5),
-.box:nth-child(6) {
+.tile:nth-child(4),
+.tile:nth-child(5),
+.tile:nth-child(6) {
   border-top: var(--border);
   border-bottom: var(--border);
 }
 
-.box[data-state] {
+.tile[data-state] {
   height: 6rem;
   width: 6rem;
   display: flex;
@@ -37,33 +37,33 @@
   transition: 0.125s ease-in-out;
 }
 
-.box[data-state="x"] {
+.tile[data-state="x"] {
   cursor: not-allowed;
   background: rgb(206, 166, 79);
 }
 
-.box[data-state="o"] {
+.tile[data-state="o"] {
   cursor: not-allowed;
   background: rgb(206, 104, 79);
 }
 
-.box[data-state=""]:hover {
+.tile[data-state=""]:hover {
   background: hsl(0, 0%, 35%);
 }
 
-.box[data-state="x"]:after {
+.tile[data-state="x"]:after {
   content: "\274C";
 }
 
-.box[data-state="o"]:after {
+.tile[data-state="o"]:after {
   content: "\2B55";
 }
 
-.board[data-turn="x"] .box[data-state=""]:hover:before {
+.board[data-turn="x"] .tile[data-state=""]:hover:before {
   content: "\274C";
 }
 
-.board[data-turn="o"] .box[data-state=""]:hover:before {
+.board[data-turn="o"] .tile[data-state=""]:hover:before {
   content: "\2B55";
 }
 

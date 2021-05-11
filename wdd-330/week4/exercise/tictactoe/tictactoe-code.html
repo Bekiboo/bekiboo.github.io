@@ -20,76 +20,80 @@
   <main>
     <section>
       <h2>Tic Tac Toe - Code</h2>
-const boxAll = document.querySelectorAll('.box') <br>
+const tileAll = document.querySelectorAll('.tile') <br>
 const board = document.querySelector('.board') <br>
 const button = document.querySelector('button') <br>
 const resultDiv = document.querySelector('.result') <br>
  <br>
+// Event listeners <br>
+tileAll.forEach(tile => { <br>
+&emsp;tile.addEventListener('click', toggletile) <br>
+}); <br>
+button.addEventListener('click', resetBoard) <br>
+ <br>
+// Board Setup <br>
 let xTurn = true <br>
 let turnNumber = 0 <br>
  <br>
-const winningCombo = [ <br>
-&emsp;// horizontal <br>
+const currentStateX = [] // which tiles have Xs <br>
+const currentStateO = [] // which tiles have Os <br>
+ <br>
+const winningCombo = [ // all possible winning combinations <br>
 &emsp;[1, 2, 3], <br>
 &emsp;[4, 5, 6], <br>
 &emsp;[7, 8, 9], <br>
-&emsp;// vertical <br>
 &emsp;[1, 4, 7], <br>
 &emsp;[2, 5, 8], <br>
 &emsp;[3, 6, 9], <br>
-&emsp;// diagonal <br>
 &emsp;[1, 5, 9], <br>
 &emsp;[3, 5, 7], <br>
 ]; <br>
  <br>
-const currentStateX = [] <br>
-const currentStateO = [] <br>
- <br>
-function toggleBox() { <br>
-&emsp;boxState = this.dataset['state'] <br>
-&emsp;boxId = this.dataset['id'] <br>
+function toggletile() { <br>
+&emsp;tileState = this.dataset['state'] <br>
+&emsp;tileId = this.dataset['id'] <br>
 &emsp;turnNumber += 1 <br>
-&emsp;if (boxState == "" && turnNumber <= 9) { <br>
+&emsp;if (tileState == "" && turnNumber <= 9) { <br>
 &emsp;&emsp;if (xTurn == true) { <br>
 &emsp;&emsp;&emsp;this.setAttribute('data-state', 'x') <br>
 &emsp;&emsp;&emsp;board.setAttribute('data-turn', 'o') // sets board turn to "o" <br>
 &emsp;&emsp;&emsp;xTurn = false <br>
-&emsp;&emsp;&emsp;currentStateX.push(parseInt(boxId)) <br>
-&emsp;&emsp;&emsp;if (checkWin(winningCombo, currentStateX)) endGame("X wins") <br>
+&emsp;&emsp;&emsp;currentStateX.push(parseInt(tileId)) <br>
+&emsp;&emsp;&emsp;checkWin(winningCombo, currentStateX) ? endGame("X wins") : checkDraw(turnNumber) <br>
  <br>
 &emsp;&emsp;} else { <br>
 &emsp;&emsp;&emsp;this.setAttribute('data-state', 'o') <br>
 &emsp;&emsp;&emsp;board.setAttribute('data-turn', 'x') // sets board turn to "x" <br>
 &emsp;&emsp;&emsp;xTurn = true <br>
-&emsp;&emsp;&emsp;currentStateO.push(parseInt(boxId)) <br>
-&emsp;&emsp;&emsp;if (checkWin(winningCombo, currentStateO)) endGame("O wins") <br>
+&emsp;&emsp;&emsp;currentStateO.push(parseInt(tileId)) <br>
+&emsp;&emsp;&emsp;checkWin(winningCombo, currentStateO) ? endGame("O wins") : checkDraw(turnNumber) <br>
 &emsp;&emsp;} <br>
 &emsp;} <br>
- <br>
-&emsp;if (turnNumber == 9) endGame("Draw"); <br>
 } <br>
  <br>
+function checkDraw(turn) { <br>
+&emsp;if (turn == 9) endGame("Draw")&emsp; <br>
+} <br>
  <br>
 function checkWin(solutions, state) { <br>
-&emsp;return solutions.some(solution => { <br>
+&emsp;return solutions.some(solution => { // Checks every solution against the current state <br>
 &emsp;&emsp;return solution.every(i => state.includes(i)); <br>
 &emsp;}) <br>
 } <br>
  <br>
 function endGame(finalState) { <br>
 &emsp;resultDiv.innerHTML = finalState <br>
-&emsp;boxAll.forEach(box => { <br>
-&emsp;&emsp;if (box.dataset['state'] == '') {&emsp;<br>
-&emsp;&emsp;&emsp;box.setAttribute('data-state', 'end') <br>
+&emsp;tileAll.forEach(tile => { // prevents the player from continuing playing <br>
+&emsp;&emsp;if (tile.dataset['state'] == '') { <br>
+&emsp;&emsp;&emsp;tile.setAttribute('data-state', 'end') <br>
 &emsp;&emsp;} <br>
 &emsp;}) <br>
 } <br>
  <br>
- <br>
-function resetBoard() { <br>
+function resetBoard() { // resets everything <br>
 &emsp;board.setAttribute('data-turn', 'x') <br>
-&emsp;boxAll.forEach(box => { <br>
-&emsp;&emsp;box.setAttribute('data-state', '') <br>
+&emsp;tileAll.forEach(tile => { <br>
+&emsp;&emsp;tile.setAttribute('data-state', '') <br>
 &emsp;}) <br>
 &emsp;xTurn = true <br>
 &emsp;turnNumber = 0 <br>
@@ -97,12 +101,6 @@ function resetBoard() { <br>
 &emsp;currentStateO.length = 0 <br>
 &emsp;resultDiv.innerHTML = '' <br>
 } <br>
- <br>
- <br>
-boxAll.forEach(box => { <br>
-&emsp;box.addEventListener('click', toggleBox) <br>
-}); <br>
-button.addEventListener('click', resetBoard) <br>
     </section>
   </main>
   <footer></footer>
