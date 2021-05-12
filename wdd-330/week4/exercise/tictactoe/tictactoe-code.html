@@ -27,7 +27,10 @@ const resultDiv = document.querySelector('.result') <br>
  <br>
 // Event listeners <br>
 tileAll.forEach(tile => { <br>
-&emsp;tile.addEventListener('click', toggletile) <br>
+&emsp;if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen <br>
+&emsp;} else { <br>
+&emsp;&emsp;tile.addEventListener('click', toggletile) <br>
+&emsp;} <br>
 }); <br>
 button.addEventListener('click', resetBoard) <br>
  <br>
@@ -46,7 +49,7 @@ const winningCombo = [ // all possible winning combinations <br>
 &emsp;[2, 5, 8], <br>
 &emsp;[3, 6, 9], <br>
 &emsp;[1, 5, 9], <br>
-&emsp;[3, 5, 7], <br>
+&emsp;[3, 5, 7] <br>
 ]; <br>
  <br>
 function toggletile() { <br>
@@ -71,8 +74,8 @@ function toggletile() { <br>
 &emsp;} <br>
 } <br>
  <br>
-function checkDraw(turn) { <br>
-&emsp;if (turn == 9) endGame("Draw")&emsp; <br>
+function checkDraw(turn) { // Checks if board is full <br>
+&emsp;if (turn == 9) endGame("Draw") <br>
 } <br>
  <br>
 function checkWin(solutions, state) { <br>
@@ -92,7 +95,7 @@ function endGame(finalState) { <br>
  <br>
 function resetBoard() { // resets everything <br>
 &emsp;board.setAttribute('data-turn', 'x') <br>
-&emsp;tileAll.forEach(tile => { <br>
+&emsp;tileAll.forEach(tile => { // empties the board <br>
 &emsp;&emsp;tile.setAttribute('data-state', '') <br>
 &emsp;}) <br>
 &emsp;xTurn = true <br>
