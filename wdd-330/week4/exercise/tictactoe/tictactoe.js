@@ -7,7 +7,7 @@ const resultDiv = document.querySelector('.result')
 tileAll.forEach(tile => {
     if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen
     } else {
-        tile.addEventListener('click', toggletile)
+        tile.addEventListener('click', toggleTile)
     }
 });
 button.addEventListener('click', resetBoard)
@@ -30,7 +30,7 @@ const winningCombo = [ // all possible winning combinations
     [3, 5, 7]
 ];
 
-function toggletile() {
+function toggleTile() {
     tileState = this.dataset['state']
     tileId = this.dataset['id']
     turnNumber += 1

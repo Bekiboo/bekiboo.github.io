@@ -15,22 +15,53 @@
 <body>
   <header>
     <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
-    <h2>Week 01</h2>
+    <a href="../index.html">Back</a>
   </header>
   <main>
     <section>
       <h2>Notes</h2>
-      <p></p>
+      <h4>How to export/import a module</h4>
+      <p>Use keyword <b>export</b> in the module before a variable or function:</p>
+      <ul>
+        <li>&emsp;export const PI = 3.1415926;</li>
+        <li>&emsp;export { <br>
+          &emsp;&emsp;variance, <br>
+          &emsp; &emsp;mean
+          }</li>
+          <li>&emsp;export default stats;</li>
+      </ul>
+      <p>And use keyword <b>import</b> in your main JavaScript file: </p>
+      <ul>
+        <li>&emsp;import { PI } from './pi.js';</li>
+        <li>&emsp;import { mean, variance } from './stats.js';</li>
+        <li>&emsp;import stats from './stats.js';</li>
+      </ul>
     </section>
     <section>
       <h2>Questions</h2>
-      <p></p>
+      <p>Is there an advantage of writting something like:</p> <br>
+      <p>function toggleTile(e) { <br>
+        &emsp;tileState = e.target.dataset['state'] <br>
+        ...</p> <br>
+      <p>Rather than like that:</p> <br>
+      <p>function toggleTile() { <br>
+        &emsp;tileState = this.dataset['state'] <br>
+        ...</p>
     </section>
     <section>
       <h2>Exercises</h2>
       <ul>
         <li>
-          <h4><a href="exercise/tictactoe/tictactoe.html">Tic Tac Toe</a> - <a href="exercise/tictactoe/tictactoe-code.html">Code</a>
+          <h4><a href="exercise/tictactoe/tictactoe.html">Tic Tac Toe</a> - <a
+              href="exercise/tictactoe/tictactoe-code.html">Code</a>
+          </h4>
+        </li>
+        <li>
+          <h4><a href="exercise/finalProject/childrenList.json">JSON file children list</a>
+          </h4>
+        </li>
+        <li>
+          <h4><a href="exercise/MVC/list.html">MVC Example</a>
           </h4>
         </li>
       </ul>
