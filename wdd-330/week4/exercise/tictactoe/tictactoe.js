@@ -6,6 +6,7 @@ const resultDiv = document.querySelector('.result')
 // Event listeners
 tileAll.forEach(tile => {
     if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen
+        tile.addEventListener('touchend', toggleTile)
     } else {
         tile.addEventListener('click', toggleTile)
     }
