@@ -14,8 +14,10 @@ tileAll.forEach(tile => {
 button.addEventListener('click', resetBoard)
 
 // Board Setup
-let xTurn = true
 let turnNumber = 0
+let boardState
+
+turnNumber;
 
 const currentStateX = [] // which tiles have Xs
 const currentStateO = [] // which tiles have Os
@@ -32,21 +34,21 @@ const winningCombo = [ // all possible winning combinations
 ];
 
 function toggleTile() {
-    tileState = this.dataset['state']
-    tileId = this.dataset['id']
-    turnNumber += 1
+    let tileState = this.dataset['state']
+    let tileId = this.dataset['id']
+    let boardState = board.dataset['turn']
+
     if (tileState == "" && turnNumber <= 9) {
-        if (xTurn == true) {
+        turnNumber += 1
+        if (boardState == "x") {
             this.setAttribute('data-state', 'x')
             board.setAttribute('data-turn', 'o') // sets board turn to "o"
-            xTurn = false
             currentStateX.push(parseInt(tileId))
             checkWin(winningCombo, currentStateX) ? endGame("X wins") : checkDraw(turnNumber)
-
+            
         } else {
             this.setAttribute('data-state', 'o')
             board.setAttribute('data-turn', 'x') // sets board turn to "x"
-            xTurn = true
             currentStateO.push(parseInt(tileId))
             checkWin(winningCombo, currentStateO) ? endGame("O wins") : checkDraw(turnNumber)
         }
@@ -73,11 +75,10 @@ function endGame(finalState) {
 }
 
 function resetBoard() { // resets everything
-    board.setAttribute('data-turn', 'x')
+    board.setAttribute('data-turn', 'x') // sets board turn to "x"
     tileAll.forEach(tile => { // empties the board
         tile.setAttribute('data-state', '')
     })
-    xTurn = true
     turnNumber = 0
     currentStateX.length = 0
     currentStateO.length = 0
