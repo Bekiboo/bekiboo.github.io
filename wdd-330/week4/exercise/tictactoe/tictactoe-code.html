@@ -28,9 +28,9 @@ const resultDiv = document.querySelector('.result') <br>
 // Event listeners <br>
 tileAll.forEach(tile => { <br>
 &emsp;if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen <br>
-&emsp;&emsp;tile.addEventListener('touchend', toggleTile) <br>
+&emsp;&emsp;tile.addEventListener('touchend', checkTile) <br>
 &emsp;} else { <br>
-&emsp;&emsp;tile.addEventListener('click', toggleTile) <br>
+&emsp;&emsp;tile.addEventListener('click', checkTile) <br>
 &emsp;} <br>
 }); <br>
 button.addEventListener('click', resetBoard) <br>
@@ -38,11 +38,10 @@ button.addEventListener('click', resetBoard) <br>
 // Board Setup <br>
 let turnNumber = 0 <br>
 let boardState <br>
- <br>
-turnNumber; <br>
- <br>
-const currentStateX = [] // which tiles have Xs <br>
-const currentStateO = [] // which tiles have Os <br>
+let currentState = { <br>
+&emsp;x: [], <br>
+&emsp;o: [] <br>
+} <br>
  <br>
 const winningCombo = [ // all possible winning combinations <br>
 &emsp;[1, 2, 3], <br>
@@ -55,30 +54,27 @@ const winningCombo = [ // all possible winning combinations <br>
 &emsp;[3, 5, 7] <br>
 ]; <br>
  <br>
-function toggleTile() { <br>
+function checkTile() { <br>
 &emsp;let tileState = this.dataset['state'] <br>
 &emsp;let tileId = this.dataset['id'] <br>
 &emsp;let boardState = board.dataset['turn'] <br>
  <br>
-&emsp;if (tileState == "" && turnNumber <= 9) { <br>
+&emsp;if (tileState === "") { <br>
 &emsp;&emsp;turnNumber += 1 <br>
-&emsp;&emsp;if (boardState == "x") { <br>
-&emsp;&emsp;&emsp;this.setAttribute('data-state', 'x') <br>
-&emsp;&emsp;&emsp;board.setAttribute('data-turn', 'o') // sets board turn to "o" <br>
-&emsp;&emsp;&emsp;currentStateX.push(parseInt(tileId)) <br>
-&emsp;&emsp;&emsp;checkWin(winningCombo, currentStateX) ? endGame("X wins") : checkDraw(turnNumber) <br>
-&emsp;&emsp;&emsp; <br>
-&emsp;&emsp;} else { <br>
-&emsp;&emsp;&emsp;this.setAttribute('data-state', 'o') <br>
-&emsp;&emsp;&emsp;board.setAttribute('data-turn', 'x') // sets board turn to "x" <br>
-&emsp;&emsp;&emsp;currentStateO.push(parseInt(tileId)) <br>
-&emsp;&emsp;&emsp;checkWin(winningCombo, currentStateO) ? endGame("O wins") : checkDraw(turnNumber) <br>
-&emsp;&emsp;} <br>
+&emsp;&emsp;toggleTile(boardState, tileId, this) <br>
 &emsp;} <br>
 } <br>
  <br>
+function toggleTile(turn, id, that) { <br>
+&emsp;that.setAttribute('data-state', `${turn}`) <br>
+&emsp;currentState[`${turn}`].push(parseInt(id)) <br>
+&emsp;checkWin(winningCombo, currentState[`${turn}`]) ? endGame(`${turn} wins`) : checkDraw(turnNumber) <br>
+&emsp;turn === 'x' ? turn = 'o' : turn = 'x' <br>
+&emsp;board.setAttribute('data-turn', `${turn}`) // sets board turn to "o" <br>
+} <br>
+ <br>
 function checkDraw(turn) { // Checks if board is full <br>
-&emsp;if (turn == 9) endGame("Draw") <br>
+&emsp;if (turn === 9) endGame("Draw") <br>
 } <br>
  <br>
 function checkWin(solutions, state) { <br>
@@ -90,7 +86,7 @@ function checkWin(solutions, state) { <br>
 function endGame(finalState) { <br>
 &emsp;resultDiv.innerHTML = finalState <br>
 &emsp;tileAll.forEach(tile => { // prevents the player from continuing playing <br>
-&emsp;&emsp;if (tile.dataset['state'] == '') { <br>
+&emsp;&emsp;if (tile.dataset['state'] === '') { <br>
 &emsp;&emsp;&emsp;tile.setAttribute('data-state', 'end') <br>
 &emsp;&emsp;} <br>
 &emsp;}) <br>
@@ -102,8 +98,8 @@ function resetBoard() { // resets everything <br>
 &emsp;&emsp;tile.setAttribute('data-state', '') <br>
 &emsp;}) <br>
 &emsp;turnNumber = 0 <br>
-&emsp;currentStateX.length = 0 <br>
-&emsp;currentStateO.length = 0 <br>
+&emsp;currentState.x.length = 0 <br>
+&emsp;currentState.o.length = 0 <br>
 &emsp;resultDiv.innerHTML = '' <br>
 } <br>
     </section>

@@ -6,9 +6,9 @@ const resultDiv = document.querySelector('.result')
 // Event listeners
 tileAll.forEach(tile => {
     if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen
-        tile.addEventListener('touchend', toggleTile)
+        tile.addEventListener('touchend', checkTile)
     } else {
-        tile.addEventListener('click', toggleTile)
+        tile.addEventListener('click', checkTile)
     }
 });
 button.addEventListener('click', resetBoard)
@@ -16,11 +16,10 @@ button.addEventListener('click', resetBoard)
 // Board Setup
 let turnNumber = 0
 let boardState
-
-turnNumber;
-
-const currentStateX = [] // which tiles have Xs
-const currentStateO = [] // which tiles have Os
+let currentState = {
+    x: [],
+    o: []
+}
 
 const winningCombo = [ // all possible winning combinations
     [1, 2, 3],
@@ -33,30 +32,27 @@ const winningCombo = [ // all possible winning combinations
     [3, 5, 7]
 ];
 
-function toggleTile() {
+function checkTile() {
     let tileState = this.dataset['state']
     let tileId = this.dataset['id']
     let boardState = board.dataset['turn']
 
-    if (tileState == "" && turnNumber <= 9) {
+    if (tileState === "") {
         turnNumber += 1
-        if (boardState == "x") {
-            this.setAttribute('data-state', 'x')
-            board.setAttribute('data-turn', 'o') // sets board turn to "o"
-            currentStateX.push(parseInt(tileId))
-            checkWin(winningCombo, currentStateX) ? endGame("X wins") : checkDraw(turnNumber)
-            
-        } else {
-            this.setAttribute('data-state', 'o')
-            board.setAttribute('data-turn', 'x') // sets board turn to "x"
-            currentStateO.push(parseInt(tileId))
-            checkWin(winningCombo, currentStateO) ? endGame("O wins") : checkDraw(turnNumber)
-        }
+        toggleTile(boardState, tileId, this)
     }
 }
 
+function toggleTile(turn, id, that) {
+    that.setAttribute('data-state', `${turn}`)
+    currentState[`${turn}`].push(parseInt(id))
+    checkWin(winningCombo, currentState[`${turn}`]) ? endGame(`${turn} wins`) : checkDraw(turnNumber)
+    turn === 'x' ? turn = 'o' : turn = 'x'
+    board.setAttribute('data-turn', `${turn}`) // sets board turn to "o"
+}
+
 function checkDraw(turn) { // Checks if board is full
-    if (turn == 9) endGame("Draw")
+    if (turn === 9) endGame("Draw")
 }
 
 function checkWin(solutions, state) {
@@ -68,7 +64,7 @@ function checkWin(solutions, state) {
 function endGame(finalState) {
     resultDiv.innerHTML = finalState
     tileAll.forEach(tile => { // prevents the player from continuing playing
-        if (tile.dataset['state'] == '') {
+        if (tile.dataset['state'] === '') {
             tile.setAttribute('data-state', 'end')
         }
     })
@@ -80,7 +76,7 @@ function resetBoard() { // resets everything
         tile.setAttribute('data-state', '')
     })
     turnNumber = 0
-    currentStateX.length = 0
-    currentStateO.length = 0
+    currentState.x.length = 0
+    currentState.o.length = 0
     resultDiv.innerHTML = ''
 }
