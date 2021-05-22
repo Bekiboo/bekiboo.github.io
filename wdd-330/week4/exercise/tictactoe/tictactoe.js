@@ -1,3 +1,5 @@
+'use strict'
+
 const tileAll = document.querySelectorAll('.tile')
 const board = document.querySelector('.board')
 const button = document.querySelector('button')
@@ -46,7 +48,9 @@ function checkTile() {
 function toggleTile(turn, id, that) {
     that.setAttribute('data-state', `${turn}`)
     currentState[`${turn}`].push(parseInt(id))
-    checkWin(winningCombo, currentState[`${turn}`]) ? endGame(`${turn} wins`) : checkDraw(turnNumber)
+    checkWin(winningCombo, currentState[`${turn}`]) ?
+        endGame(`${turn.toUpperCase()} wins`) :
+        checkDraw(turnNumber)
     turn === 'x' ? turn = 'o' : turn = 'x'
     board.setAttribute('data-turn', `${turn}`) // sets board turn to "o"
 }

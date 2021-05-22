@@ -20,20 +20,43 @@
   <main>
     <section>
       <h2>Notes</h2>
-      
+      <h4>try - catch - finally</h4>
+      function imaginarySquareRoot(number) { <br>
+      &emsp;'use strict'; <b>// Produces more exceptions and
+        warnings and prohibits the use of some deprecated features</b><br>
+      &emsp;let answer; <br>
+      &emsp;try { <b>// Throws any error to the catch block</b><br>
+      &emsp;&emsp;answer = String(squareRoot(number)); <br>
+      &emsp;} catch (error) { <b>// Catches the error</b><br>
+      &emsp;&emsp;answer = squareRoot(-number) + "i"; <br>
+      &emsp;} finally { <b>// Executes anyway</b><br>
+      &emsp;&emsp;return `+ or - ${answer}`; <br>
+      &emsp;} <br>
+      } <br>
+
     </section>
     <section>
       <h2>Questions</h2>
-      
+      <h4>Classes vs Factories</h4>
+      <p>Since classes are just functions under the hood, do we really need to use them? Should we?</p>
+      <p>Factories seem to be more robust against bugs due to avoiding the <em>this</em> keyword, and don't allow
+        modifications of the objects/methods from the outside. It is a tiny bit slower though, but readability over
+        speed seems to be a good compromise.
+      </p>
+
     </section>
     <section>
       <h2>Exercises</h2>
       <ul>
         <li>
-          <h4><a href="exercise/hiking/index.html">Hiking</a> 
+          <h4><a href="exercise/hiking/index.html">Hiking</a>
           </h4>
         </li>
-        
+        <li>
+          <h4><a href="exercise/Quiz Ninja/index.html">Quiz Ninja</a>
+          </h4>
+        </li>
+
       </ul>
     </section>
   </main>

@@ -35,6 +35,7 @@ export default class HikesController {
         childrenArray.forEach(child => {
             child.addEventListener('touchend', e => {
                 // why currentTarget instead of target?
+                console.log(this);
                 this.showOneHike(e.currentTarget.dataset.name);
             });
         });

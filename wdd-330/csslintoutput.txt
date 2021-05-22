@@ -1,0 +1,8 @@
+
+style.css
+  1:1  ×  Unknown rule no-invalid-position-at-import-rule                       no-invalid-position-at-import-rule
+  1:1  ×  Unknown rule no-irregular-whitespace                                  no-irregular-whitespace           
+ 40:1  ×  Expected selector "header > a" to come before selector "a:hover"      no-descending-specificity         
+ 52:1  ×  Expected selector "h1 a" to come before selector "a:hover"            no-descending-specificity         
+ 52:1  ×  Expected selector "h1 a" to come before selector "header > a:hover"   no-descending-specificity
+
