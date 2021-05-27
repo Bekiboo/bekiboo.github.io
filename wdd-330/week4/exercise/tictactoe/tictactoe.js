@@ -6,14 +6,16 @@ const button = document.querySelector('button')
 const resultDiv = document.querySelector('.result')
 
 // Event listeners
-tileAll.forEach(tile => {
+tileAll.forEach(tile => {onTouch(tile, checkTile)});
+onTouch(button, resetBoard)
+
+ function onTouch(elementSelector, callback) {
     if (window.matchMedia("(pointer: coarse)").matches) { // checks if touchscreen
-        tile.addEventListener('touchend', checkTile)
+        elementSelector.addEventListener('touchend', callback)
     } else {
-        tile.addEventListener('click', checkTile)
+        elementSelector.addEventListener('click', callback)
     }
-});
-button.addEventListener('click', resetBoard)
+ };
 
 // Board Setup
 let turnNumber = 0
