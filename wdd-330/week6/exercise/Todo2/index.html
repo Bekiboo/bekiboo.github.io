@@ -31,17 +31,17 @@
   <footer>
     <div class="filter-todo">
       <div class="total-todo">X tasks left</div>
-      <div class="select-todo">
-        <input type="radio" id="radioAll" name="todos" value="all" checked>
-        <label for="radioAll">All</label>
-        <input type="radio" id="radioActive" name="todos" value="active">
-        <label for="radioActive">Active</label>
-        <input type="radio" id="radioCompleted" name="todos" value="completed">
-        <label for="radioCompleted">Completed</label>
+      <div class="select-todo" id="selectTodo">
+        <input data-value="all" type="radio" id="radioAll" name="todos" value="all" checked>
+        <label data-value="all" for="radioAll">All</label>
+        <input data-value="active" type="radio" id="radioActive" name="todos" value="active">
+        <label data-value="active" for="radioActive">Active</label>
+        <input data-value="completed" type="radio" id="radioCompleted" name="todos" value="completed">
+        <label data-value="completed" for="radioCompleted">Completed</label>
       </div>
     </div>
     <form class="inputArea">
-      <input type="text" class="todo-input" placeholder="Add task" />
+      <input type="text" class="todo-input" placeholder="Add task" maxlength="16" required/>
       <button class="todo-button" id="todoBtn" type="submit">
         <i class="fas fa-plus-square"></i>
       </button>

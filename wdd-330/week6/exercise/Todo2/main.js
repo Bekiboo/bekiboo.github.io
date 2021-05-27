@@ -12,7 +12,7 @@ window.onload = () => {
 // SELECTORS
 const todoButton = qs('#todoBtn')
 const todosListDisplay = qs('#todoListContainer')
-const filterTodosEl = qs('.select-todo')
+const filterTodosEl = qs('#selectTodo')
 
 // EVENT LISTENERS
 onTouch(todoButton, (e) => {
@@ -39,6 +39,7 @@ onTouch(todosListDisplay, (e) => {
 })
 
 onTouch(filterTodosEl, (e) => {
-    const filterTag = e.target.value
+    const filterTag = e.target.dataset['value']
+    console.log(filterTag);
     myTodos.filterTodo(filterTag)
 })

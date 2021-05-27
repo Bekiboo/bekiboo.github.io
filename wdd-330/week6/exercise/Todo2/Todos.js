@@ -19,9 +19,11 @@ export default class Todos {
         e.preventDefault()
         const todoInput = qs('.todo-input')
         const newTask = todoInput.value
-        saveTodo(newTask, this.key)
-        this.listTodos()
-        todoInput.value = ''
+        if (newTask) {
+            saveTodo(newTask, this.key)
+            this.listTodos()
+            todoInput.value = ''
+        }
     }
 
     listTodos() {
