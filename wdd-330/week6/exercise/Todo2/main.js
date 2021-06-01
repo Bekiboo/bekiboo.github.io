@@ -40,6 +40,5 @@ onTouch(todosListDisplay, (e) => {
 
 onTouch(filterTodosEl, (e) => {
     const filterTag = e.target.dataset['value']
-    console.log(filterTag);
     myTodos.filterTodo(filterTag)
 })

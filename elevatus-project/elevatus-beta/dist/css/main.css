@@ -479,8 +479,7 @@ section {
   display: grid;
   place-items: center;
   width: 100%;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding: 1em 0;
 }
 
 .container-section {
@@ -1007,5 +1006,10 @@ nav a:active {
 
 .infographic--light .infographic__card:nth-of-type(odd) div {
   text-align: left;
+}
+
+.call-to-action img {
+  width: 350px;
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

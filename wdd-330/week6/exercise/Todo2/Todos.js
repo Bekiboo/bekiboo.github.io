@@ -8,6 +8,7 @@ import {
 } from './ls.js';
 
 let todoList = [];
+let filterState = "all"
 
 export default class Todos {
     constructor(parentElementId, key) {
@@ -27,9 +28,8 @@ export default class Todos {
     }
 
     listTodos() {
-        renderTodoList(getTodos(this.key), this.parentElement)
+        this.filterTodo(filterState)
         taskCounter()
-
     }
 
     completeTodo(todoId) {
@@ -52,24 +52,29 @@ export default class Todos {
         todoList = readFromLS(this.key)
         switch (filter) {
             case 'all':
-                this.listTodos()
+                renderTodoList(todoList, this.parentElement)
+                filterState = "all"
                 break;
             case 'active':
-                todoList = todoList.filter((state) => {
+                let activeTodoList = todoList.filter((state) => {
                     return state.completed === false;
                 });
-                renderTodoList(todoList, this.parentElement)
+                renderTodoList(activeTodoList, this.parentElement)
+                filterState = "active"
                 break;
-            case 'completed':
-                todoList = todoList.filter((state) => {
-                    return state.completed === true;
-                });
-                renderTodoList(todoList, this.parentElement)
+                case 'completed':
+                    let completedTodoList = todoList.filter((state) => {
+                        return state.completed === true;
+                    });
+                    renderTodoList(completedTodoList, this.parentElement)
+                    filterState = "completed"
                 break;
 
             default:
                 break;
         }
+// THE SWITCH STATEMENT ABOVE NEEDS TO BE CHANGED TO AVOID ANY BUGS WHILE 
+// ADDING A NEW IMPUT WHEN ON A FILTER;
     }
 }
 
@@ -96,6 +101,7 @@ function getTodos(key) {
 
 function renderTodoList(list, element) {
     element.innerHTML = ''
+    console.log(list);
     list.forEach(todo => {
         // Create div
         const todoDiv = document.createElement('div')
