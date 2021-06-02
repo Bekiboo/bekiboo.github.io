@@ -7,7 +7,7 @@ import {
     writeToLS
 } from './ls.js';
 
-let todoList = [];
+let todoList = []
 let filterState = "all"
 
 export default class Todos {
@@ -49,7 +49,7 @@ export default class Todos {
         this.listTodos()
     }
     filterTodo(filter) {
-        todoList = readFromLS(this.key)
+        getTodos(this.key)
         switch (filter) {
             case 'all':
                 renderTodoList(todoList, this.parentElement)
@@ -101,7 +101,6 @@ function getTodos(key) {
 
 function renderTodoList(list, element) {
     element.innerHTML = ''
-    console.log(list);
     list.forEach(todo => {
         // Create div
         const todoDiv = document.createElement('div')
