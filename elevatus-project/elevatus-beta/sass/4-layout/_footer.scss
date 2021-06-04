@@ -1,4 +1,33 @@
 footer {
     height: 8em;
     background: $primary-500;
+
+}
+
+.social {
+    
+    svg {
+        fill: white;
+        height: 4em;
+        width: 4em;
+        transition: .125s ease-in-out;
+    }
+
+    &__facebook {
+        &:hover {
+            fill: hsl(221, 44%, 41%);
+        }
+    }
+
+    &__instagram {
+        &:hover {
+            fill: #bc2a8d;
+        }
+    }
+
+    &__youtube {
+        &:hover {
+            fill: red;
+        }
+    }
 }

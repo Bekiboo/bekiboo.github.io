@@ -487,6 +487,8 @@ section {
   width: 100%;
   max-width: 1000px;
   padding: 0 20px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 @media only screen and (min-width: 48em) {
@@ -594,6 +596,25 @@ body {
 footer {
   height: 8em;
   background: #ffbb00;
+}
+
+.social svg {
+  fill: white;
+  height: 4em;
+  width: 4em;
+  transition: .125s ease-in-out;
+}
+
+.social__facebook:hover {
+  fill: #3b5897;
+}
+
+.social__instagram:hover {
+  fill: #bc2a8d;
+}
+
+.social__youtube:hover {
+  fill: red;
 }
 
 header {
@@ -809,7 +830,7 @@ nav a:active {
   top: 0;
   left: 0;
   z-index: 10;
-  content: '';
+  content: "";
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -861,7 +882,7 @@ nav a:active {
 }
 
 .hero .caption h1 {
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   font-size: calc(1.8rem + 1.6vw);
   text-transform: uppercase;
   line-height: 1;
@@ -871,7 +892,7 @@ nav a:active {
 .hero .caption h4 {
   margin-left: 1em;
   font-size: 1.2rem;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   font-weight: 300;
 }
 
@@ -887,7 +908,7 @@ nav a:active {
   transition: 0.25s;
   background: #2997d6;
   border-radius: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
@@ -910,8 +931,6 @@ nav a:active {
 .mission-statement {
   display: grid;
   place-items: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
   text-align: center;
 }
 
@@ -934,8 +953,6 @@ nav a:active {
 
 .infographic {
   color: #2f3337;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 .infographic img {
@@ -1008,8 +1025,17 @@ nav a:active {
   text-align: left;
 }
 
-.call-to-action img {
-  width: 350px;
-  height: 100%;
+.donation h2 {
+  color: #4d6293;
+}
+
+.donation img {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.donation p {
+  color: #181a1b;
 }
 /*# sourceMappingURL=main.css.map */
