@@ -6,6 +6,9 @@ const startBtn = document.getElementById('startBtn')
 
 startBtn.addEventListener('click', renderGame)
 
+window.onload = () => {
+    startPage.classList.remove('hidden');
+};
 fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
     .then((response) => response.json())
     .then((listOfHeroes) => {
