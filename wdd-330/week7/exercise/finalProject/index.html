@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Superhero Quiz Game for WDD-330 - by Julien Connault">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <title>Superhero Quiz</title>
+</head>
+
+<body>
+    <main>
+        <section class="start-page" id="startPage">
+            <h1>HERO QUIZ</h1>
+            <button id="startBtn">Start New Game</button>
+        </section>
+        <section class="quiz-page hidden" id="quizPage">
+            <div class="quiz-body">
+                <header>
+                    <div id="score">Score:
+                        <strong>0</strong>
+                    </div>
+                    <div id="hiScore">High Score:
+                        <strong></strong>
+                    </div>
+                </header>
+                <div id="question"></div>
+                <div id="response"></div>
+                <div id="result"></div>
+                <div id="info"></div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
