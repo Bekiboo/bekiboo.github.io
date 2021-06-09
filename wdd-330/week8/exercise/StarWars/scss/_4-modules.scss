@@ -11,7 +11,7 @@ button {
   overflow: hidden;
   background: $neon-primary;
   color: rgb(0, 0, 0);
-  box-shadow: 0 0 2.5px $neon-primary, 0 0 12px $neon-primary, 0 0 100px $neon-primary;
+  box-shadow: 0 0 2.5px $neon-primary, 0 0 12px $neon-primary, 0 0 50px $neon-primary;
     &:hover,
     &:focus {
       outline: none;
