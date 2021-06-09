@@ -3,6 +3,7 @@ const model = {
     url: 'https://swapi.dev/api/',
 
     getJSON(url) {
+        console.log(url);
         return fetch(url)
             .then(function (response) {
                 if (!response.ok) {
