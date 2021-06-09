@@ -18,17 +18,29 @@ fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
 
 function renderGame() {
     startTitle.classList.add('faded')
-    startPage.classList.add('visuallyhidden');
+    // startPage.classList.add('visuallyhidden');
+    transition()
 
-    
-    startTitle.addEventListener('transitionend', function (e) {
+}
+
+function transition() {
+    startPage.addEventListener('transitionend', function (e) {
+        console.log(e.propertyName);
+        if (e.propertyName !== 'display') transition();
         quizPage.classList.remove('hidden')
+        startPage.classList.add('hidden')
     }, {
         capture: false,
         once: true,
         passive: false
     })
 }
+
+
+// document.querySelector('a').addEventListener('transitionend', function (event) {
+//     if (event.propertyName !== 'width') return;
+//     console.log('transitionEnd - width!');
+// });
 
 
 

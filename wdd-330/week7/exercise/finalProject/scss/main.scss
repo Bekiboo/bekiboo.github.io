@@ -4,42 +4,25 @@
 
 .start-page {
   margin: 4em auto 0;
-  transition: all 0.75s;
+  transition: all .5s ease-in;
   h1 {
     // https://codepen.io/FelixRilling/pen/qzfoc?editors=1100
     font-family: "Monoton", cursive;
     font-size: 5em;
     font-weight: 100;
-    color: #fff;
+    color: rgb(255, 255, 255);
     line-height: 1.2;
     letter-spacing: 8px;
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate;
-    transition: 
-        color 0.25s, 
-        -webkit-animation 1s cubic-bezier(1, 0, 0, 1),
-        -moz-animation 1s cubic-bezier(1, 0, 0, 1),
-        animation 1s cubic-bezier(1, 0, 0, 1);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px $neon-primary, 0 0 35px $neon-primary, 0 0 40px $neon-primary,
+      0 0 50px $neon-primary, 0 0 75px $neon-primary;
 
     &.faded {
-      color: $neon-primary;
-      -webkit-animation: none;
-      -moz-animation: none;
-      animation: none;
-    }
-  }
-
-  @keyframes neon1 {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-        0 0 40px $neon-primary, 0 0 70px $neon-primary, 0 0 80px $neon-primary,
-        0 0 100px $neon-primary, 0 0 150px $neon-primary;
-    }
-    to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-        0 0 20px $neon-primary, 0 0 35px $neon-primary, 0 0 40px $neon-primary,
-        0 0 50px $neon-primary, 0 0 75px $neon-primary;
+      color: #fff;
+      transition: text-shadow 0.125s;
+      text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff,
+        0 0 20px $neon-third, 0 0 35px $neon-third, 0 0 40px $neon-third,
+        0 0 50px $neon-third, 0 0 75px $neon-third;
     }
   }
 
@@ -62,18 +45,19 @@
     font-size: 0.8em;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    transition: 0.1s cubic-bezier(1, 0, 0, 1);
     overflow: hidden;
     background: $neon-primary;
-    color: #ffffff;
+    color: white;
     box-shadow: 0 0 5px $neon-primary, 0 0 25px $neon-primary,
       0 0 50px $neon-primary, 0 0 200px $neon-primary;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
   }
 
   button:hover {
-    background: none;
-    color: white;
-    box-shadow: none;
+    background-color: white;
+    box-shadow: 0 0 20px $neon-third, 0 0 100px $neon-third, 0 0 100px $neon-third,
+      0 0 400px $neon-third;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    transition: background-color .125s, box-shadow .125s;
   }
 }

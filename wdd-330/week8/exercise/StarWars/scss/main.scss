@@ -1,0 +1,136 @@
+@import "1-variables";
+@import "2-normalize";
+@import "3-base";
+@import "4-modules";
+
+.start-page {
+  margin: 0 auto;
+  transition: all 0.5s ease-in;
+  h1 {
+    // https://codepen.io/FelixRilling/pen/qzfoc?editors=1100
+    font-family: "Poller One", cursive;
+    font-size: 4em;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    letter-spacing: 8px;
+    padding-left: 0.25em;
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff,
+      0 0 20px $neon-primary, 0 0 35px $neon-primary, 0 0 40px $neon-primary,
+      0 0 50px $neon-primary, 0 0 75px $neon-primary;
+
+    &.faded {
+      color: #fff;
+      transition: text-shadow 0.125s;
+      text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff,
+        0 0 20px $neon-third, 0 0 35px $neon-third, 0 0 40px $neon-third,
+        0 0 50px $neon-third, 0 0 75px $neon-third;
+    }
+
+    em {
+      font-style: unset;
+      letter-spacing: -6px;
+    }
+  }
+
+  h2 {
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      &:visited {
+        color: white;
+      }
+    }
+  }
+  button {
+    width: 50%;
+    padding: 1em 2em;
+    margin: 2em auto;
+  }
+
+  nav {
+    margin-top: 4em;
+  }
+}
+
+.data-display {
+  & > button {
+    margin-left: 2em;
+    padding: 0.5em 1em;
+  }
+  transition: all 0.5s ease-in;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.data-index {
+  display: grid;
+  place-items: center;
+  margin-top: 2em;
+  ul {
+    display: flex;
+  }
+  button {
+    display: grid;
+    place-content: center;
+    font-size: 1.1rem;
+    letter-spacing: normal;
+    padding: 0.5rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    background: $dim-yellow;
+    box-shadow: none;
+  }
+
+  [data-page="current"] {
+    background: $neon-primary;
+    box-shadow: 0 0 2.5px $neon-primary, 0 0 12px $neon-primary,
+
+  }
+  
+}
+
+
+.data-body {
+  display: grid;
+  place-items: center;
+  margin-top: 2em;
+  min-height: 408px;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $dim-yellow;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+
+    &:visited {
+      color: $dim-yellow;
+    }
+  }
+
+  li {
+    width: 16rem;
+    padding: 0.5em;
+    border: 1px $dim-yellow solid;
+    &:hover {
+      background: $dim-yellow;
+
+      & a {
+        color: black;
+      }
+    }
+  }
+}
