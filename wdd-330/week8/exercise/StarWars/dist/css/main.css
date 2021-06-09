@@ -47,15 +47,15 @@ button {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   overflow: hidden;
-  background: #fffb00;
+  background: #d4a421;
   color: black;
-  box-shadow: 0 0 2.5px #fffb00, 0 0 12px #fffb00, 0 0 25px #fffb00, 0 0 100px #fffb00;
+  box-shadow: 0 0 2.5px #d4a421, 0 0 12px #d4a421, 0 0 100px #d4a421;
 }
 
 button:hover, button:focus {
   outline: none;
   background-color: white;
-  box-shadow: 0 0 20px #fffead, 0 0 100px #fffead, 0 0 100px #fffead, 0 0 400px #fffead;
+  box-shadow: 0 0 20px #f4e4b8, 0 0 100px #f4e4b8, 0 0 100px #f4e4b8, 0 0 400px #f4e4b8;
   transition: background-color 0.125s, box-shadow 0.125s;
   cursor: pointer;
   z-index: 10;
@@ -74,13 +74,13 @@ button:hover, button:focus {
   line-height: 1.2;
   letter-spacing: 8px;
   padding-left: 0.25em;
-  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 20px #fffb00, 0 0 35px #fffb00, 0 0 40px #fffb00, 0 0 50px #fffb00, 0 0 75px #fffb00;
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 20px #d4a421, 0 0 35px #d4a421, 0 0 40px #d4a421, 0 0 50px #d4a421, 0 0 75px #d4a421;
 }
 
 .start-page h1.faded {
   color: #fff;
   transition: text-shadow 0.125s;
-  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 20px #fffead, 0 0 35px #fffead, 0 0 40px #fffead, 0 0 50px #fffead, 0 0 75px #fffead;
+  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 20px #f4e4b8, 0 0 35px #f4e4b8, 0 0 40px #f4e4b8, 0 0 50px #f4e4b8, 0 0 75px #f4e4b8;
 }
 
 .start-page h1 em {
@@ -154,16 +154,25 @@ button:hover, button:focus {
   box-shadow: none;
 }
 
+.data-index button:hover, .data-index button:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 20px #f4e4b8, 0 0 100px #f4e4b8, 0 0 100px #f4e4b8, 0 0 400px #f4e4b8;
+  transition: background-color 0.125s, box-shadow 0.125s;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .data-index [data-page="current"] {
-  background: #fffb00;
-  box-shadow: 0 0 2.5px #fffb00, 0 0 12px #fffb00;
+  background: #f4e4b8;
+  box-shadow: 0 0 2.5px #f4e4b8, 0 0 12px #f4e4b8;
 }
 
 .data-body {
   display: grid;
   place-items: center;
   margin-top: 2em;
-  min-height: 408px;
+  min-height: 420px;
 }
 
 .data-body a {

@@ -92,12 +92,21 @@
     margin-right: 0.125rem;
     background: $dim-yellow;
     box-shadow: none;
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: white;
+      box-shadow: 0 0 20px $neon-third, 0 0 100px $neon-third, 0 0 100px $neon-third,
+        0 0 400px $neon-third;
+      transition: background-color 0.125s, box-shadow 0.125s;
+      cursor: pointer;
+      z-index: 10;
+    }
   }
 
   [data-page="current"] {
-    background: $neon-primary;
-    box-shadow: 0 0 2.5px $neon-primary, 0 0 12px $neon-primary,
-
+    background: $dim-yellow-glow;
+    box-shadow: 0 0 2.5px $dim-yellow-glow, 0 0 12px $dim-yellow-glow
   }
   
 }
@@ -107,7 +116,7 @@
   display: grid;
   place-items: center;
   margin-top: 2em;
-  min-height: 408px;
+  min-height: 420px;
 
   a {
     text-decoration: none;

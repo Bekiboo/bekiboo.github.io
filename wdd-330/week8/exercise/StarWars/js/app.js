@@ -1,6 +1,6 @@
 // ------------------------ MODEL ------------------------
 const model = {
-    url: 'http://swapi.dev/api/',
+    url: 'https://swapi.dev/api/',
 
     getJSON(url) {
         return fetch(url)
