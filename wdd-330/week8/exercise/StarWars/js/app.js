@@ -28,6 +28,7 @@ const view = {
     categories: document.querySelectorAll('#mainNav button'),
     dataIndex: document.getElementById('dataIndex'),
     backBtn: document.getElementById('backBtn'),
+    body: document.getElementsByTagName('body'),
 
     transition() {
         this.startTitle.classList.add('faded')
@@ -47,7 +48,7 @@ const view = {
         }, 500)
     },
 
-    renderList(data) {
+    renderList(data, category) {
         this.dataBody.innerHTML = ''
         this.dataIndex.innerHTML = ''
         let itemsList = document.createElement('ul')
@@ -60,13 +61,13 @@ const view = {
 
                 itemList.addEventListener('click', function (event) {
                     event.preventDefault()
-                    // getnameDetails(name.url)
+                    getDetails(name.url, category)
                 })
 
                 itemsList.appendChild(itemList)
             })
         } else {
-            data.results.forEach(function (title) {
+            data.results.forEach(title => {
                 let itemList = document.createElement('li')
                 itemList.innerHTML = `
                       <a href='${title.url}'>${title.title}</a>
@@ -74,7 +75,7 @@ const view = {
 
                 itemList.addEventListener('click', function (event) {
                     event.preventDefault()
-                    // getnameDetails(name.url)
+                    getDetails(title.url, category)
                 })
 
                 itemsList.appendChild(itemList)
@@ -129,6 +130,136 @@ const view = {
         view.startTitle.classList.remove('faded')
         view.startPage.classList.remove('visuallyhidden')
         view.startPage.removeEventListener('transitionend', view.transitionEffects)
+    },
+
+    renderDetailsModal(data, category) {
+        console.log(data);
+        console.log(category);
+        const modal = document.createElement('section')
+        modal.classList.add('details')
+        const closeModalBtn = document.createElement('div')
+        closeModalBtn.classList.add('close-modal')
+        closeModalBtn.innerHTML = '&times;'
+        closeModalBtn.addEventListener('click', view.closeModal)
+        modal.appendChild(closeModalBtn)
+        detailsContainer = document.createElement('div')
+        detailsContainer.classList.add('details-container')
+
+        let info1
+        let info2
+        let info3
+        let info4
+        let info5
+
+        switch (category) {
+            case 'films':
+                details = [
+                    `Title: ${data.title}`,
+                    `Release Date: ${data.release_date}`,
+                    `Director: ${data.director}`,
+                    `Producer: ${data.producer}`,
+                    `Opening Crawl: ${data.opening_crawl}`
+                ]
+                break;
+
+            case 'people':
+                console.log('people');
+                details = [
+                    `Name: ${data.name}`,
+                    `Gender: ${data.gender}`,
+                    `Birth Year: ${data.birth_year}`,
+                    `Mass: ${data.mass} Kg`,
+                    `Height: ${data.height} cm`,
+                    `Skin Color: ${data.skin_color}`,
+                    `Hair Color: ${data.hair_color}`,
+                    `Eye Color: ${data.eye_color}`,
+                ]
+                break;
+
+            case 'planets':
+                console.log('planets');
+                details = [
+                    `Name: ${data.name}`,
+                    `Climate: ${data.climate}`,
+                    `Terrain: ${data.terrain}`,
+                    `Gravity: ${data.gravity}`,
+                    `Orbital Period: ${data.orbital_period}`,
+                    `Terrain: ${data.terrain}`,
+                    `Population: ${data.population}`
+                ]
+
+                break;
+            case 'species':
+                console.log('species');
+                details = [
+                    `Name: ${data.name}`,
+                    `Classification: ${data.classification}`,
+                    `Designation: ${data.designation}`,
+                    `Average Height: ${data.average_height} cm`,
+                    `Average Lifespan: ${data.average_lifespan} years`,
+                    `Skin Colors: ${data.skin_colors}`,
+                    `Hair Colors: ${data.hair_colors}`,
+                    `Eye Colors: ${data.eye_colors}`,
+                    `Language: ${data.language}`
+                    // `Homeworld: ${getJSON(data.homeworld)}`,
+                ]
+
+                break;
+            case 'starships':
+                console.log('starships');
+                details = [
+                    `Name: ${data.name}`,
+                    `Model: ${data.model}`,
+                    `Starship Class: ${data.starship_class}`,
+                    `Manufacturer: ${data.manufacturer}`,
+                    `Length: ${data.length} meters`,
+                    `Cargo Capacity: ${data.cargo_capacity}`,
+                    `Cost: ${data.cost_in_credits} credits`,
+                    `Crew: ${data.crew}`,
+                    `Passengers: ${data.passengers}`,
+                    `Hyperdrive Rating: ${data.hyperdrive_rating}`,
+                    `Max Atmosphering Speed: ${data.max_atmosphering_speed} `,
+                    `MGLT: ${data.MGLT}`
+                ]
+
+                break;
+            case 'vehicles':
+                console.log('vehicles');
+                details = [
+                    `Name: ${data.name}`,
+                    `Model: ${data.model}`,
+                    `Vehicle Class: ${data.vehicule_class}`,
+                    `Manufacturer: ${data.manufacturer}`,
+                    `Length: ${data.length} meters`,
+                    `Cargo Capacity: ${data.cargo_capacity}`,
+                    `Cost: ${data.cost_in_credits} credits`,
+                    `Crew: ${data.crew}`,
+                    `Passengers: ${data.passengers}`,
+                    `Max Atmosphering Speed: ${data.max_atmosphering_speed} `
+                ]
+
+                break;
+
+            default:
+                break;
+        }
+        console.log(details);
+        let itemsList = document.createElement('ul')
+        details.forEach(function (detail) {
+            let itemList = document.createElement('li')
+            itemList.innerHTML = `<p>${detail}</p>`
+            itemsList.appendChild(itemList)
+        })
+        detailsContainer.appendChild(itemsList)
+
+        modal.appendChild(detailsContainer)
+
+        view.body[0].appendChild(modal)
+    },
+
+    closeModal() {
+        modal = document.querySelector('.details')
+        modal.remove()
     }
 }
 
@@ -136,9 +267,16 @@ const view = {
 function showList(url, category, pageNumber) {
     model.getJSON(url)
         .then((data) => {
-            view.renderList(data)
+            view.renderList(data, category)
             view.renderIndex(data, category, pageNumber)
             view.transition()
+        })
+}
+
+function getDetails(info, category) {
+    model.getJSON(info)
+        .then((data) => {
+            view.renderDetailsModal(data, category)
         })
 }
 

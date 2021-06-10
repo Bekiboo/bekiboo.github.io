@@ -15,8 +15,11 @@ body {
   height: 100vh;
 }
 
-main > * {
-  width: 20em;
+main {
+  position: relative;
+  & > * {
+    width: 20em;
+  }
 }
 
 button {
@@ -33,5 +36,5 @@ button {
 }
 
 .visuallyhidden {
-    opacity: 0;
-  }
+  opacity: 0;
+}
