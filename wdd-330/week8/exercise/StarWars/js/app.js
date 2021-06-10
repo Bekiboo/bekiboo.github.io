@@ -3,7 +3,6 @@ const model = {
     url: 'https://swapi.dev/api/',
 
     getJSON(url) {
-        console.log(url);
         return fetch(url)
             .then(function (response) {
                 if (!response.ok) {
@@ -87,41 +86,41 @@ const view = {
 
     renderIndex(data, category, pageNumber) {
         indexCount = Math.ceil(data.count / 10)
-        let indexBody = document.createElement('ul')
-        previous = this.createBackForth(data.previous, '<', indexBody, category, (pageNumber - 1))
+        if (indexCount > 1) {
 
-        for (let i = 1; i <= indexCount; i++) {
+            let indexBody = document.createElement('ul')
+            previous = this.createBackForth(data.previous, '<', indexBody, category, (pageNumber - 1))
 
-            let indexPage = document.createElement('li')
+            for (let i = 1; i <= indexCount; i++) {
 
-            indexURL = `${model.url}${category}/?page=${i}`
-            indexPage.innerHTML = `<button href='${indexURL}'>${i}</button>`
+                let indexPage = document.createElement('li')
 
-            indexPage.addEventListener('click', function (event) {
-                event.preventDefault()
-                showList(indexPage.children[0].getAttribute('href'), category, i)
-            })
-            indexBody.appendChild(indexPage)
-            if (i == pageNumber) indexPage.children[0].setAttribute('data-page', 'current')                
+                indexURL = `${model.url}${category}/?page=${i}`
+                indexPage.innerHTML = `<button href='${indexURL}'>${i}</button>`
+
+                indexPage.addEventListener('click', function (event) {
+                    event.preventDefault()
+                    showList(indexPage.children[0].getAttribute('href'), category, i)
+                })
+                indexBody.appendChild(indexPage)
+                if (i == pageNumber) indexPage.children[0].setAttribute('data-page', 'current')
+            }
+
+            next = this.createBackForth(data.next, '>', indexBody, category, (pageNumber + 1))
+            this.dataIndex.appendChild(indexBody)
         }
-
-        next = this.createBackForth(data.next, '>', indexBody, category, (pageNumber + 1))
-        this.dataIndex.appendChild(indexBody)
     },
 
     createBackForth(direction, text, parentElement, category, pageNumber) {
+        let dirElement = document.createElement('li')
+        dirElement.innerHTML = `<button href='${direction}'>${text}</button>`
         if (direction) {
-            let dirElement = document.createElement('li')
-            dirElement.innerHTML = `<button href='${direction}'>${text}</button>`
-
             dirElement.addEventListener('click', function (event) {
                 event.preventDefault()
                 showList(dirElement.children[0].getAttribute('href'), category, pageNumber)
             })
-            parentElement.appendChild(dirElement)
-        } else {
-            return
         }
+        parentElement.appendChild(dirElement)
     },
 
     backToMenu() {
@@ -137,8 +136,6 @@ const view = {
 function showList(url, category, pageNumber) {
     model.getJSON(url)
         .then((data) => {
-            console.log(data)
-            console.log(pageNumber);
             view.renderList(data)
             view.renderIndex(data, category, pageNumber)
             view.transition()

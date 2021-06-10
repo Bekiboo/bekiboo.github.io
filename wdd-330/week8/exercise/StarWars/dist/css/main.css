@@ -44,7 +44,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 0.8em;
-  font-family: "Raleway", sans-serif;
+  font-family: sans-serif;
   font-weight: 700;
   overflow: hidden;
   background: #d4a421;
@@ -143,8 +143,9 @@ button:hover, button:focus {
 }
 
 .data-index button {
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   font-size: 1.1rem;
   letter-spacing: normal;
   padding: 0.5rem;
@@ -161,6 +162,10 @@ button:hover, button:focus {
   transition: background-color 0.125s, box-shadow 0.125s;
   cursor: pointer;
   z-index: 10;
+}
+
+.data-index [href="null"] {
+  opacity: 0;
 }
 
 .data-index [data-page="current"] {

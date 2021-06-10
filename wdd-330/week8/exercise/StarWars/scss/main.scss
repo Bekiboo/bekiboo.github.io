@@ -83,8 +83,9 @@
     display: flex;
   }
   button {
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     font-size: 1.1rem;
     letter-spacing: normal;
     padding: 0.5rem;
@@ -102,6 +103,11 @@
       cursor: pointer;
       z-index: 10;
     }
+  }
+
+  
+  [href="null"] {
+    opacity: 0;
   }
 
   [data-page="current"] {
