@@ -133,8 +133,6 @@ const view = {
     },
 
     renderDetailsModal(data, category) {
-        console.log(data);
-        console.log(category);
         const modal = document.createElement('section')
         modal.classList.add('details')
         const closeModalBtn = document.createElement('div')
@@ -163,7 +161,6 @@ const view = {
                 break;
 
             case 'people':
-                console.log('people');
                 details = [
                     `Name: ${data.name}`,
                     `Gender: ${data.gender}`,
@@ -177,7 +174,6 @@ const view = {
                 break;
 
             case 'planets':
-                console.log('planets');
                 details = [
                     `Name: ${data.name}`,
                     `Climate: ${data.climate}`,
@@ -190,7 +186,6 @@ const view = {
 
                 break;
             case 'species':
-                console.log('species');
                 details = [
                     `Name: ${data.name}`,
                     `Classification: ${data.classification}`,
@@ -206,7 +201,6 @@ const view = {
 
                 break;
             case 'starships':
-                console.log('starships');
                 details = [
                     `Name: ${data.name}`,
                     `Model: ${data.model}`,
@@ -224,7 +218,6 @@ const view = {
 
                 break;
             case 'vehicles':
-                console.log('vehicles');
                 details = [
                     `Name: ${data.name}`,
                     `Model: ${data.model}`,
@@ -243,7 +236,7 @@ const view = {
             default:
                 break;
         }
-        console.log(details);
+        
         let itemsList = document.createElement('ul')
         details.forEach(function (detail) {
             let itemList = document.createElement('li')
