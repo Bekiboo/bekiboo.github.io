@@ -1,4 +1,16 @@
-// ------------------------ MODEL ------------------------
+window.onload = () => {
+    setTimeout(function () {
+        view.startPage.classList.remove('visuallyhidden')
+    }, 1000)
+
+    view.categories.forEach(category =>
+        category.addEventListener('click', function () {
+            controller.showList(`${model.url}${this.id}`, this.id, 1)
+        }))
+    view.backBtn.addEventListener('click', view.backToMenu)
+}
+
+// ----------------------------------- MODEL -----------------------------------
 const model = {
     url: 'https://swapi.dev/api/',
 
@@ -17,7 +29,7 @@ const model = {
     }
 }
 
-// ------------------------ VIEW ------------------------
+// ----------------------------------- VIEW -----------------------------------
 const view = {
     // SELECTORS
     startPage: document.getElementById('startPage'),
@@ -30,13 +42,16 @@ const view = {
     backBtn: document.getElementById('backBtn'),
     body: document.getElementsByTagName('body'),
 
+    // Transition between main menu and categories. 
+    // Needs refactoring to be usable for each transitions
     transition() {
         this.startTitle.classList.add('faded')
-        this.startPage.addEventListener('transitionend', view.transitionEffects, {
-            capture: false,
-            once: true,
-            passive: false
-        })
+        this.startPage.addEventListener('transitionend',
+            view.transitionEffects, {
+                capture: false,
+                once: true,
+                passive: false
+            })
     },
 
     transitionEffects() {
@@ -61,11 +76,11 @@ const view = {
 
                 itemList.addEventListener('click', function (event) {
                     event.preventDefault()
-                    getDetails(name.url, category)
+                    controller.getDetails(name.url, category)
                 })
-
                 itemsList.appendChild(itemList)
             })
+
         } else {
             data.results.forEach(title => {
                 let itemList = document.createElement('li')
@@ -75,12 +90,10 @@ const view = {
 
                 itemList.addEventListener('click', function (event) {
                     event.preventDefault()
-                    getDetails(title.url, category)
+                    controller.getDetails(title.url, category)
                 })
-
                 itemsList.appendChild(itemList)
             })
-
         }
         dataBody.appendChild(itemsList)
     },
@@ -90,7 +103,12 @@ const view = {
         if (indexCount > 1) {
 
             let indexBody = document.createElement('ul')
-            previous = this.createBackForth(data.previous, '<', indexBody, category, (pageNumber - 1))
+            previous = this.createBackForth(
+                data.previous,
+                '<',
+                indexBody,
+                category,
+                (pageNumber - 1))
 
             for (let i = 1; i <= indexCount; i++) {
 
@@ -101,24 +119,36 @@ const view = {
 
                 indexPage.addEventListener('click', function (event) {
                     event.preventDefault()
-                    showList(indexPage.children[0].getAttribute('href'), category, i)
+                    controller.showList(
+                        indexPage.children[0].getAttribute('href'),
+                        category, i)
                 })
                 indexBody.appendChild(indexPage)
-                if (i == pageNumber) indexPage.children[0].setAttribute('data-page', 'current')
+                if (i == pageNumber)
+                    indexPage.children[0].setAttribute('data-page', 'current')
             }
 
-            next = this.createBackForth(data.next, '>', indexBody, category, (pageNumber + 1))
+            next = this.createBackForth(
+                data.next,
+                '>',
+                indexBody,
+                category,
+                (pageNumber + 1))
             this.dataIndex.appendChild(indexBody)
         }
     },
 
+    // Previous and Next buttons on each sides of the Index
     createBackForth(direction, text, parentElement, category, pageNumber) {
         let dirElement = document.createElement('li')
         dirElement.innerHTML = `<button href='${direction}'>${text}</button>`
         if (direction) {
             dirElement.addEventListener('click', function (event) {
                 event.preventDefault()
-                showList(dirElement.children[0].getAttribute('href'), category, pageNumber)
+                controller.showList(
+                    dirElement.children[0].getAttribute('href'),
+                    category,
+                    pageNumber)
             })
         }
         parentElement.appendChild(dirElement)
@@ -129,7 +159,9 @@ const view = {
         view.startPage.classList.remove('hidden')
         view.startTitle.classList.remove('faded')
         view.startPage.classList.remove('visuallyhidden')
-        view.startPage.removeEventListener('transitionend', view.transitionEffects)
+        view.startPage.removeEventListener(
+            'transitionend',
+            view.transitionEffects)
     },
 
     renderDetailsModal(data, category) {
@@ -143,12 +175,7 @@ const view = {
         detailsContainer = document.createElement('div')
         detailsContainer.classList.add('details-container')
 
-        let info1
-        let info2
-        let info3
-        let info4
-        let info5
-
+        // Switch to select which info to display in each category
         switch (category) {
             case 'films':
                 details = [
@@ -230,23 +257,19 @@ const view = {
                     `Passengers: ${data.passengers}`,
                     `Max Atmosphering Speed: ${data.max_atmosphering_speed} `
                 ]
-
-                break;
-
-            default:
                 break;
         }
-        
+
         let itemsList = document.createElement('ul')
+
         details.forEach(function (detail) {
             let itemList = document.createElement('li')
             itemList.innerHTML = `<p>${detail}</p>`
             itemsList.appendChild(itemList)
         })
+
         detailsContainer.appendChild(itemsList)
-
         modal.appendChild(detailsContainer)
-
         view.body[0].appendChild(modal)
     },
 
@@ -256,32 +279,21 @@ const view = {
     }
 }
 
-// ------------------------ CONTROLLER ------------------------
-function showList(url, category, pageNumber) {
-    model.getJSON(url)
-        .then((data) => {
-            view.renderList(data, category)
-            view.renderIndex(data, category, pageNumber)
-            view.transition()
-        })
-}
+// ----------------------------------- CONTROLLER -----------------------------------
+const controller = {
+    showList(url, category, pageNumber) {
+        model.getJSON(url)
+            .then((data) => {
+                view.renderList(data, category)
+                view.renderIndex(data, category, pageNumber)
+                view.transition()
+            })
+    },
 
-function getDetails(info, category) {
-    model.getJSON(info)
-        .then((data) => {
-            view.renderDetailsModal(data, category)
-        })
-}
-
-window.onload = () => {
-    setTimeout(function () {
-        view.startPage.classList.remove('visuallyhidden')
-    }, 1000)
-
-    view.categories.forEach(category =>
-        category.addEventListener('click', function () {
-            showList(`${model.url}${this.id}`, this.id, 1)
-        }))
-
-    view.backBtn.addEventListener('click', view.backToMenu)
+    getDetails(info, category) {
+        model.getJSON(info)
+            .then((data) => {
+                view.renderDetailsModal(data, category)
+            })
+    }
 }
