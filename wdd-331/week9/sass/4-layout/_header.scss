@@ -1,0 +1,72 @@
+header {
+  margin-bottom: 2rem;
+}
+
+.site-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $link-blue;
+  padding-left: $margin-sm;
+  padding-right: $margin-sm;
+  @include respond(lg) {
+    padding-left: $margin-lg;
+    padding-right: $margin-lg;
+  }
+  @include respond(xl) {
+    padding-left: $margin-xl;
+    padding-right: $margin-xl;
+  }
+
+  a {
+    text-decoration: none;
+    border: none;
+    &:visited {
+      color: white;
+    }
+  }
+
+  &__left {
+    font-size: 1.8rem;
+    background-color: $body-font;
+    padding: 1rem 0.75rem 0.65rem 0.75rem;
+  }
+
+  &__right {
+    font-size: 2rem;
+    margin-right: 1rem;
+    padding-top: 0.25rem;
+  }
+}
+
+.site-title {
+  background-color: $light-gray;
+  border-bottom: 1px solid $dark-gray;
+  font-family: $font-light;
+  font-size: 0.8rem;
+  padding: 1rem 0;
+
+  @include respond(med) {
+    border: none;
+    padding-top: 1.875rem;
+    padding-bottom: 0.9375rem;
+  }
+
+  h2 {
+    max-width: 45rem;
+    line-height: 1.8rem;
+    font-weight: lighter;
+    font-size: 1.25rem;
+    padding-left: 5rem;
+    @include respond(med) {
+      font-size: 1.875rem;
+      padding-left: $margin-sm;
+    }
+    @include respond(lg) {
+      padding-left: $margin-lg;
+    }
+    @include respond(xl) {
+      padding-left: $margin-xl;
+    }
+  }
+}

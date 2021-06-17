@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+body {
+  background: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+button {
+  border: none;
+}
+
+​button:focus {
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.start-page {
+  margin: 4em auto 0;
+  transition: all .5s ease-in;
+}
+
+.start-page h1 {
+  font-family: "Monoton", cursive;
+  font-size: 5em;
+  font-weight: 100;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: 8px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0400ff, 0 0 35px #0400ff, 0 0 40px #0400ff, 0 0 50px #0400ff, 0 0 75px #0400ff;
+}
+
+.start-page h1.faded {
+  color: #fff;
+  transition: text-shadow 0.125s;
+  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 20px #adbeff, 0 0 35px #adbeff, 0 0 40px #adbeff, 0 0 50px #adbeff, 0 0 75px #adbeff;
+}
+
+.start-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.start-page button {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 12em auto 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8em;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  overflow: hidden;
+  background: #0400ff;
+  color: white;
+  box-shadow: 0 0 5px #0400ff, 0 0 25px #0400ff, 0 0 50px #0400ff, 0 0 200px #0400ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.start-page button:hover {
+  background-color: white;
+  box-shadow: 0 0 20px #adbeff, 0 0 100px #adbeff, 0 0 100px #adbeff, 0 0 400px #adbeff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  transition: background-color .125s, box-shadow .125s;
+}
+/*# sourceMappingURL=main.css.map */

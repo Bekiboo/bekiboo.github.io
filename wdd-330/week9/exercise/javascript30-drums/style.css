@@ -1,0 +1,82 @@
+html {
+  font-size: 10px;
+  background: url(https://images.unsplash.com/photo-1524230659092-07f99a75c013?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) bottom center;
+  background-size: cover;
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+/* [data-low="10"] {
+  margin-top: 10px;
+}
+[data-low="20"] {
+  margin-top: 20px;
+}
+[data-low="30"] {
+  margin-top: 30px;
+}
+[data-low="40"] {
+  margin-top: 40px;
+}
+[data-low="50"] {
+  margin-top: 50px;
+}
+[data-low="60"] {
+  margin-top: 60px;
+}
+[data-low="70"] {
+  margin-top: 70px;
+}
+[data-low="80"] {
+  margin-top: 80px;
+}
+[data-low="90"] {
+  margin-top: 90px;
+}
+[data-low="100"] {
+  margin-top: 100px;
+} */

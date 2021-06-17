@@ -1,0 +1,37 @@
+$side-margins-mobile: 10vw;
+$side-margins-tab-land: 18vw;
+$vertical-margins-mobile: 5vw;
+$vertical-margins-tab-land: 10vw;
+
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==tab-port {
+    @media only screen and (min-width: 48em) {
+      @content;
+    } //768px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (min-width: 60em) {
+      @content;
+    } //960px
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+}
+
+@mixin pseudoImage() {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
