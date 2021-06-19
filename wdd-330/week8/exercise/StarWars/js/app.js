@@ -284,6 +284,7 @@ const controller = {
     showList(url, category, pageNumber) {
         model.getJSON(url)
             .then((data) => {
+                console.log(data);
                 view.renderList(data, category)
                 view.renderIndex(data, category, pageNumber)
                 view.transition()

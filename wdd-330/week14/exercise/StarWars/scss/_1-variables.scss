@@ -1,0 +1,17 @@
+$neon-primary: hsl(214, 100%, 50%);
+$neon-secondary: hsl(214, 100%, 50%);
+$neon-third: hsl(44, 73%, 84%);
+$neon-forth: hsl(289, 80%, 65%);
+$neon-fifth: #73dd73;
+$dim-yellow: hsl(44, 73%, 48%);
+$dim-yellow-glow: hsl(44, 73%, 84%);
+
+$ad: rgb(17, 88, 30);
+$ba: rgb(4, 22, 7);
+$ad: rgb(88, 88, 30);
+$ba: rgb(22, 22, 7); 
+
+::selection {
+    color: red;
+    background-color: white;
+}

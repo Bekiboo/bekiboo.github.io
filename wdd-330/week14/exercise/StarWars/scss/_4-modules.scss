@@ -1,0 +1,28 @@
+button {
+  // https://codepen.io/bhadupranjal/pen/vYLZYqQ?editors=1100
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8em;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  overflow: hidden;
+  background: $neon-primary;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 2.5px $neon-primary, 0 0 12px $neon-primary, 0 0 50px $neon-primary;
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: white;
+      box-shadow: 0 0 20px $neon-third, 0 0 100px $neon-third, 0 0 100px $neon-third,
+        0 0 400px $neon-third;
+      transition: background-color 0.125s, box-shadow 0.125s;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+}
+
+

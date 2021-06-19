@@ -1,5 +1,12 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@font-face {
+  font-family: 'american_captainregular';
+  src: url("./../../assets/americancaptain-mdey-webfont.woff2") format("woff2"), url("./../../assets/americancaptain-mdey-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: #222222;
   display: flex;
@@ -20,6 +27,13 @@ button {
 
 .hidden {
   display: none;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 100;
+  font-family: 'american_captainregular', sans-serif;
+  color: red;
 }
 
 .start-page {
