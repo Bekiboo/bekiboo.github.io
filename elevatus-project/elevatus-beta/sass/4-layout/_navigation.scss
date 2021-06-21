@@ -6,10 +6,10 @@ header {
     height: 80px;
     text-align: left;
     background: rgba($primary-500, .98);
+    display: grid;
+    place-items: center;
 
     @include respond(tab-port) {
-        display: grid;
-        place-items: center;
         bottom: unset;
         top: 0;
     }

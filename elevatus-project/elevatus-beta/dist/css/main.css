@@ -625,12 +625,12 @@ header {
   height: 80px;
   text-align: left;
   background: rgba(255, 187, 0, 0.98);
+  display: grid;
+  place-items: center;
 }
 
 @media only screen and (min-width: 48em) {
   header {
-    display: grid;
-    place-items: center;
     bottom: unset;
     top: 0;
   }
