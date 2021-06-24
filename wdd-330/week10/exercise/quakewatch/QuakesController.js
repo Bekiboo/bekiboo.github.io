@@ -7,7 +7,7 @@ export default class QuakesController {
   constructor(parent, position = null) {
     this.parent = parent;
     this.parentElement = null;
-    this.position = position || { // the API doesn't work from Madagascar, so I have to add these default coordinates
+    this.position = position || { // the API doesn't seem to work from Madagascar, so I added these default coordinates
       lat: 43.814540699999995,
       lon: -111.78491029999999
     };
@@ -27,7 +27,8 @@ export default class QuakesController {
     if (this.position.lat === 0) {
       try {
         // try to get the position using getLocation()
-        const posFull = await getLocation();
+        const posFull = await getLocation(); // Doesn't seem to be working. Because I try it from Madagascar?
+        console.log(posFull);
 
         // if we get the location back then set the latitude and longitude into this.position
         this.position.lat = posFull.coords.latitude;
@@ -47,19 +48,21 @@ export default class QuakesController {
       this.position,
       100
     );
-
-    console.log(quakeList);
-
+    
     // // render the list to html
     this.quakesView.renderQuakeList(quakeList, this.parentElement);
-    // // add a listener to the new list of quakes to allow drill down in to the details. The listener should call this.getQuakeDetails on the targeted element
-    // this.parentElement.addEventListener('touchend', e => {
-    //   this.getQuakeDetails(e.target.dataset.id);
-    // });
+    this.parentElement.addEventListener('click', e => {
+      let id = e.target.dataset.id ? e.target.dataset.id : e.target.parentElement.dataset.id
+      this.getQuakeDetails(id);
+    });
   }
   async getQuakeDetails(quakeId) {
+    const quakeList = await this.quakes.getEarthQuakesByRadius(
+      this.position,
+      100
+    );
     // get the details for the quakeId provided, then send them to the view to be displayed
     const quake = this.quakes.getQuakeById(quakeId);
-    this.quakesView.renderQuake(quake, this.parentElement);
+    this.quakesView.renderQuake(quake, this.parentElement, quakeList, this.parentElement);
   }
 }
