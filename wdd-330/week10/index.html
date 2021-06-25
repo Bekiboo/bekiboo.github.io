@@ -1,97 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>WDD 330</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../style.css" />
-  <title>WDD 330</title>
-</head>
-
-<body>
-  <header>
-    <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
-    <a href="../index.html">Back</a>
-  </header>
-  <main>
-    <section>
-      <h2>Notes</h2>
-      <h3>Async/Await</h3>
-      <p>An async function is a function declared with the async keyword, and the await keyword is permitted within
-        them. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style,
-        avoiding the need to explicitly configure promise chains.</p>
-      <p>Basically allows to have two pieces of code running in the same time. While we wait for one to resolve, the
-        rest of the code can continue</p>
-      <br>
-      <h3>Promises</h3>
-      <p>The Promise object represents the eventual completion (or failure) of an asynchronous operation and its
-        resulting value.</p> <br>
-      let p = new Promise((resolve, reject) => { <br>
-      &emsp;let a = 1 + 1 <br>
-      &emsp;if (a == 2) { <br>
-      &emsp;&emsp; resolve('Success') <br>
-      &emsp;} else { <br>
-      &emsp;&emsp; reject('Failed') <br>
-      &emsp;} <br>
-      }) <br>
-      <br>
-      p.then((message) => { <br>
-      &emsp;console.log('This is in the then ' + message) <br>
-      }).catch((message) => { <br>
-      &emsp;console.log('This is in the catch ' + message) <br>
-      }) <br>
-      <br>
-      <h3>Promise.all Promise.race</h3>
-      const loadOne = new Promise((resolve, reject) => { <br>
-      &emsp;resolve('One') <br>
-      }) <br>
-      const loadTwo = new Promise((resolve, reject) => { <br>
-      &emsp;resolve('Two') <br>
-      }) <br>
-      const loadThree = new Promise((resolve, reject) => { <br>
-      &emsp;resolve('Three') <br>
-      }) <br>
-      <br>
-      Promise.<b>all</b>([ <br>
-      &emsp;loadOne, <br>
-      &emsp;loadTwo, <br>
-      &emsp;loadThree <br>
-      ]).then((message) => <br>
-      &emsp;console.log(message) <br>
-      ) <i>// ['One', 'Two', 'Three']</i> <br>
-      <br>
-      Promise.<b>race</b>([ <br>
-      &emsp;loadOne, <br>
-      &emsp;loadTwo, <br>
-      &emsp;loadThree <br>
-      ]).then((message) => <br>
-      &emsp;console.log(message) <br>
-      ) <i>// ['One'] or whicheve finishes first</i> <br>
-
-    </section>
-    <section>
-      <h2>Questions</h2>
-    </section>
-    <section>
-      <h2>Exercises</h2>
-      <ul>
-        <li>
-          <h4><a href="exercise/quakewatch/index.html">Quake List</a>
-          </h4>
-        </li>
-        <!-- <li>
+  <body>
+    <header>
+      <h1><a href="../../index.html">WDD 330 PORTFOLIO</a></h1>
+      <a href="../index.html">Back</a>
+    </header>
+    <main>
+      <section>
+        <h2>Notes</h2>
+        <h3>Async/Await</h3>
+        <p>
+          An async function is a function declared with the async keyword, and
+          the await keyword is permitted within them. The async and await
+          keywords enable asynchronous, promise-based behavior to be written in
+          a cleaner style, avoiding the need to explicitly configure promise
+          chains.
+        </p>
+        <p>
+          Basically allows to have two pieces of code running in the same time.
+          While we wait for one to resolve, the rest of the code can continue
+        </p>
+        <br />
+        <h3>Promises</h3>
+        <p>
+          The Promise object represents the eventual completion (or failure) of
+          an asynchronous operation and its resulting value.
+        </p>
+        <br />
+        let p = new Promise((resolve, reject) => { <br />
+        &emsp;let a = 1 + 1 <br />
+        &emsp;if (a == 2) { <br />
+        &emsp;&emsp; resolve('Success') <br />
+        &emsp;} else { <br />
+        &emsp;&emsp; reject('Failed') <br />
+        &emsp;} <br />
+        }) <br />
+        <br />
+        p.then((message) => { <br />
+        &emsp;console.log('This is in the then ' + message) <br />
+        }).catch((message) => { <br />
+        &emsp;console.log('This is in the catch ' + message) <br />
+        }) <br />
+        <br />
+        <h3>Promise.all Promise.race</h3>
+        const loadOne = new Promise((resolve, reject) => { <br />
+        &emsp;resolve('One') <br />
+        }) <br />
+        const loadTwo = new Promise((resolve, reject) => { <br />
+        &emsp;resolve('Two') <br />
+        }) <br />
+        const loadThree = new Promise((resolve, reject) => { <br />
+        &emsp;resolve('Three') <br />
+        }) <br />
+        <br />
+        Promise.<b>all</b>([ <br />
+        &emsp;loadOne, <br />
+        &emsp;loadTwo, <br />
+        &emsp;loadThree <br />
+        ]).then((message) => <br />
+        &emsp;console.log(message) <br />
+        ) <i>// ['One', 'Two', 'Three']</i> <br />
+        <br />
+        Promise.<b>race</b>([ <br />
+        &emsp;loadOne, <br />
+        &emsp;loadTwo, <br />
+        &emsp;loadThree <br />
+        ]).then((message) => <br />
+        &emsp;console.log(message) <br />
+        ) <i>// ['One'] or whicheve finishes first</i> <br />
+      </section>
+      <section>
+        <h2>Questions</h2>
+        <p>
+          I wonder if I could use a framework for my final project. I don't know
+          any yet, but I'm very interested into Svelte.js. Well, I guess it would
+          be too much to learn before the end of next month.
+        </p>
+      </section>
+      <section>
+        <h2>Exercises</h2>
+        <ul>
+          <li>
+            <h4><a href="exercise/quakewatch/index.html">Quake List</a></h4>
+          </li>
+          <!-- <li>
           <h4><a href="exercise/proposal/index.html">Final Project Proposal</a>
           </h4>
         </li> -->
-
-      </ul>
-    </section>
-  </main>
-  <footer></footer>
-</body>
-
+        </ul>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>

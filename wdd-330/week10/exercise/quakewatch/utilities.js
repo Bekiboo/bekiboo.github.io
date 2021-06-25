@@ -1,11 +1,9 @@
 export function getJSON(url) {
-  console.log('getJSON');
   return fetch(url)
     .then(function (response) {
       if (!response.ok) {
         throw Error(response.statusText);
       } else {
-        console.log(response.json);
         return response.json();
       }
     })

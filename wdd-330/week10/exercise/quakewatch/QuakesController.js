@@ -4,9 +4,10 @@ import QuakesView from './QuakesView.js';
 
 // Quake controller
 export default class QuakesController {
-  constructor(parent, position = null) {
+  constructor(parent, radius, position = null) {
     this.parent = parent;
     this.parentElement = null;
+    this.radius = radius
     this.position = position || { // the API doesn't seem to work from Madagascar, so I added these default coordinates
       lat: 43.814540699999995,
       lon: -111.78491029999999
@@ -19,7 +20,7 @@ export default class QuakesController {
     // use this as a place to grab the element identified by this.parent, do the initial call of this.intiPos(), and display some quakes by calling this.getQuakesByRadius()
     this.parentElement = document.querySelector(this.parent);
     await this.initPos();
-    this.getQuakesByRadius(100);
+    this.getQuakesByRadius(this.radius);
   }
 
   async initPos() {
@@ -28,7 +29,6 @@ export default class QuakesController {
       try {
         // try to get the position using getLocation()
         const posFull = await getLocation(); // Doesn't seem to be working. Because I try it from Madagascar?
-        console.log(posFull);
 
         // if we get the location back then set the latitude and longitude into this.position
         this.position.lat = posFull.coords.latitude;
@@ -46,7 +46,7 @@ export default class QuakesController {
     // get the list of quakes in the specified radius of the location
     const quakeList = await this.quakes.getEarthQuakesByRadius(
       this.position,
-      100
+      this.radius
     );
     
     // // render the list to html
