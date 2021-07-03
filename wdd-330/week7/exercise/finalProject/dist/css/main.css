@@ -1,19 +1,45 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  --theme: rgb(237, 29, 35);
+}
+
 @font-face {
-  font-family: 'american_captainregular';
-  src: url("./../../assets/americancaptain-mdey-webfont.woff2") format("woff2"), url("./../../assets/americancaptain-mdey-webfont.woff") format("woff");
+  font-family: "rogue";
+  src: url("./../../assets/roguehero-webfont.woff2") format("woff2"), url("./../../assets/roguehero-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
-  background: #222222;
+  background: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   text-align: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+main {
+  width: 300vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  transition: .3s;
 }
 
 button {
@@ -25,66 +51,121 @@ button {
   outline: none;
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Rogue', sans-serif;
+}
+
+h4,
+p,
+a,
+div {
+  font-family: 'Poppins', sans-serif;
+}
+
 .hidden {
   display: none;
 }
 
-h1 {
+.not-focused {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+main section {
+  width: 100vw;
+  transition: .3s;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home h4 {
+  color: #212121;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.home__header {
+  width: 100%;
+  background: #212121;
+}
+
+.home__title {
+  margin: 2rem 0;
   font-size: 6rem;
   font-weight: 100;
-  font-family: 'american_captainregular', sans-serif;
-  color: red;
+  font-family: 'rogue', sans-serif;
+  line-height: 0.775;
 }
 
-.start-page {
-  margin: 4em auto 0;
-  transition: all .5s ease-in;
+.home__title--hero {
+  color: #ed1d23;
 }
 
-.start-page h1 {
-  font-family: "Monoton", cursive;
-  font-size: 5em;
-  font-weight: 100;
-  color: white;
-  line-height: 1.2;
-  letter-spacing: 8px;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0400ff, 0 0 35px #0400ff, 0 0 40px #0400ff, 0 0 50px #0400ff, 0 0 75px #0400ff;
+.home__title--quiz {
+  color: #0476f1;
 }
 
-.start-page h1.faded {
-  color: #fff;
-  transition: text-shadow 0.125s;
-  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 20px #adbeff, 0 0 35px #adbeff, 0 0 40px #adbeff, 0 0 50px #adbeff, 0 0 75px #adbeff;
+.home__main {
+  margin-top: 5vh;
 }
 
-.start-page * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.home__menu div {
+  cursor: pointer;
+  pointer-events: none;
 }
 
-.start-page button {
-  position: relative;
-  display: inline-block;
-  padding: 25px 30px;
-  margin: 12em auto 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.8em;
-  font-family: "Raleway", sans-serif;
+.home__menu div:hover {
+  opacity: 1;
+}
+
+.home__menu .focused--clickable {
+  transition: 0.3s;
+  opacity: .25;
+  pointer-events: all;
+}
+
+.home__menu--marvel {
+  transform: scale(0.8);
+}
+
+.home__menu--dc {
+  transform: scale(0.8);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #fafafa;
+  margin: 0 auto;
+}
+
+.nav div {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 3rem;
+  background: var(--theme);
   font-weight: 700;
-  overflow: hidden;
-  background: #0400ff;
-  color: white;
-  box-shadow: 0 0 5px #0400ff, 0 0 25px #0400ff, 0 0 50px #0400ff, 0 0 200px #0400ff;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.start-page button:hover {
-  background-color: white;
-  box-shadow: 0 0 20px #adbeff, 0 0 100px #adbeff, 0 0 100px #adbeff, 0 0 400px #adbeff;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-  transition: background-color .125s, box-shadow .125s;
+.nav div:nth-of-type(2) {
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+}
+
+.nav div:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
