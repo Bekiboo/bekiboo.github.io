@@ -1,0 +1,276 @@
+@charset "UTF-8";
+:root {
+  --theme: rgb(237, 29, 35);
+}
+
+@font-face {
+  font-family: "rogue";
+  src: url("./../../assets/roguehero-webfont.woff2") format("woff2"), url("./../../assets/roguehero-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rogue_hero_condensedcondensed';
+  src: url("./../../assets/rogueherocond-webfont.woff2") format("woff2"), url("./../../assets/rogueherocond-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+main {
+  width: 300vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  transition: .3s;
+}
+
+button {
+  border: none;
+}
+
+​button:focus {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Rogue', sans-serif;
+}
+
+h4,
+p,
+a,
+div {
+  font-family: 'Poppins', sans-serif;
+  color: #212121;
+}
+
+.hidden {
+  display: none;
+}
+
+.not-focused {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+main section {
+  width: 100vw;
+  transition: 0.3s;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home h4 {
+  color: #212121;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.home__header {
+  width: 100%;
+  background: #212121;
+}
+
+.home__title {
+  margin: 2rem 0;
+  font-size: 6rem;
+  font-weight: 100;
+  font-family: 'rogue', sans-serif;
+  line-height: 0.775;
+}
+
+.home__title--hero {
+  color: #ed1d23;
+}
+
+.home__title--quiz {
+  color: #0476f1;
+}
+
+.home__main {
+  display: grid;
+  place-content: center;
+  height: calc(100vh - 212px - 48px);
+}
+
+.home__menu div {
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.home__menu div:hover {
+  opacity: 1;
+}
+
+.home__menu .focused--clickable {
+  transition: 0.3s;
+  opacity: 0.25;
+  pointer-events: all;
+}
+
+.home__menu--marvel {
+  transform: scale(0.8);
+}
+
+.home__menu--dc {
+  transform: scale(0.8);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.nav div {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 6vh;
+  background: var(--theme);
+  font-weight: 700;
+  color: #fafafa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav div:nth-of-type(2) {
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+}
+
+.nav div:hover {
+  opacity: 1;
+}
+
+.explore {
+  color: black;
+}
+
+.explore__header {
+  display: grid;
+  place-content: center;
+  height: 12vh;
+  width: 100vw;
+  background: var(--theme);
+  color: white;
+}
+
+.explore__header h4 {
+  font-weight: lighter;
+  font-size: 2rem;
+  font-family: "rogue_hero_condensedcondensed", sans-serif;
+  color: #fafafa;
+}
+
+.explore__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #212121;
+}
+
+.explore__list {
+  width: 360px;
+  height: 72vh;
+  margin: 0 auto;
+  padding: 4vh 2rem;
+  text-align: center;
+  columns: 2;
+  font-size: 1rem;
+  font-weight: 300;
+  background: #fafafa;
+}
+
+.explore__list li {
+  margin-bottom: .85rem;
+}
+
+.explore__list li p {
+  line-height: .8;
+}
+
+.explore__list li:hover {
+  font-weight: 400;
+  color: var(--theme);
+}
+
+.explore__index ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3vh;
+  transition: 0.3s;
+  height: 10vh;
+  width: 360px;
+  margin: 0 auto;
+  background: #fafafa;
+}
+
+.explore__index li {
+  color: white;
+  padding: 0.5rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  background: var(--theme);
+  border-radius: 100%;
+}
+
+.explore__index li:not(:first-of-type) {
+  margin-left: 0.25rem;
+}
+
+.explore__index li:hover {
+  transform: scale(1.1);
+}
+
+.explore__index li div {
+  color: #fafafa;
+}
+
+.explore li {
+  list-style: none;
+  line-height: 3vh;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.explore li:hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=main.css.map */
