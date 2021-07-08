@@ -208,7 +208,7 @@ main section {
 
 .explore__list {
   width: 360px;
-  height: 72vh;
+  height: 68vh;
   margin: 0 auto;
   padding: 4vh 2rem;
   text-align: center;
@@ -227,7 +227,6 @@ main section {
 }
 
 .explore__list li:hover {
-  font-weight: 400;
   color: var(--theme);
 }
 
@@ -236,7 +235,7 @@ main section {
   justify-content: center;
   margin-bottom: 3vh;
   transition: 0.3s;
-  height: 10vh;
+  height: 14vh;
   width: 360px;
   margin: 0 auto;
   background: #fafafa;

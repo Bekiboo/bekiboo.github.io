@@ -1,5 +1,6 @@
 import controller from './controller.js'
 import view from './view.js'
+import anime from './animejs/lib/anime.es.js'
 
 // // SWIPE EVENT LISTENERS
 // const { SwipeEventListener } = window.SwipeEventListener
@@ -11,6 +12,17 @@ import view from './view.js'
 // controller.goToPage('navExplore')
 
 window.onload = () => {
+
+  anime({
+    targets: '#menuDC svg',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutSine',
+    duration: 1500,
+    delay: function(el, i) { return i * 250 },
+    direction: 'alternate',
+    loop: true
+  });
+
   // Page initializer
   controller.getFranchise('Marvel Comics')
 
