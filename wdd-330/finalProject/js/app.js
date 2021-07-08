@@ -8,7 +8,7 @@ import view from './view.js'
 //   swipeSensitivity: 200,
 // })
 
-controller.goToPage('navExplore')
+// controller.goToPage('navExplore')
 
 window.onload = () => {
   // Page initializer
