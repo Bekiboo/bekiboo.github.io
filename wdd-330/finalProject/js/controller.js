@@ -7,8 +7,13 @@ const controller = {
       model.heroesList = []
 
       data.forEach((hero) => {
-        if (hero.biography.publisher == franchise) model.heroesList.push(hero)
+        if (
+          hero.biography.publisher == franchise &&
+          hero.appearance.height[0] !== '-'
+        )
+          model.heroesList.push(hero)
       })
+      
       view.switchMode(franchise)
       view.renderHeroesList(model.heroesList, 1)
     })

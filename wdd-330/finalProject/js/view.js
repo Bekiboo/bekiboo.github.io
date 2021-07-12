@@ -133,6 +133,8 @@ const view = {
     this.exploreIndex.innerHTML = ''
   },
 
+
+
   renderHeroDetail(hero, heroesList, pageNumber) {
     console.log(hero)
     this.emptyExplore()
@@ -147,6 +149,8 @@ const view = {
       `Hair Color: ${hero.appearance.hairColor}`,
       `Eye Color: ${hero.appearance.eyeColor}`,
       `<img src="${hero.images.sm}" alt="${hero.name}" width="160px" height="240px">`,
+      `Hair Color: ${hero.appearance.hairColor}`,
+      `Eye Color: ${hero.appearance.eyeColor}`,
     ]
 
     let details = [
@@ -158,27 +162,27 @@ const view = {
       // `Combat: ${hero.powerstats.combat} - Durability: ${hero.powerstats.durability}`,
     ]
 
-    let itemsList1 = document.createElement('ul')
-    let itemsList2 = document.createElement('ul')
-    itemsList2.style.transform  = 'translate(-150px)'
-    itemsList2.style.width  = '80vw'
+    let itemsList1 = document.createElement('div')
+    // let itemsList2 = document.createElement('ul')
+    // itemsList2.style.transform  = 'translate(-150px)'
+    // itemsList2.style.width  = '80vw'
 
     description.forEach(function (detail) {
-      let itemList = document.createElement('li')
+      let itemList = document.createElement('p')
       itemList.style.pointerEvents = 'none'
       itemList.innerHTML = `<div>${detail}</div>`
       itemsList1.appendChild(itemList)
     })
 
-    details.forEach(function (detail) {
-      let itemList = document.createElement('li')
-      itemList.style.pointerEvents = 'none'
-      itemList.innerHTML = `<div>${detail}</div>`
-      itemsList2.appendChild(itemList)
-    })
+    // details.forEach(function (detail) {
+    //   let itemList = document.createElement('li')
+    //   itemList.style.pointerEvents = 'none'
+    //   itemList.innerHTML = `<div>${detail}</div>`
+    //   itemsList2.appendChild(itemList)
+    // })
 
     anime({
-      targets: [itemsList1, itemsList2],
+      targets: [itemsList1],
       translateX: [
         { value: -500, duration: 0},
         { value: 0, duration: 800, delay: 150 },
@@ -190,7 +194,7 @@ const view = {
     })
 
     this.exploreList.appendChild(itemsList1)
-    this.exploreList.appendChild(itemsList2)
+    // this.exploreList.appendChild(itemsList2)
 
     let indexBody = document.createElement('ul')
 

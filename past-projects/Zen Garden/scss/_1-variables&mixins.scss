@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Fira Code', monospace;
+  word-spacing: -.12w5em;
+}
+
+$side-margins-mobile: 5vw;
+$side-margins-tab-land: 18vw;
+
+
+$dark-grey: hsl(0, 0%, 25%);
+$bright-orange: hsl(19, 100%, 50%);
+$tern-teal: hsl(188, 37%, 57%);
+
+@mixin downArrow($scale, $x, $y) {
+  position: absolute;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='131.786 131.535 135.013 85' width='135.013' height='85'%3E%3Cpath style='paint-order: stroke; fill: rgba(216, 216, 216, 0); stroke-width: 8px; stroke: rgb(255, 81, 0);' d='M 131.786 132.862 L 198.629 199.705 L 266.799 131.535'%3E%3C/path%3E%3C/svg%3E");
+  transform: scale($scale) translate($x, $y);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==tab-port {
+    @media only screen and (min-width: 48em) {
+      @content;
+    } //768px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (min-width: 60em) {
+      @content;
+    } //960px
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+}
+
+@mixin pseudoImage() {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
