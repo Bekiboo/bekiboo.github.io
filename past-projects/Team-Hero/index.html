@@ -11,10 +11,10 @@
     />
     <meta
       name="description"
-      content="Superhero Quiz Game for WDD-330 - by Julien Connault"
+      content="Superhero Team Library for WDD-330 - by Julien Connault"
     />
     <link rel="stylesheet" href="dist/css/main.css" />
-    <title>Hero Quiz</title>
+    <title>Team Hero</title>
   </head>
 
   <body>
@@ -35,9 +35,9 @@
       <section class="home" id="homePage">
         <div class="home__header">
           <h1 class="home__title">
-            <span class="home__title--hero">HERO</span><br /><span
+            <span class="home__title--hero">TEAM</span><br /><span
               class="home__title--quiz"
-              >QUIZ</span
+              >HERO</span
             >
           </h1>
         </div>
@@ -83,7 +83,7 @@
                 </g>
               </svg>
             </div>
-            <div class="home__menu--dc focused--clickable" id="menuDC">
+            <div class="home__menu--dc" id="menuDC">
               <svg
                 version="1.1"
                 id="Layer_1"
@@ -119,9 +119,16 @@
         </div>
       </section>
 
-      <!---------------------- PLAY PAGE ---------------------->
-      <section class="play" id="playPage">
-        <h1 style="color: rgb(4, 0, 255)">Play</h1>
+      <!---------------------- TEAM PAGE ---------------------->
+      <section class="team" id="teamPage">
+        <div class="team__header">
+          <h4 class="team__title" id="teamTitle">Build up your team</h4>
+          <p>max: 5 members</p>
+        </div>
+        <div class="team__main" id="teamMain">
+          <div class="team__list" id="teamList">
+          </div>
+        </div>
       </section>
 
       <!-- end main -->
@@ -131,7 +138,7 @@
     <nav class="nav" id="navBar" data-state="navHome">
       <div class="nav__item not-focused" id="navExplore">Explore</div>
       <div class="nav__item" id="navHome">Home</div>
-      <div class="nav__item not-focused" id="navPlay">Play</div>
+      <div class="nav__item not-focused" id="navTeam">Team</div>
     </nav>
 
     <script src="https://unpkg.com/swipe-event-listener@1.2.1/dist/swipe-event-listener.js"></script>

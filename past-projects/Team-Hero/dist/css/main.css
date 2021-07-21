@@ -1,6 +1,8 @@
 @charset "UTF-8";
 :root {
   --theme: rgb(237, 29, 35);
+  --themeblend: white
+;
 }
 
 @font-face {
@@ -69,7 +71,7 @@ p,
 a,
 div {
   font-family: 'Poppins', sans-serif;
-  color: #212121;
+  color: #262626;
 }
 
 .hidden {
@@ -78,7 +80,7 @@ div {
 
 .not-focused {
   transition: 0.3s;
-  opacity: 0.5;
+  background: #545454 !important;
 }
 
 main section {
@@ -91,17 +93,18 @@ main section {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background: #262626;
 }
 
 .home h4 {
-  color: #212121;
+  color: #262626;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
 .home__header {
   width: 100%;
-  background: #212121;
+  background: #1a1a1a;
 }
 
 .home__title {
@@ -123,7 +126,9 @@ main section {
 .home__main {
   display: grid;
   place-content: center;
-  height: calc(100vh - 212px - 48px);
+  width: 360px;
+  background: #fafafa;
+  height: calc(100vh - 212.8px - 6vh);
 }
 
 .home__menu div {
@@ -197,13 +202,21 @@ main section {
   font-size: 2rem;
   font-family: "rogue_hero_condensedcondensed", sans-serif;
   color: #fafafa;
+  line-height: 1.25rem;
+}
+
+.explore__header h4 em {
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
 
 .explore__main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #212121;
+  background: #262626;
 }
 
 .explore__list {
@@ -216,6 +229,11 @@ main section {
   font-size: 1rem;
   font-weight: 300;
   background: #fafafa;
+}
+
+.explore__list.details {
+  height: 72vh;
+  padding-bottom: 0;
 }
 
 .explore__list li {
@@ -262,6 +280,16 @@ main section {
   color: #fafafa;
 }
 
+.explore__index .add-button {
+  line-height: 1;
+  border-radius: 200px;
+  width: 10rem;
+}
+
+.explore__index .close-button {
+  margin-right: 1rem;
+}
+
 .explore li {
   list-style: none;
   line-height: 3vh;
@@ -270,6 +298,94 @@ main section {
 }
 
 .explore li:hover {
+  opacity: 1;
+}
+
+.team {
+  color: black;
+}
+
+.team__header {
+  display: grid;
+  place-content: center;
+  height: 12vh;
+  width: 100vw;
+  background: var(--theme);
+  color: white;
+}
+
+.team__header h4 {
+  font-weight: lighter;
+  font-size: 2rem;
+  font-family: "rogue_hero_condensedcondensed", sans-serif;
+  color: #fafafa;
+}
+
+.team__header p {
+  color: white;
+}
+
+.team__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #262626;
+}
+
+.team__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 360px;
+  height: 82vh;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  background: #fafafa;
+}
+
+.team__list .teamHeroLine {
+  display: flex;
+  align-items: center;
+  margin: .5rem auto;
+}
+
+.team__list .teamBtn {
+  width: 12rem;
+  padding: .5rem 0;
+  background: var(--theme);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
+  transition: .3s;
+}
+
+.team__list .teamBtn:active {
+  box-shadow: none;
+}
+
+.team__list .removeBtn {
+  padding: .2rem .75rem;
+  background: #262626;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.team__list .removeBtn:hover {
+  transition: .3s;
+  color: var(--theme);
+}
+
+.team li {
+  list-style: none;
+  line-height: 3vh;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.team li:hover {
   opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

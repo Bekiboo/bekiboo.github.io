@@ -10,8 +10,8 @@ $side-margins-tab-land: 18vw;
 
 
 $dark-grey: hsl(0, 0%, 25%);
-$bright-orange: hsl(19, 100%, 50%);
-$tern-teal: hsl(188, 37%, 57%);
+$bright-orange: #ff5100;
+$tern-teal: #69afba;
 
 @mixin downArrow($scale, $x, $y) {
   position: absolute;

@@ -7,11 +7,14 @@ main section {
   transition: 0.3s;
 }
 
+
+// HOME
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background: $clr-black;
 
   h4 {
     color: $clr-black;
@@ -21,7 +24,7 @@ main section {
 
   &__header {
     width: 100%;
-    background: $clr-black;
+    background: hsl(0, 0%, 10%);
   }
 
   &__title {
@@ -41,7 +44,9 @@ main section {
   &__main {
     display: grid;
     place-content: center;
-    height: calc(100vh - 212px - 48px);
+    width: 360px;
+    background: $clr-white;
+    height: calc(100vh - 212.8px - 6vh);
   }
 
   &__menu {
@@ -115,6 +120,14 @@ main section {
       font-size: 2rem;
       font-family: $font-secondary;
       color: $clr-white;
+      line-height: 1.25rem;
+
+      em {
+        font-style: normal;
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: $font-primary;
+      }
     }
   }
 
@@ -130,6 +143,10 @@ main section {
     height: 68vh;
     margin: 0 auto;
     padding: 4vh 2rem;
+    &.details {
+      height: 72vh;
+      padding-bottom: 0;
+    }
     text-align: center;
     columns: 2;
     font-size: 1rem;
@@ -176,6 +193,100 @@ main section {
         color: $clr-white;
       }
     }
+    .add-button {
+      line-height: 1;
+      border-radius: 200px;
+      width: 10rem;
+    }
+    .close-button {
+      margin-right: 1rem;
+    }
+  }
+
+  li {
+    list-style: none;
+    line-height: 3vh;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// TEAM PAGE
+.team {
+  color: black;
+
+  &__header {
+    display: grid;
+    place-content: center;
+    height: 12vh;
+    width: 100vw;
+    background: var(--theme);
+    color: white;
+
+    h4 {
+      font-weight: lighter;
+      font-size: 2rem;
+      font-family: $font-secondary;
+      color: $clr-white;
+    }
+    p {
+      color: white;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $clr-black;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 360px;
+    height: 82vh;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    background: $clr-white;
+
+    .teamHeroLine {
+      display: flex;
+      align-items: center;
+      margin: .5rem auto;
+    }
+
+    .teamBtn {
+      width: 12rem;
+      padding: .5rem 0;
+      background: var(--theme);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      box-shadow: 4px 4px 10px 0 rgba(black, 0.25);
+      transition: .3s;
+      &:active {
+        box-shadow: none
+      }
+    }
+    
+    .removeBtn {
+      padding: .2rem .75rem;
+      background: $clr-black;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        transition: .3s;
+        color: var(--theme);
+      }
+    }
+    
   }
 
   li {

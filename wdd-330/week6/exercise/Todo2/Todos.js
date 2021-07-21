@@ -92,6 +92,7 @@ function saveTodo(task, key) {
 function getTodos(key) {
     if (todoList.length === 0) {
         todoList = readFromLS(key)
+        console.log(todoList);
         if (todoList === null) {
             todoList = []
         }

@@ -1,10 +1,11 @@
 $clr-marvel: hsl(358, 85%, 52%);
 $clr-dc: hsl(211, 97%, 48%);
 $clr-white: hsl(0, 0%, 98%);
-$clr-black: hsl(0, 0%, 13%);
+$clr-black: hsl(0, 0%, 15%);
 
 :root {
   --theme: rgb(237, 29, 35);
+  --themeblend: white
 }
 
 $background: $clr-white;
