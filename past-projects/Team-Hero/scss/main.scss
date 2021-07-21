@@ -7,7 +7,6 @@ main section {
   transition: 0.3s;
 }
 
-
 // HOME
 .home {
   display: flex;
@@ -143,25 +142,35 @@ main section {
     height: 68vh;
     margin: 0 auto;
     padding: 4vh 2rem;
-    &.details {
-      height: 72vh;
-      padding-bottom: 0;
-    }
     text-align: center;
     columns: 2;
     font-size: 1rem;
     font-weight: 300;
     background: $clr-white;
     li {
-      margin-bottom: .85rem;
+      margin-bottom: 0.85rem;
       p {
-        line-height: .8;
+        line-height: 0.8;
       }
       &:hover {
         color: var(--theme);
       }
     }
+    &.details {
+      height: 72vh;
+      padding-bottom: 0;
+
+      @media screen and (max-height: 660px) {
+        line-height: 1.2;
+      }
+      @media screen and (max-height: 600px) {
+        line-height: 1;
+      }
+    }
+
   }
+
+
 
   &__index {
     ul {
@@ -258,35 +267,34 @@ main section {
     .teamHeroLine {
       display: flex;
       align-items: center;
-      margin: .5rem auto;
+      margin: 0.5rem auto;
     }
 
     .teamBtn {
       width: 12rem;
-      padding: .5rem 0;
+      padding: 0.5rem 0;
       background: var(--theme);
       color: white;
       font-size: 1.5rem;
       font-weight: 700;
       box-shadow: 4px 4px 10px 0 rgba(black, 0.25);
-      transition: .3s;
+      transition: 0.3s;
       &:active {
-        box-shadow: none
+        box-shadow: none;
       }
     }
-    
+
     .removeBtn {
-      padding: .2rem .75rem;
+      padding: 0.2rem 0.75rem;
       background: $clr-black;
       font-size: 2rem;
       color: white;
       cursor: pointer;
       &:hover {
-        transition: .3s;
+        transition: 0.3s;
         color: var(--theme);
       }
     }
-    
   }
 
   li {
