@@ -157,13 +157,13 @@ main section {
       }
     }
     &.details {
-      height: 72vh;
+      height: 68vh;
       padding-bottom: 0;
 
-      @media screen and (max-height: 660px) {
+      @media screen and (max-height: 700px) {
         line-height: 1.2;
       }
-      @media screen and (max-height: 600px) {
+      @media screen and (max-height: 636px) {
         line-height: 1;
       }
     }
