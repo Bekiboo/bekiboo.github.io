@@ -21,6 +21,14 @@
     background: url("diagonal.png");
   }
 
+  img {
+    @include cover(5);
+    object-fit: cover;
+    @include respond(tab-port) {
+      display: none
+    }
+  }
+
   video {
     @include cover(5);
     object-fit: cover;
@@ -35,7 +43,7 @@
   }
 
   .video-thin {
-    display: block;
+    display: none;
 
     @include respond(tab-port) {
       display: none;
@@ -44,11 +52,16 @@
 
   .caption {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 65vh;
+    flex-direction: column;
     z-index: 20;
     text-align: left;
-    // padding-top: 10vh;
-    // margin-left: 1em;
     color: white;
+    @include respond(tab-port) {
+      justify-content: space-evenly;
+    }
 
     h1 {
       margin-top: 0.25rem;
@@ -56,6 +69,7 @@
       text-transform: uppercase;
       line-height: 1;
       max-width: 20ch;
+      font-weight: 800;
     }
 
     h4 {
@@ -106,17 +120,33 @@
 
   h2 {
     color: $primary-600;
-    max-width: 30ch;
-
+    font-size: 2rem;
+    margin-bottom: .25em;
+    
     @include respond(tab-port) {
-      font-size: 2rem;
     }
+  }
+  
+  h3 {
+    color: $dark-900;
+    font-weight: 400;
+    max-width: 30ch;
+  }
+
+  span {
+    height: .1rem;
+    width: 50%;
+    background-color: $primary-600;
+    margin: 1em 0;
   }
 
   p {
-    margin-top: 1em;
     color: $dark-800;
     max-width: 60ch;
+  }
+
+  b {
+    font-weight: 600;
   }
 }
 
@@ -125,7 +155,12 @@
 
   img {
     max-width: 50%;
-    max-height: 12em;
+    max-height: 8em;
+  }
+
+  h2 {
+    width: 18ch;
+    margin: 0 auto;
   }
 
   &__card {
@@ -152,14 +187,14 @@
 
   &--dark {
     h2 {
-      color: $red-error;
+      color: $curious-blue-700;
     }
     .infographic__card {
       div {
         text-align: right;
         line-height: 1.2;
       }
-
+      
       &:nth-of-type(even) {
         flex-direction: row-reverse;
         div {
@@ -168,11 +203,11 @@
       }
     }
   }
-
+  
   &--light {
-    margin-top: 2em;
+    margin-top: 4em;
     h2 {
-      color: $honey-500;
+      color: $curious-blue-600;
       text-align: right;
     }
 
@@ -199,6 +234,7 @@
 .donation {
   h2 {
     color: $blue-dark;
+    text-align: center;
   }
   img {
     width: 100%;

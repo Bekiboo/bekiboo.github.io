@@ -594,8 +594,8 @@ body {
 }
 
 footer {
-  height: 8em;
-  background: #ffbb00;
+  height: 16em;
+  background: #474d52;
 }
 
 .social svg {
@@ -844,6 +844,22 @@ nav a:active {
   background: url("diagonal.png");
 }
 
+.hero img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 48em) {
+  .hero img {
+    display: none;
+  }
+}
+
 .hero video {
   width: 100%;
   height: 100%;
@@ -865,7 +881,7 @@ nav a:active {
 }
 
 .hero .video-thin {
-  display: block;
+  display: none;
 }
 
 @media only screen and (min-width: 48em) {
@@ -876,9 +892,19 @@ nav a:active {
 
 .hero .caption {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  height: 65vh;
+  flex-direction: column;
   z-index: 20;
   text-align: left;
   color: white;
+}
+
+@media only screen and (min-width: 48em) {
+  .hero .caption {
+    justify-content: space-evenly;
+  }
 }
 
 .hero .caption h1 {
@@ -887,6 +913,7 @@ nav a:active {
   text-transform: uppercase;
   line-height: 1;
   max-width: 20ch;
+  font-weight: 800;
 }
 
 .hero .caption h4 {
@@ -936,19 +963,30 @@ nav a:active {
 
 .mission-statement h2 {
   color: #cc9600;
+  font-size: 2rem;
+  margin-bottom: .25em;
+}
+
+.mission-statement h3 {
+  color: #181a1b;
+  font-weight: 400;
   max-width: 30ch;
 }
 
-@media only screen and (min-width: 48em) {
-  .mission-statement h2 {
-    font-size: 2rem;
-  }
+.mission-statement span {
+  height: .1rem;
+  width: 50%;
+  background-color: #cc9600;
+  margin: 1em 0;
 }
 
 .mission-statement p {
-  margin-top: 1em;
   color: #2f3337;
   max-width: 60ch;
+}
+
+.mission-statement b {
+  font-weight: 600;
 }
 
 .infographic {
@@ -957,7 +995,12 @@ nav a:active {
 
 .infographic img {
   max-width: 50%;
-  max-height: 12em;
+  max-height: 8em;
+}
+
+.infographic h2 {
+  width: 18ch;
+  margin: 0 auto;
 }
 
 .infographic__card {
@@ -983,7 +1026,7 @@ nav a:active {
 }
 
 .infographic--dark h2 {
-  color: #d53f3f;
+  color: #185a81;
 }
 
 .infographic--dark .infographic__card div {
@@ -1000,11 +1043,11 @@ nav a:active {
 }
 
 .infographic--light {
-  margin-top: 2em;
+  margin-top: 4em;
 }
 
 .infographic--light h2 {
-  color: #ffbb00;
+  color: #2178ab;
   text-align: right;
 }
 
@@ -1027,6 +1070,7 @@ nav a:active {
 
 .donation h2 {
   color: #4d6293;
+  text-align: center;
 }
 
 .donation img {

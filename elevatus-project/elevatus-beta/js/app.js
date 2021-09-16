@@ -1,3 +1,13 @@
+
+
+
+
+// SELECTORS
+const hamburgerButton = document.getElementById('hamburger')
+
+// EVENT LISTENERS
+hamburgerButton.addEventListener('click', toggleMenu)
+
 // Hamburger button animation
 function toggleMenu() {
   document.getElementById("hamburger").classList.toggle("open");
