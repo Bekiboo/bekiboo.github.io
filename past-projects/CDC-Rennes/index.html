@@ -1,260 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8">
-	<link rel="shortcut icon" type="image/png" href="favicon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-		rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="dist/css/main.css" />
 
-	<!-- Stylesheet -->
-	<link rel="stylesheet" href="dist/css/main.css">
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/4ecb5a630a.js"
+      crossorigin="anonymous"
+    ></script>
 
-	<!-- Font Awesome -->
-	<script src="https://kit.fontawesome.com/4ecb5a630a.js" crossorigin="anonymous"></script>
+    <meta
+      name="description"
+      content="The hub for businesses in Rennes Métropole. Connect with other businesses and CEO in the region."
+    />
 
+    <title>Home - CDC Rennes</title>
+  </head>
 
-	<meta name="description"
-		content="The hub for businesses in Rennes Métropole. Connect with other businesses and CEO in the region.">
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="index.html"> <img src="/img/logo.svg" alt="" /></a>
+      </div>
+      <a href="#" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+      </a>
 
-	<title>Home - CDC Rennes</title>
+      <!-- Navigation -->
+      <nav class="nav" id="js-nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__a active" href="index.html">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__a" href="rennes.html">Rennes</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__a" href="directory.html">Directory</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__a" href="contact.html">Contact</a>
+          </li>
+          <li class="nav__item nav__item--join">
+            <a class="nav__a--join" href="join.html">Join</a>
+          </li>
+        </ul>
+      </nav>
+      <label class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    <!-- Hero -->
+    <div class="container">
+      <div class="hero hero-index" id="hero">
+        <div class="texture"></div>
+        <picture>
+          <source media="(max-width: 600px)" srcset="img/hero600.jpg" />
+          <source media="(max-width: 800px)" srcset="img/hero800.jpg" />
+          <img src="img/hero1200.jpg" alt="Parlement de Rennes" />
+        </picture>
 
-</head>
+        <!-- caption -->
+        <div class="caption">
+          <p class="purpose">
+            Providing a hub to those who want to make a difference
+            <svg
+              id="infoBtn"
+              class="info-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 12 12"
+            >
+              <defs>
+                <style>
+                  .info-icon-cls-1 {
+                    fill: #9cd5e2;
+                  }
+                </style>
+              </defs>
+              <g data-name="Calque 2">
+                <g>
+                  <path
+                    class="info-icon-cls-1"
+                    d="M9.38,0H2.62A2.62,2.62,0,0,0,0,2.62V9.38A2.62,2.62,0,0,0,2.62,12H9.38A2.62,2.62,0,0,0,12,9.38V2.62A2.62,2.62,0,0,0,9.38,0Zm-4,2a1,1,0,0,1,.7-.29,1,1,0,0,1,.7.29,1,1,0,0,1,.29.7,1,1,0,0,1-.29.7,1,1,0,0,1-.7.29A1,1,0,0,1,5.42,2Zm2.43,8H4.33V8.69h.86v-3H4.33V4.33H7V8.69h.85Z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </p>
 
-<body>
+          <div id="infoModal" class="modal_info">
+            <div class="modal_info-content">
+              <span class="modal_info-close">&times;</span>
+              <p>
+                The Chambre Du Commerce Rennes' purpose is to promote the
+                historical city of Rennes and its businesses and to create a hub
+                for people interested in networking with other businesses and in
+                being informed of the last events, weather, ...
+              </p>
+            </div>
+          </div>
 
-	<!-- HEADER -->
-	<header>
-		<div class="logo">
-			<a href="index.html">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 938.8 181.3">
-					<defs>
-						<style>
-							.cls-1,
-							.cls-4 {
-								fill: #fff;
-							}
+          <h1>Because entrepreneurs need to expand their network</h1>
+          <h2>What are you waiting for?</h2>
 
-							.cls-2 {
-								fill: #352929;
-							}
+          <a href="join.html">
+            <div class="cta">Join</div>
+          </a>
 
-							.cls-3 {
-								fill: none;
-							}
+          <!-- popup -->
+        </div>
+      </div>
+    </div>
 
-							.cls-4 {
-								font-size: 114px;
-							}
+    <main class="main-home" id="mainHome">
+      <!-- Weather Summary -->
+      <section class="weather">
+        <h2 class="weather--title">Weather in Rennes</h2>
+        <div class="weather__current">
+          <div class="current__title">
+            <h3>Current</h3>
+            <span class="line"></span>
+          </div>
+          <p><span id="currentWeather">Fetching...</span></p>
+          <p>Humidity: <span id="humidity">80</span>%</p>
+          <p><span id="temp">23</span> &#8451;</p>
+        </div>
 
-							.cls-4,
-							.cls-5 {
-								font-family: Bretagne;
-							}
+        <div class="weather__forecast">
+          <h3 class="forecast__title">Forecast</h3>
+          <span class="line"></span>
+          <div id="weather"></div>
+        </div>
+      </section>
 
-							.cls-5 {
-								isolation: isolate;
-								font-size: 60px;
-							}
-						</style>
-					</defs>
-					<g id="Calque_2" data-name="Calque 2">
-						<g id="Calque_1-2" data-name="Calque 1">
-							<g id="Calque_2-2" data-name="Calque 2">
-								<g id="Calque_1-2-2" data-name="Calque 1-2">
-									<path class="cls-1"
-										d="M207,72a68,68,0,0,1-.6,9,70.26,70.26,0,0,1-4.7,18,74.89,74.89,0,0,1-4.4,9,71.16,71.16,0,0,1-14.8,18,69.67,69.67,0,0,1-12.7,9A71.91,71.91,0,0,1,63.6,63a70.26,70.26,0,0,1,4.7-18,63.51,63.51,0,0,1,3.8-7.9,10.91,10.91,0,0,1,.6-1.1A71.16,71.16,0,0,1,87.5,18a69.67,69.67,0,0,1,12.7-9,72.29,72.29,0,0,1,97.2,27,72,72,0,0,1,9.1,27C206.8,66,207,69,207,72Z" />
-									<path class="cls-2"
-										d="M177.3,30.2H68.5A69.48,69.48,0,0,1,89.1,13.5h67.5A68.65,68.65,0,0,1,177.3,30.2Z" />
-									<path class="cls-2"
-										d="M192,63.6H53.7a64.52,64.52,0,0,1,4.5-16.7H187.4A62,62,0,0,1,192,63.6Z" />
-									<path class="cls-2"
-										d="M192,80.4a64.52,64.52,0,0,1-4.5,16.7H58.3a61.74,61.74,0,0,1-4.5-16.7Z" />
-									<path class="cls-2"
-										d="M177.3,113.8a69.48,69.48,0,0,1-20.6,16.7H89.1a68.24,68.24,0,0,1-20.6-16.7Z" />
-									<circle class="cls-2" cx="72" cy="72" r="67" />
-									<path class="cls-1"
-										d="M72,10A62,62,0,1,1,10,72,62.05,62.05,0,0,1,72,10M72,0a72,72,0,1,0,72,72A72,72,0,0,0,72,0Z" />
-									<polygon class="cls-1" points="50 59 33.9 51.1 50 43.5 66.2 51.1 50 59" />
-									<polygon class="cls-1" points="94 59 77.8 51.1 94 43.5 110.1 51.1 94 59" />
-									<polygon class="cls-1" points="63.8 29.6 71.7 13.5 79.3 29.6 71.7 45.8 63.8 29.6" />
-									<path class="cls-1"
-										d="M96.7,108.9l-9-2.3v8.9l-6.2-4.9L72,130.5,62.5,111l-6.1,4.5.3-8.8L46.4,109,54,93.5l.3-.7L72.1,56.4h0l.1.1.1.2.1.2.1.3.2.4.2.4.2.5.3.5.3.6.3.6.3.7.3.7.4.8.4.8.4.8.4.8.4.9.4.9.4.9.4.9.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.5,1,.4,1,.4.9.4.9.4.9.4.9.4.8.4.8.3.8.3.7.3.7.3.6.3.6.3.5.2.5.2.4.2.4V92l.1.2c.1.1.1.2.2.3h0c.1.3.3.6.4.9l.3.6.3.7.4.8.4.9.4,1,.5,1,.5,1.1.5,1.1.5,1.1.5,1.1.5,1,.4,1,.4.9.4.8.3.7.3.6.2.5.1.3Z" />
-								</g>
-							</g>
-							<rect class="cls-3" x="216.2" y="60.3" width="722.6" height="88.5" /><text class="cls-4"
-								transform="translate(216.17 138.32)">CDC</text><text class="cls-5"
-								transform="translate(432.07 138.32)"> </text><text class="cls-4"
-								transform="translate(464.67 138.32)">Rennes</text>
-						</g>
-					</g>
-				</svg></a>
-		</div>
-		<a href="#" id="hamburger" onclick="toggleMenu()">
-			<span></span>
-		</a>
+      <!-- Business Cards -->
+      <section class="business-cards list" id="businessCards">
+        <h2>Business Spotlights</h2>
+      </section>
 
-		<!-- Navigation -->
-		<nav class="nav" id="js-nav">
-			<ul class="nav__list">
-				<li class="nav__item"><a class="nav__a active" href="index.html">Home</a></li>
-				<li class="nav__item"><a class="nav__a" href="rennes.html">Rennes</a></li>
-				<li class="nav__item"><a class="nav__a" href="directory.html">Directory</a></li>
-				<li class="nav__item"><a class="nav__a" href="contact.html">Contact</a></li>
-				<li class="nav__item nav__item--join"><a class="nav__a--join" href="join.html">Join</a>
-				</li>
-			</ul>
-		</nav>
-		<label class="nav-toggle-label">
-			<span></span>
-		</label>
-	</header>
-	<!-- Hero -->
-	<div class="container">
-		<div class="hero hero-index" id="hero">
-			<div class="texture"></div>
-			<picture>
-				<source media="(max-width: 600px)" srcset="img/hero600.jpg">
-				<source media="(max-width: 800px)" srcset="img/hero800.jpg">
-				<img src="img/hero1200.jpg" alt="Parlement de Rennes">
-			</picture>
+      <aside><img src="img/old-street.jpg" alt="old street in Rennes" /></aside>
 
-			<!-- caption -->
-			<div class="caption">
-				<p class="purpose">Providing a hub to those who want to make a difference
-					<svg id="infoBtn" class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
-						<defs>
-							<style>
-								.info-icon-cls-1 {
-									fill: #9cd5e2;
-								}
-							</style>
-						</defs>
-						<g data-name="Calque 2">
-							<g>
-								<path class="info-icon-cls-1"
-									d="M9.38,0H2.62A2.62,2.62,0,0,0,0,2.62V9.38A2.62,2.62,0,0,0,2.62,12H9.38A2.62,2.62,0,0,0,12,9.38V2.62A2.62,2.62,0,0,0,9.38,0Zm-4,2a1,1,0,0,1,.7-.29,1,1,0,0,1,.7.29,1,1,0,0,1,.29.7,1,1,0,0,1-.29.7,1,1,0,0,1-.7.29A1,1,0,0,1,5.42,2Zm2.43,8H4.33V8.69h.86v-3H4.33V4.33H7V8.69h.85Z" />
-							</g>
-						</g>
-					</svg>
-				<div id="infoModal" class="modal_info">
-					<div class="modal_info-content">
-						<span class="modal_info-close">&times;</span>
-						<p>The Chambre Du Commerce Rennes' purpose is to promote the historical city of Rennes and its businesses
-							and to create a hub for people interested in networking with
-							other businesses and in being informed of the last events, weather, ...</p>
-					</div>
-				</div>
+      <!-- Events -->
+      <section class="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+          <li>
+            <p>
+              April 24th:
+              <a href="rennes.html"
+                >Festival national du film d'animation à Rennes
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>May 5th: <a href="rennes.html">Rock'n Solex </a></p>
+          </li>
+          <li>
+            <p>
+              May 11-26th:
+              <a href="rennes.html"
+                >Quinzaine du commerce équitable en France
+              </a>
+            </p>
+          </li>
+          <li>
+            <p>June 1st: <a href="rennes.html">Fête de la Musique </a></p>
+          </li>
+          <li>
+            <p>
+              June 16th: <a href="rennes.html">Grande Braderie de Rennes </a>
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
 
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="contact">
+          <h2>Contact</h2>
+          <div class="contact-flex">
+            <div>
+              <p>CDC - Rennes</p>
+              <p>101 rue Henri Fréville</p>
+            </div>
+            <div>
+              <p>35700 RENNES</p>
+              <p>cdc-rennes@officiel.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="social">
+          <a target="_blank" href="https://www.facebook.com"
+            ><i class="fab fa-facebook-square"></i
+          ></a>
+          <a target="_blank" href="https://www.twitter.com"
+            ><i class="fab fa-twitter-square"></i
+          ></a>
+          <a target="_blank" href="https://www.google.com"
+            ><i class="fab fa-google-plus-square"></i
+          ></a>
+        </div>
 
-				<h1>Because entrepreneurs need to expand their network</h1>
-				<h2>What are you waiting for?</h2>
+        <p>Last modified: <span id="lastModified"></span></p>
+        <a target="_blank" href="https://unsplash.com/"
+          >All Images provided by Unsplash</a
+        >
+      </div>
+    </footer>
 
-				<a href="join.html">
-					<div class="cta">Join</div>
-				</a>
-
-				<!-- popup -->
-
-			</div>
-
-
-		</div>
-	</div>
-
-	<main class="main-home" id="mainHome">
-
-		<!-- Weather Summary -->
-		<section class="weather">
-			<h2 class="weather--title">Weather in Rennes</h2>
-			<div class="weather__current">
-				<div class="current__title">
-					<h3>Current</h3>
-					<span class="line"></span>
-				</div>
-				<p><span id="currentWeather">Fetching...</span></p>
-				<p>Humidity: <span id="humidity">80</span>%</p>
-				<p><span id="temp">23</span> &#8451;</p>
-			</div>
-
-			<div class="weather__forecast">
-				<h3 class="forecast__title">Forecast</h3>
-				<span class="line"></span>
-				<div id="weather"></div>
-			</div>
-		</section>
-
-		<!-- Business Cards -->
-		<section class="business-cards list" id="businessCards">
-			<h2>Business Spotlights</h2>
-		</section>
-
-		<aside><img src="img/old-street.jpg" alt="old street in Rennes"></aside>
-
-		<!-- Events -->
-		<section class="events">
-			<h2>Upcoming Events</h2>
-			<ul>
-				<li>
-					<p>April 24th: <a href="rennes.html">Festival national du film d'animation à Rennes
-					</a></p>
-				</li>
-				<li>
-					<p>May 5th: <a href="rennes.html">Rock'n Solex
-					</a></p>
-				</li>
-				<li>
-					<p>May 11-26th: <a href="rennes.html">Quinzaine du commerce équitable en France
-					</a></p>
-				</li>
-				<li>
-					<p>June 1st: <a href="rennes.html">Fête de la Musique
-					</a></p>
-				</li>
-				<li>
-					<p>June 16th: <a href="rennes.html">Grande Braderie de Rennes
-					</a></p>
-				</li>
-			</ul>
-		</section>
-	</main>
-
-	<!-- Footer -->
-	<footer>
-		<div class="footer-grid">
-			<div class="contact">
-				<h2>Contact</h2>
-				<div class="contact-flex">
-					<div>
-						<p>CDC - Rennes</p>
-						<p>101 rue Henri Fréville</p>
-					</div>
-					<div>
-						<p>35700 RENNES</p>
-						<p>cdc-rennes@officiel.com</p>
-					</div>
-				</div>
-			</div>
-			<div class="social">
-				<a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
-				<a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a>
-				<a target="_blank" href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a>
-			</div>
-
-			<p>Last modified: <span id="lastModified"></span></p>
-			<a target="_blank" href="https://unsplash.com/">All Images provided by Unsplash</a>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="js/app.js"></script>
-	<script src="js/modal.js"></script>
-	<script src="js/weather.js"></script>
-	<script src="js/business-cards.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/business-cards.js"></script>
+  </body>
 </html>

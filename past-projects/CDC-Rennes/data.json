@@ -1,74 +1,74 @@
 {
-    "businesses": [
-      {
-        "name": "Ouest France",
-        "logo": "ouest-france.png",
-        "website": "https://www.ouest-france.fr/",
-        "headquarters": "10 rue du Breil 35000 Chantepie",
-        "phone": "02 99 32 60 00",
-        "yearFounded": 1890,
-        "activity": "Édition de journaux",
-        "annualRevenue": "295 997 010 €"
-      },
-      {
-        "name": "Ubisoft",
-        "logo": "ubisoft.png",
-        "website": "https://www.ubisoft.com/en-gb/",
-        "headquarters": "107 avenue Fréville 35200 Rennes",
-        "phone": "02 99 62 61 08",
-        "yearFounded": 1986,
-        "activity": "Édition de jeux électroniques",
-        "annualRevenue": "811 610 000 €"
-      },
-      {
-        "name": "Cooper-Standard",
-        "logo": "cooper-standard.png",
-        "website": "https://www.cooperstandard.com/",
-        "headquarters": "48 route des Eaux 35500 Vitre",
-        "phone": "02 99 39 38 11",
-        "yearFounded": 2006,
-        "activity": "Industrie du caoutchouc",
-        "annualRevenue": "180 962 251 €"
-      },
-      {
-        "name": "Eurovia Bretagne",
-        "logo": "eurovia.png",
-        "website": "https://www.eurovia.fr/",
-        "headquarters": "45 rue de Servigné 35000 Rennes",
-        "phone": "02 99 19 38 58",
-        "yearFounded": 1972,
-        "activity": "Construction de routes et autoroutes",
-        "annualRevenue": "174 230 934 €"
-      },
-      {
-        "name": "Digitaleo",
-        "logo": "digitaleo.png",
-        "website": "https://www.digitaleo.fr/",
-        "headquarters": "20 Avenue Jules Maniez 35000 Rennes",
-        "phone": "02 99 91 81 18",
-        "yearFounded": 2004,
-        "activity": "Édition de logiciels système",
-        "annualRevenue": "5 778 686 €"
-      },
-      {
-        "name": "Espacil Habitat",
-        "logo": "espacil-habitat.png",
-        "website": "https://www.espacil-habitat.fr/",
-        "headquarters": "1 rue du Scorff 35700 Rennes",
-        "phone": "02 99 14 52 63",
-        "yearFounded": 1956,
-        "activity": "Location de logements",
-        "annualRevenue": "134 946 638 €"
-      },
-      {
-        "name": "KEOLIS RENNES",
-        "logo": "keolis-rennes.png",
-        "website": "https://www.keolis-rennes.com/",
-        "headquarters": "Rue Jean Marie Huchet 35000 Rennes",
-        "phone": "02 99 11 59 73",
-        "yearFounded": 1987,
-        "activity": "Transports urbains de voyageurs",
-        "annualRevenue": "136 361 994 €"
-      }      
-    ]
-  }
+  "businesses": [
+    {
+      "name": "Ouest France",
+      "logo": "ouest-france.png",
+      "website": "https://www.ouest-france.fr/",
+      "headquarters": "10 rue du Breil 35000 Chantepie",
+      "phone": "02 99 32 60 00",
+      "yearFounded": 1890,
+      "activity": "Édition de journaux",
+      "annualRevenue": "295 997 010 €"
+    },
+    {
+      "name": "Ubisoft",
+      "logo": "ubisoft.png",
+      "website": "https://www.ubisoft.com/en-gb/",
+      "headquarters": "107 avenue Fréville 35200 Rennes",
+      "phone": "02 99 62 61 08",
+      "yearFounded": 1986,
+      "activity": "Édition de jeux électroniques",
+      "annualRevenue": "811 610 000 €"
+    },
+    {
+      "name": "Cooper-Standard",
+      "logo": "cooper-standard.png",
+      "website": "https://www.cooperstandard.com/",
+      "headquarters": "48 route des Eaux 35500 Vitre",
+      "phone": "02 99 39 38 11",
+      "yearFounded": 2006,
+      "activity": "Industrie du caoutchouc",
+      "annualRevenue": "180 962 251 €"
+    },
+    {
+      "name": "Eurovia Bretagne",
+      "logo": "eurovia.png",
+      "website": "https://www.eurovia.fr/",
+      "headquarters": "45 rue de Servigné 35000 Rennes",
+      "phone": "02 99 19 38 58",
+      "yearFounded": 1972,
+      "activity": "Construction de routes et autoroutes",
+      "annualRevenue": "174 230 934 €"
+    },
+    {
+      "name": "Digitaleo",
+      "logo": "digitaleo.png",
+      "website": "https://www.digitaleo.fr/",
+      "headquarters": "20 Avenue Jules Maniez 35000 Rennes",
+      "phone": "02 99 91 81 18",
+      "yearFounded": 2004,
+      "activity": "Édition de logiciels système",
+      "annualRevenue": "5 778 686 €"
+    },
+    {
+      "name": "Espacil Habitat",
+      "logo": "espacil-habitat.png",
+      "website": "https://www.espacil-habitat.fr/",
+      "headquarters": "1 rue du Scorff 35700 Rennes",
+      "phone": "02 99 14 52 63",
+      "yearFounded": 1956,
+      "activity": "Location de logements",
+      "annualRevenue": "134 946 638 €"
+    },
+    {
+      "name": "KEOLIS RENNES",
+      "logo": "keolis-rennes.png",
+      "website": "https://www.keolis-rennes.com/",
+      "headquarters": "Rue Jean Marie Huchet 35000 Rennes",
+      "phone": "02 99 11 59 73",
+      "yearFounded": 1987,
+      "activity": "Transports urbains de voyageurs",
+      "annualRevenue": "136 361 994 €"
+    }
+  ]
+}
